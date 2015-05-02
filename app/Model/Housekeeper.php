@@ -13,4 +13,16 @@ class Housekeeper extends AppModel
 
     public $primaryKey = 'housekeeper_id';
 
+    public $order = array('housekeeper_id DESC');
+
+    //Search PluginのSearchableビヘイビアの設定
+    public $actsAs = array('Search.Searchable');
+
+    //Search Pluginの検索のタイプを$filterArgsプロパティにて設定
+    public $filterArgs = array(
+        // 例
+        'station' => array('type' => 'like'),
+
+    );
+
 }

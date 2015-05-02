@@ -15,19 +15,28 @@ class HousekeepersController extends AppController
 
     public $helpers = array('Html', 'Form');
 
-    public $paginate = array(
-        'limit'=>10,
-        'order'=>array(
-            'Housekeeper.id'=>'ASC',
-        ),
-    );
+    //Search Pluginの Prgコンポーネントを設定
+    public $components = array('Search.Prg');
+
+    public $presetVars = true;
+
 
     public function index(){
         //ハウスキーパー一覧をページネーションで表示
-        $housekeepers=$this->paginate('Housekeeper',array('housekeeper_id not'=>null));
 
+        //　recursiveでアソシエーションをどの深さまで掘り下げるかを設定
+        $this->Housekeeper->recursive = 0;
+        // Search PluginのPOSTデータのバリデーションを実施
+        $this->Prg->commonProcess();
+        $this->paginate = array(
 
-        $this->set('housekeepers', $housekeepers);
+            //Search Pluginにて検索条件によって絞り込まれたデータを抽出
+            'conditions' => $this->Housekeeper->parseCriteria($this->passedArgs),
+            'housekeeper_id not'=>null
+        );
+
+        $this->set('housekeepers', $this->paginate());
+
     }
 
 

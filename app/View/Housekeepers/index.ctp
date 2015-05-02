@@ -2,6 +2,15 @@
 
     <div class="search_bar">
 
+        <?php echo $this->Form->create('Housekeeper', array('action'=>'index')); ?>
+        <fieldset>
+            <legend>検索</legend>
+            <?php echo $this->Form->input('station', array('label' => '駅', 'class' => 'span12', 'empty' => true)); ?>
+        </fieldset>
+        <?php echo $this->Form->end('検索'); ?>
+
+
+
     </div>
 
     <div class="pagination">
