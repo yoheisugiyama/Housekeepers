@@ -22,6 +22,7 @@ class Housekeeper extends AppModel
     public $filterArgs = array(
         // 例
         'station' => array('type' => 'like'),
+        'sex'=>array('type'=>'value')
 
     );
 
