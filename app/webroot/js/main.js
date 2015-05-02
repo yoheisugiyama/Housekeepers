@@ -15,13 +15,17 @@ $(document).ready(function(){
 });
 
 
+$("body").append("<div id='glayLayer'></div>");
+
 
 $('.btn-success').click(function(){
+
+    $("#glayLayer").show();
+
+    return false;
+})
+
+$("#glayLayer").click(function(){
     $(this).hide();
-})
-
-$('.btn-primary').click(function(){
-    $('.btn-success').show();
-})
-
+});
 
