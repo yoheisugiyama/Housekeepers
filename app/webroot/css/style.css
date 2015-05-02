@@ -33,9 +33,10 @@ div#glayLayer {
     background: #7BAEB5;
     filter: alpha(opacity=75);
     opacity: 0.75;
+    z-index: 1;
 }
 
-#overLayer{
+div#overLayer{
     display:none;
     width:400px;
     background:white;
@@ -43,6 +44,7 @@ div#glayLayer {
     position: fixed;
     top:50%;
     left:50%;
+    z-index: 2;
 }
 
 .logo{

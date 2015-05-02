@@ -15,17 +15,24 @@ $(document).ready(function(){
 });
 
 
-$("body").append("<div id='glayLayer'></div>");
+$('body').append("<div id='glayLayer'></div>");
 
 
-$('.btn-success').click(function(){
+$('.login:nth-child(2)').click(function(){
 
     $("#glayLayer").show();
+    $("#overLayer").show().css({
+        "margin-top":"-"+$("#overLayer").height()/2+"px" ,
+        "margin-left":"-"+$("#overLayer").width()/2+"px"
+    });
+
 
     return false;
-})
+});
+
 
 $("#glayLayer").click(function(){
     $(this).hide();
+    $("#overLayer").hide();
 });
 
