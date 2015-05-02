@@ -17,16 +17,16 @@
         <h2 id="catchcopy">近所の家事代行人を探し、家事代行を依頼しよう</h2>
     </div>
     <div class="login">
-        <?php echo $this->Form->create('Users',array('action'=>'login')); ?>
+
         <p>家事代行を依頼したい人はこちら</p>
         <p>
-            <?php  echo $this->Form->button('家事代行依頼人', array('class'=>'btn btn-lg btn-success', 'type'=>'submit', 'controller'=>'users', 'action'=>'resigter')); ?>
+            <?php  echo $this->Form->button('家事代行依頼人', array('class'=>'btn btn-lg btn-success','type'=>'submit')); ?>
         </p>
         <p>家事代行をしたい人はこちら</p>
         <p>
             <?php  echo $this->Form->button('家事代行人', array('class'=>'btn btn-lg btn-primary', 'type'=>'submit')); ?>
         </p>
-        <?php echo $this->Form->end() ?>
+
     </div>
 </div>
 

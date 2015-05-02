@@ -13,3 +13,15 @@ $(document).ready(function(){
   auto:true
     });
 });
+
+
+
+$('.btn-success').click(function(){
+    $(this).hide();
+})
+
+$('.btn-primary').click(function(){
+    $('.btn-success').show();
+})
+
+

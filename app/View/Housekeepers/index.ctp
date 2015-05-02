@@ -1,7 +1,8 @@
 <div class="container">
 
     <div class="search_bar">
-
+        <br>
+        <br>
         <?php echo $this->Form->create('Housekeeper', array('action'=>'index')); ?>
         <fieldset>
             <legend>検索</legend>
