@@ -7,7 +7,7 @@
             <legend>検索</legend>
             <?php echo $this->Form->input('station', array('label' => '駅', 'empty' => true)); ?>
             <hr />
-            <?php echo $this->Form->select('sex', array('男' => '男', '女' => '女')); ?>
+            <?php echo $this->Form->select('sex',array('男' => '男', '女' => '女'),array('label'=>true)); ?>
         </fieldset>
         <br>
         <br>
