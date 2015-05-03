@@ -27,10 +27,14 @@
         <hr/>
 
         <div>
+
             <?php foreach ($housekeepers as $row): ?>
                 <div class="thumb">
-                    <p>写真</p>
+
+                    <?php echo $this->Html->image($row['Image'][0]['name'], array('width'=>'100px', 'height'=>'100px')) ?>
+
                 </div>
+
 
                 <div class="summary">
                     <ul>
@@ -40,7 +44,6 @@
                         <li><?php echo h($row['Housekeeper']['station']); ?></li>
                     </ul>
                 </div>
-
             <?php endforeach; ?>
         </div>
 

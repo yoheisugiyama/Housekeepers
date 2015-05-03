@@ -24,20 +24,25 @@ class HousekeepersController extends AppController
     public function index(){
         //ハウスキーパー一覧をページネーションで表示
 
+
+
         //　recursiveでアソシエーションをどの深さまで掘り下げるかを設定
-        $this->Housekeeper->recursive = 0;
+//        $this->Housekeeper->recursive = 0;
         // Search PluginのPOSTデータのバリデーションを実施
         $this->Prg->commonProcess();
         $this->paginate = array(
 
             //Search Pluginにて検索条件によって絞り込まれたデータを抽出
             'conditions' => $this->Housekeeper->parseCriteria($this->passedArgs),
-            'housekeeper_id not'=>null
+            'id not'=>null
         );
 
         $this->set('housekeepers', $this->paginate());
 
+
+
     }
+
 
 
     public function mypage()
@@ -50,14 +55,21 @@ class HousekeepersController extends AppController
 
             $options = array(
                 'conditions' => array(
-                    'Housekeeper.housekeeper_id' => $id
+                    'Housekeeper.id' => $id
                 )
             );
 
             //ハウスキーパー情報をDBから取得
             $housekeeper = $this->Housekeeper->find('first', $options);
 
+
+
+            $this->Session->write(array('id'=>$housekeeper['Housekeeper']['id']));
+
             $this->request->data = $housekeeper;
+
+
+
 
         }else{
 

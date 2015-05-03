@@ -11,10 +11,11 @@ App::uses('AppModel', 'Model');
 class Housekeeper extends AppModel
 {
 
-    public $primaryKey = 'housekeeper_id';
+
+    public $hasMany=array('Image');
 
 
-    public $order = array('housekeeper_id DESC');
+    public $order = array('id DESC');
 
     //Search PluginのSearchableビヘイビアの設定
     public $actsAs = array('Search.Searchable');
