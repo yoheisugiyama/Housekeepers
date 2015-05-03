@@ -11,7 +11,7 @@ class HousekeepersController extends AppController
 {
 
     //利用するモデルの定義
-    public $uses = array('Housekeeper');
+    public $uses = array('Housekeeper','User','Image');
 
     public $helpers = array('Html', 'Form');
 
@@ -61,6 +61,8 @@ class HousekeepersController extends AppController
 
         }else{
 
+
+
             //mypageにアクセスしたあと、各項目をアップデートし、再登録する際の処理
 
             $new_housekeeper=array(
@@ -87,4 +89,6 @@ class HousekeepersController extends AppController
             }
         }
     }
+
+
 }

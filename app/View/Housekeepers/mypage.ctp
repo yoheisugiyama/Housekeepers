@@ -14,7 +14,7 @@
 
         <div>
             <h2>基本情報</h2>
-            <?php echo $this->Form->create(null, array('type'=>'post','class'=>'form-horizontal', 'url'=>array('controller'=>'housekeepers','action'=>'mypage')));  ?>
+            <?php echo $this->Form->create('Housekeeper', array('type'=>'post','class'=>'form-horizontal', 'url'=>array('controller'=>'housekeepers','action'=>'mypage')));  ?>
             <div class="form-group form-group-sm">
                 <label class="col-sm-6 control-label" for="formGroupInput">氏</label>
                 <label class="col-sm-6 control-label" for="formGroupInput">名</label>
@@ -83,8 +83,14 @@
                     <?php echo $this->Form->input('Housekeeper.appeal', array('type'=>'text', 'label'=>false,'required'=>false, 'class'=>'form-control', 'id'=>'formGroupInput', 'placeholder'=>'アピール')); ?>
                 </div>
             </div>
+
+
             <div class="form-group form-group-sm">
                 <?php echo $this->Form->end('プロフィール登録') ?>
+            </div>
+
+            <div class="form-group form-group-sm">
+                <?php echo $this->Html->link('ファイルアップロード',array('controller'=>'images','action'=>'file_upload')); ?>
             </div>
         </div>
 
