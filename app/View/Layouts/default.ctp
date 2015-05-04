@@ -25,9 +25,6 @@
 
     <!-- Custom styles for this template -->
 
-
-
-
 <body>
 
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -37,6 +34,8 @@
         <p class="navbar-text navbar-right"><?php  echo $this->Html->link('ログアウト', array('class'=>'navbar-link','controller'=>'users', 'action'=>'logout')) ?> </p>
         <p class="navbar-text navbar-right"><?php  echo $this->Html->link('ログイン', array('class'=>'navbar-link','controller'=>'users', 'action'=>'login')) ?> </p>
         <p class="navbar-text navbar-right"><?php  echo $this->Html->link('ホーム', array('class'=>'navbar-link','controller'=>'users', 'action'=>'index')) ?> </p>
+        <p class="navbar-text navbar-right"><?php  echo $this->Html->link('ハウスキーパー', array('class'=>'navbar-link','controller'=>'housekeepers', 'action'=>'index')) ?> </p>
+
     </div>
 </nav>
 

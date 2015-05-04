@@ -9,7 +9,6 @@
 
 class HousekeepersController extends AppController
 {
-
     //利用するモデルの定義
     public $uses = array('Housekeeper','User','Image');
 
@@ -24,8 +23,6 @@ class HousekeepersController extends AppController
     public function index(){
         //ハウスキーパー一覧をページネーションで表示
 
-
-
         //　recursiveでアソシエーションをどの深さまで掘り下げるかを設定
 //        $this->Housekeeper->recursive = 0;
         // Search PluginのPOSTデータのバリデーションを実施
@@ -38,12 +35,7 @@ class HousekeepersController extends AppController
         );
 
         $this->set('housekeepers', $this->paginate());
-
-
-
     }
-
-
 
     public function mypage()
     {
@@ -62,20 +54,13 @@ class HousekeepersController extends AppController
             //ハウスキーパー情報をDBから取得
             $housekeeper = $this->Housekeeper->find('first', $options);
 
-
-
             $this->Session->write(array('id'=>$housekeeper['Housekeeper']['id']));
 
             $this->request->data = $housekeeper;
 
-
-
-
         }else{
 
-
-
-            //mypageにアクセスしたあと、各項目をアップデートし、再登録する際の処理
+           //mypageにアクセスしたあと、各項目をアップデートし、再登録する際の処理
 
             $new_housekeeper=array(
                 'housekeeper_id'=>$id,
@@ -90,7 +75,6 @@ class HousekeepersController extends AppController
                 'appeal'=>$this->request->data['Housekeeper']['appeal']
             );
 
-
             $this->Housekeeper->create();
 
             if($this->Housekeeper->save($new_housekeeper)){
@@ -102,5 +86,20 @@ class HousekeepersController extends AppController
         }
     }
 
+    public function ind_page(){
+
+            $id=$this->request->pass[0];
+            $options = array(
+                'conditions' => array(
+                    'Housekeeper.id' => $id
+                )
+            );
+
+            //ハウスキーパー情報をDBから取得
+            $housekeeper = $this->Housekeeper->find('first', $options);
+
+            $this->set('housekeeper',$housekeeper);
+
+    }
 
 }

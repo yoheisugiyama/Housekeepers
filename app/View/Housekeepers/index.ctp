@@ -16,7 +16,6 @@
         <?php echo $this->Form->end('検索'); ?>
 
 
-
     </div>
 
     <div class="pagination">
@@ -30,11 +29,8 @@
 
             <?php foreach ($housekeepers as $row): ?>
                 <div class="thumb">
-
-                    <?php echo $this->Html->image($row['Image'][0]['name'], array('width'=>'100px', 'height'=>'100px')) ?>
-
+                    <?php echo $this->Html->image($row['Image'][0]['name'], array('url'=>array('action'=>'ind_page',$row['Image'][0]['housekeeper_id']),'alt'=>'noimages','width'=>'100px', 'height'=>'100px')) ?>
                 </div>
-
 
                 <div class="summary">
                     <ul>
@@ -44,6 +40,7 @@
                         <li><?php echo h($row['Housekeeper']['station']); ?></li>
                     </ul>
                 </div>
+                <br>
             <?php endforeach; ?>
         </div>
 
