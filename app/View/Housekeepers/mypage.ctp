@@ -5,11 +5,9 @@
     </div>
 
     <div class="pagination">
-
         <div>
             <h1>プロフィール編集</h1>
             <p>プロフィールの基本情報を充実化させて、houseownerの目に止まるページを作りましょう!</p>
-
         </div>
 
         <div>

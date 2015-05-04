@@ -11,6 +11,5 @@
     </div>
     <?php echo $this->Form->end() ?>
     <hr>
-    <h3>会員登録</h3>
-    <?php  echo $this->Html->link('会員登録', '/users/register'); ?>
+
 </div>

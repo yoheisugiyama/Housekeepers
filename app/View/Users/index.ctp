@@ -18,13 +18,14 @@
     </div>
     <div class="login">
 
+        <h3>今すぐ無料登録!</h3>
         <p>家事代行を依頼したい人はこちら</p>
         <p>
-            <?php  echo $this->Form->button('家事代行依頼人', array('class'=>'btn btn-lg btn-success','type'=>'submit')); ?>
+            <?php  echo $this->Form->button('ハウスオーナー登録', array('class'=>'btn btn-lg btn-success','type'=>'submit')); ?>
         </p>
         <p>家事代行をしたい人はこちら</p>
         <p>
-            <?php  echo $this->Form->button('家事代行人', array('class'=>'btn btn-lg btn-primary', 'type'=>'submit')); ?>
+            <?php  echo $this->Form->button('ハウスキーパー登録', array('class'=>'btn btn-lg btn-primary', 'type'=>'submit')); ?>
         </p>
 
     </div>
@@ -116,11 +117,26 @@
 
 <hr>
 
+
 <div class="background_2">
     <div class="container">
+        <h3>ハウスキーパーとは？ハウスオーナーとは？</h3>
+        <h4>ハウスキーパーとは</h4>
+        <p>
+            家事代行をする人のことを言います。当ページの上部にある「ハウスキーパー登録」のページより登録いた
+            だいたユーザーはハウスキーパーとなります。ハウスキーパーは、FacebookまたはLinkedIn、運転免許証当
+            による本人確認が必要となります。
+        </p>
+        <h4>ハウスオーナーとは</h4>
+        <p>
+            家事代行を依頼する人のことを言います。住居は賃貸・購入を問いません。家事代行を依頼したい人であれ
+            ばどなたでもハウスオーナー登録が可能です。
+        </p>
+
         <h3>How To Use</h3>
     </div>
 </div>
+
 
 <div class="background">
 

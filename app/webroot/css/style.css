@@ -147,6 +147,12 @@ p{
     height: 50px;
 }
 
+.background{
+    height: 300px;
+    background-color: #f3f8f9;
+
+}
+
 hr{
     margin: 0 0 50px 0;
 }
@@ -201,11 +207,6 @@ hr{
 }
 
 
-.background{
-    height: 300px;
-    background-color: white;
-
-}
 
 .button_center{
     text-align: center;
@@ -230,14 +231,27 @@ hr{
     text-align: left;
 }
 
+.housekeeper{
+    background-color: #e3efd7;
+    padding: 10px;
+
+}
 .thumb{
     width: 30%;
     float: left;
     height: 70px;
+
 }
 
+.thumbphoto{
+    padding-bottom: 10px;
+}
 .summary{
     width: 70%;
+
+}
+
+.summary>ul{
 
 }
 
@@ -255,8 +269,10 @@ div.caption p{
     font-size: 14px;
 }
 
-
-
+footer{
+    height: 400px;
+    background-color: #000000;
+}
 
 
 

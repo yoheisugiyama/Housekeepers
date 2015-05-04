@@ -30,7 +30,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <!--        <h1 class="navbar-text">HouseKeepers.jp</h1>-->
-        <?php echo $this->Html->image('housekeepers_logo.png', array('alt'=>'Housekeepers', 'class'=>'logo')) ?>
+        <?php echo $this->Html->image('housekeepers_logo.png', array('alt'=>'Housekeepers', 'class'=>'logo', 'url'=>array('controller'=>'users','action'=>'index'))) ?>
         <p class="navbar-text navbar-right"><?php  echo $this->Html->link('ログアウト', array('class'=>'navbar-link','controller'=>'users', 'action'=>'logout')) ?> </p>
         <p class="navbar-text navbar-right"><?php  echo $this->Html->link('ログイン', array('class'=>'navbar-link','controller'=>'users', 'action'=>'login')) ?> </p>
         <p class="navbar-text navbar-right"><?php  echo $this->Html->link('ホーム', array('class'=>'navbar-link','controller'=>'users', 'action'=>'index')) ?> </p>
@@ -41,6 +41,21 @@
 
 <?php echo $this->Session->flash(); ?>
 <?php echo $this->fetch('content'); ?>
+
+<footer>
+
+    <div class="container">
+        <h3>Housekeepers</h3>
+
+        <ul>
+        <li>運営会社</li>
+
+    </ul>
+    <ul>
+
+    </ul>
+    </div>
+</footer>
 
 <!-- Placed at the end of the document so the pages load faster -->
 <?php echo $this->Html->script('jquery-1.11.2.js'); ?>
