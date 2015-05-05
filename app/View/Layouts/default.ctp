@@ -15,7 +15,7 @@
     <!-- Bootstrap core CSS -->
     <?php echo $this->Html->css('bootstrap', null, array('media'=>"screen, projection")); ?>
     <?php echo $this->Html->css('style', null, array("screen, projection")); ?>
-    <?php echo $this->Html->css('jquery.bxslider.css', null, array("screen, projection")); ?>
+
 
     <!-- <link href="css/carousel.css" rel="stylesheet"> -->
 
@@ -28,14 +28,14 @@
 <body>
 
 <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <!--        <h1 class="navbar-text">HouseKeepers.jp</h1>-->
+    <div class="row">
         <?php echo $this->Html->image('housekeepers_logo.png', array('alt'=>'Housekeepers', 'class'=>'logo', 'url'=>array('controller'=>'users','action'=>'index'))) ?>
-        <p class="navbar-text navbar-right"><?php  echo $this->Html->link('ログアウト', array('class'=>'navbar-link','controller'=>'users', 'action'=>'logout')) ?> </p>
-        <p class="navbar-text navbar-right"><?php  echo $this->Html->link('ログイン', array('class'=>'navbar-link','controller'=>'users', 'action'=>'login')) ?> </p>
-        <p class="navbar-text navbar-right"><?php  echo $this->Html->link('ホーム', array('class'=>'navbar-link','controller'=>'users', 'action'=>'index')) ?> </p>
-        <p class="navbar-text navbar-right"><?php  echo $this->Html->link('ハウスキーパー', array('class'=>'navbar-link','controller'=>'housekeepers', 'action'=>'index')) ?> </p>
-
+        <ul class="nav">
+            <li><?php  echo $this->Html->link('ログイン', array('class'=>'navbar-link','controller'=>'users', 'action'=>'login')) ?> </li>
+            <li><?php  echo $this->Html->link('ログアウト', array('class'=>'navbar-link','controller'=>'users', 'action'=>'logout')) ?> </li>
+            <li><?php  echo $this->Html->link('ホーム', array('class'=>'navbar-link','controller'=>'users', 'action'=>'index')) ?> </li>
+            <li><?php  echo $this->Html->link('ハウスキーパー', array('class'=>'navbar-link','controller'=>'housekeepers', 'action'=>'index')) ?> </li>
+        </ul>
     </div>
 </nav>
 

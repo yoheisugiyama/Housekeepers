@@ -1,25 +1,45 @@
 
+body{
+   font-family:Avenir, 'Helvetica neue', Helvetica, '游ゴシック', YuGothic, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', sans-serif !important; 
+}
 
 .navbar{
-    background-color: #D3E0E2;
+    background-color: #c7e1e7;
     color: white;
-
-}
-.navbar-text>a{
-    color: white;
+    text-align: right;
 
 }
 
-.navbar-right{
-    margin-right: 140px;
+.row{
+    width: 960px;
+    margin:0 auto;
+    position:relative;
+
 }
 
-.navbar img{
-    padding-top: 10px;
+.logo{
+    margin-top: 20px;
+    float:left;
 }
 
-.bx-wrapper img{
-    height: 450px;
+
+ul.nav{
+    list-style-type: none;
+    float: right;
+    display:inline;
+    margin-top:30px;
+    font-size: 15px;
+
+
+}
+
+.nav>li{
+    float:left;    
+}
+
+.nav>li a{
+    color:white;
+
 }
 
 
@@ -30,9 +50,9 @@ div#glayLayer {
     top: 0;
     height: 100%;
     width: 100%;
-    background: #7BAEB5;
+    background: #acdde6;
     filter: alpha(opacity=75);
-    opacity: 0.75;
+    opacity: 0.60;
     z-index: 1;
 }
 
@@ -47,16 +67,6 @@ div#overLayer{
     z-index: 2;
 }
 
-.logo{
-    margin-left: 60px;
-}
-
-.row{
-    width: 1024px;
-    margin:0 auto;
-    text-align: center;
-
-}
 
 body{
     padding-top:70px;
@@ -65,12 +75,12 @@ body{
 }
 
 .main{
-    width: 100%;
+    clear:both;
+    background-image: url(../img/top.jpg);
+    background-size: 100%;
+    height:500px;
 }
 
-.main>img{
-    height: 500px;
-}
 
 .facebook_login{
     position: absolute;
@@ -78,56 +88,37 @@ body{
 
 }
 
-#title{
-    position: absolute;
-    top: 200px;
-    font-size: 60px;
-    color: #7F7F7F;
-    margin-left: 60px;
-}
-
-#catchcopy{
-    position: absolute;
-    top: 270px;
-    font-size: 20px;
-    color: #7F7F7F;
-    margin-left: 60px;
-}
 
 
 .title{
-    float: left;
+    color: white;
+    text-shadow:2px 2px grey;
+    margin-top: 120px;
 }
 
 
 .login{
-    background-color: white;
-    height: 280px;
-    position: absolute;
-    width: 340px;
-    display: block;
-    border-radius: 5px;
-    top: 150px;
-    right: 200px;
-    float: right;
-    text-align: center;
+    margin: 80px 0;
+    
 }
+
+.login>p{
+    float:left;
+    margin:10px;
+    
+}
+
 
 h3{
     color: grey;
     text-align: center;
     
 }
-.container>h2{
-    clear: both;
-}
 
 
 p{
-    
-    font-size: 1.2em;
-    margin-top: 20px;;
-
+   font-size: 1.2em;
+   margin-top: 20px;;
 }
 
 
@@ -155,12 +146,6 @@ p{
 
 hr{
     margin: 0 0 50px 0;
-}
-
-.containter>h2{
-    text-align: center;
-    padding:20px 20px;
-    margin: 0px 0px;
 }
 
 .alert{
@@ -256,9 +241,6 @@ hr{
 }
 
 
-.bxslider>img{
-    height: 300px;
-}
 
 div.caption{
     height: 450px;

@@ -1,34 +1,22 @@
 
 <div class="main">
-
-    <ul class="bxslider">
-        <li><?php echo $this->Html->image('top写真_narrow.jpg', array('alt'=>'Generic placeholder image','width'=>'100%')); ?></li>
-        <li><?php echo $this->Html->image('top写真_narrow_2.png', array('alt'=>'Generic placeholder image','width'=>'100%')); ?></li>
-        <li><?php echo $this->Html->image('top写真_narrow_3.png', array('alt'=>'Generic placeholder image','width'=>'100%')); ?></li>
-        <li></li>
-    </ul>
-
-</div>
-
-
-<div class="container">
+    <div class="row">
     <div class="title">
-        <h1 id="title">HouseKeepers</h1>
-        <h2 id="catchcopy">近所の家事代行人を探し、家事代行を依頼しよう</h2>
+        <h1>HouseKeepers</h1>
+        <h2>近所の家事代行人を探し、家事代行を依頼しよう</h2>
     </div>
-    <div class="login">
-
-        <h3>今すぐ無料登録!</h3>
-        <p>家事代行を依頼したい人はこちら</p>
+    <div class="login">        
         <p>
             <?php  echo $this->Form->button('ハウスオーナー登録', array('class'=>'btn btn-lg btn-success','type'=>'submit')); ?>
         </p>
-        <p>家事代行をしたい人はこちら</p>
         <p>
             <?php  echo $this->Form->button('ハウスキーパー登録', array('class'=>'btn btn-lg btn-primary', 'type'=>'submit')); ?>
         </p>
-
     </div>
+    </div>
+</div>
+
+
     <div id="overLayer">
         <h2>会員登録</h2>
         <?php echo $this->Form->create('User', array('action'=>'register'));?>
