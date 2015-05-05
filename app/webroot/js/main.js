@@ -6,6 +6,7 @@ $(function() {
 });
 
 
+
 $(document).ready(function(){
   $('.bxslider').bxSlider({
   mode: 'horizontal',
