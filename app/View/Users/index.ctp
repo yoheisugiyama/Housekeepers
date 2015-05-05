@@ -119,7 +119,7 @@
 
 
 <div class="background_2">
-    <div class="container">
+    <div class="row">
         <h3>ハウスキーパーとは？ハウスオーナーとは？</h3>
         <h4>ハウスキーパーとは</h4>
         <p>
