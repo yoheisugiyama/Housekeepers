@@ -30,7 +30,6 @@ ul.nav{
     margin-top:30px;
     font-size: 15px;
 
-
 }
 
 .nav>li{
@@ -58,13 +57,14 @@ div#glayLayer {
 
 div#overLayer{
     display:none;
-    width:400px;
-    background:white;
+    width:60%;
+    background:beige;
     padding:10px;
     position: fixed;
     top:50%;
     left:50%;
-    z-index: 2;
+    z-index: 50;
+    border-radius: 5px;
 }
 
 
@@ -76,16 +76,9 @@ body{
 
 .main{
     clear:both;
-    background-image: url(../img/top.jpg);
+    background-image: url(../img/top_2.png);
     background-size: 100%;
     height:500px;
-}
-
-
-.facebook_login{
-    position: absolute;
-    top: 100px;
-
 }
 
 
@@ -112,7 +105,12 @@ body{
 h3{
     color: grey;
     text-align: center;
-    
+}
+
+h4{
+    color: grey;
+    text-align: center;
+    margin-top: 20px;
 }
 
 
@@ -133,15 +131,24 @@ p{
     width: 250px;
 }
 
-.background_2{
-    background-color: #f3f8f9;
-    height: 50px;
-}
 
 .background{
-    height: 300px;
-    background-color: #f3f8f9   ;
 
+    background-color: #f3f8f9;
+}
+
+.background_2{
+
+}
+
+
+.col-lg-6{
+    text-align: center;
+    font-size: 16px;
+}
+
+dt{
+    font-size: 18px !important;
 }
 
 hr{
@@ -192,7 +199,6 @@ hr{
 }
 
 
-
 .button_center{
     text-align: center;
 }
@@ -241,7 +247,6 @@ hr{
 }
 
 
-
 div.caption{
     height: 450px;
 }
@@ -251,9 +256,29 @@ div.caption p{
     font-size: 14px;
 }
 
+.ind_photo{
+    float: left;
+    margin-right: 50px;
+}
+
+.ind_info{
+    padding:0 20px;
+    margin:0 20px;
+}
+
+.ind_info ul{
+    list-style-type:none;
+    margin-left: 20px;
+
+}
+
+
 footer{
-    height: 400px;
     background-color: #000000;
+    margin: 50px 0;
+    text-align: center;
+    color: #ffffff;
+    clear:both;
 }
 
 

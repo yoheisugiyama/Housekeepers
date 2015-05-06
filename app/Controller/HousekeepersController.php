@@ -19,22 +19,21 @@ class HousekeepersController extends AppController
 
     public $presetVars = true;
 
-
     public function index(){
         //ハウスキーパー一覧をページネーションで表示
-
-        //　recursiveでアソシエーションをどの深さまで掘り下げるかを設定
-//        $this->Housekeeper->recursive = 0;
+        // recursiveでアソシエーションをどの深さまで掘り下げるかを設定
+        // $this->Housekeeper->recursive = 0;
         // Search PluginのPOSTデータのバリデーションを実施
+
         $this->Prg->commonProcess();
         $this->paginate = array(
-
             //Search Pluginにて検索条件によって絞り込まれたデータを抽出
             'conditions' => $this->Housekeeper->parseCriteria($this->passedArgs),
             'id not'=>null
         );
 
         $this->set('housekeepers', $this->paginate());
+
     }
 
     public function mypage()

@@ -30,26 +30,26 @@
             <tbody>
             <tr>
                 <th><?php echo $this->Form->label('User.name', '名前'); ?></th>
-                <td><?php echo $this->Form->input('name', array('label'=>false)); ?></td>
+                <td><?php echo $this->Form->input('name', array('label'=>false, 'class'=>'form-control')); ?></td>
             </tr>
             <tr>
                 <th><?php echo $this->Form->label('User.email', 'email'); ?></th>
-                <td><?php echo $this->Form->input('email', array('label'=>false)); ?></td>
+                <td><?php echo $this->Form->input('email', array('label'=>false, 'class'=>'form-control')); ?></td>
             </tr>
             <tr>
                 <th><?php echo $this->Form->label('User.username', 'ユーザー名'); ?></th>
-                <td><?php echo $this->Form->input('username', array('label'=>false)); ?></td>
+                <td><?php echo $this->Form->input('username', array('label'=>false, 'class'=>'form-control')); ?></td>
 
             </tr>
             <tr>
                 <th><?php echo $this->Form->label('User.password', 'パスワード'); ?></th>
-                <td><?php echo $this->Form->input('password', array('label'=>false)); ?></td>
+                <td><?php echo $this->Form->input('password', array('label'=>false, 'class'=>'form-control')); ?></td>
             </tr>
             <tr>
                 <th></th>
                 <td>
                     <?php echo $this->Form->input('confirmed', array('type'=>'hidden', 'value'=>false));?>
-                    <?php echo $this->Form->submit('確認') ?>
+                    <?php echo $this->Form->submit('確認', array('class'=>'btn btn-primary')) ?>
                 </td>
             </tr>
             </tbody>
@@ -59,18 +59,13 @@
 </div>
 
 
-<div class="background_2">
-    <div class="container">
-    </div>
-</div>
-
 <hr>
 
 <div class="row">
 
     <h3>HouseKeepersは、家事代行依頼人と家事代行人をマッチングさせるサービスです</h3>
-    　　 <p>HouseKeepersは、より多くの方々に、安心して安価に家事代行をご利用いただくための</p>
-    <p>オンラインプラットフォームです。</p>
+    <h4>HouseKeepersは、より多くの方々に、安心して安価に家事代行をご利用いただくための</h4>
+    <h4>オンラインプラットフォームです。</h4>
     <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
             <img src="" alt="" class="koumoku">
@@ -106,13 +101,13 @@
 <hr>
 
 
-<div class="background_2">
+<div class="background">
     <div class="row">
         <h3>ハウスキーパーとは？ハウスオーナーとは？</h3>
         <h4>ハウスキーパーとは</h4>
         <p>
             家事代行をする人のことを言います。当ページの上部にある「ハウスキーパー登録」のページより登録いた
-            だいたユーザーはハウスキーパーとなります。ハウスキーパーは、FacebookまたはLinkedIn、運転免許証当
+            だいたユーザーはハウスキーパーとなります。ハウスキーパーは、FacebookまたはLinkedIn、運転免許証等
             による本人確認が必要となります。
         </p>
         <h4>ハウスオーナーとは</h4>
@@ -120,12 +115,33 @@
             家事代行を依頼する人のことを言います。住居は賃貸・購入を問いません。家事代行を依頼したい人であれ
             ばどなたでもハウスオーナー登録が可能です。
         </p>
-
-        <h3>How To Use</h3>
     </div>
 </div>
 
 
-<div class="background">
 
+
+<div class="background_2">
+    <div class="row">
+        <h3>How To Use</h3>
+        <div class="col-lg-6">
+        <dl>
+            <dt>ハウスキーパーの場合</dt>
+            <dd>ハウスキーパーとして登録する</dd>
+            <dd>ハウスオーナーを探す</dd>
+            <dd>面談を設定する</dd>
+            <dd>トライアルを設定する</dd>
+
+        </dl>
+        </div>
+        <div class="col-lg-6" >
+        <dl>
+            <dt>ハウスオーナーの場合</dt>
+            <dd>ハウスオーナーとして登録する</dd>
+            <dd>ハウスオーナーを探す</dd>
+            <dd>面談を設定する</dd>
+            <dd>トライアルを設定する</dd>
+        </dl>
+        </div>
+    </div>
 </div>

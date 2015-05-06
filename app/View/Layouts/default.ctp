@@ -43,17 +43,8 @@
 <?php echo $this->fetch('content'); ?>
 
 <footer>
-
-    <div class="container">
-        <h3>Housekeepers</h3>
-
-        <ul>
-        <li>運営会社</li>
-
-    </ul>
-    <ul>
-
-    </ul>
+    <div class="row">
+        <p>©Copyright©2015 CreaTive WorkS All Rights Reserved</p>
     </div>
 </footer>
 

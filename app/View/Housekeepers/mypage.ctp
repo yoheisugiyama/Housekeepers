@@ -84,7 +84,7 @@
 
 
             <div class="form-group form-group-sm">
-                <?php echo $this->Form->end('プロフィール登録') ?>
+                <?php echo $this->Form->end('プロフィール登録', array('class'=>'btn btn-primary')) ?>
             </div>
 
             <div class="form-group form-group-sm">

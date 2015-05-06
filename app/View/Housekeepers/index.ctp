@@ -1,15 +1,18 @@
-<div class="container">
+<div class="row">
 
     <div class="search_bar">
-        <br>
-        <br>
+        <h2>検索</h2>
         <?php echo $this->Form->create('Housekeeper', array('action'=>'index')); ?>
         <fieldset>
-            <legend>検索</legend>
-            <?php echo $this->Form->input('station', array('label' => '駅', 'empty' => true)); ?>
-            <hr />
             <legend>性別</legend>
             <?php echo $this->Form->select('Housekeeper.sex',array('男' => '男', '女' => '女')); ?>
+            <br>
+            <legend>経験年数</legend>
+            <?php echo $this->Form->select('Housekeeper.experience',array('1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9','10' => '10')); ?>
+            <br>
+            <legend>最寄り駅</legend>
+            <?php echo $this->Form->input('Housekeeper.station', array('label' => '駅', 'empty' => true)); ?>
+            <hr />
         </fieldset>
         <br>
         <br>
@@ -30,7 +33,14 @@
             <?php foreach ($housekeepers as $row): ?>
               <div class="housekeeper">
                 <div class="thumb">
-                    <?php echo $this->Html->image($row['Image'][0]['name'], array('url'=>array('action'=>'ind_page',$row['Image'][0]['housekeeper_id']),'alt'=>'noimages','width'=>'100px', 'height'=>'100px', 'class'=>'thumbphoto')) ?>
+                    <?php
+                         if(!isset($row['Image'][0]['name'])){
+                             echo $this->Html->image('no_image.png', array('url'=>array('action'=>'ind_page',$row['Housekeeper']['id']),'alt'=>'noimages','width'=>'100px', 'height'=>'100px', 'class'=>'thumbphoto')) ;
+                         }else{
+                             echo $this->Html->image($row['Image'][0]['name'], array('url'=>array('action'=>'ind_page',$row['Image'][0]['housekeeper_id']),'alt'=>'noimages','width'=>'100px', 'height'=>'100px', 'class'=>'thumbphoto')) ;
+                         }
+                    ?>
+                    <?php ?>
                 </div>
 
                 <div class="summary">
