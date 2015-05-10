@@ -34,6 +34,7 @@ class AppController extends Controller {
 
     //Authコンポーネントの設定
     public $components = array(
+        
         //Auth コンポーネントの使用
         'Auth',
         //セッションコンポーネントの使用
