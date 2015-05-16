@@ -15,9 +15,9 @@ class UsersController extends AppController
 
     public function beforeFilter()
     {
-        //ログインなしでアクセス可能なページを列挙
-        $this->Auth->allow('register');
+
     }
+
 
     public function login()
     {
@@ -26,8 +26,18 @@ class UsersController extends AppController
             if ($this->Auth->login()) {
 
                 $this->Session->setFlash(__('ログイン成功!'));
-                //ページネーション画面へ遷移
-                $this->redirect(array('controller'=>'Housekeepers','action'=>'mypage'));
+                $user = $this->Auth->user();
+
+                if($user['group_id']==1){
+                    $this->Session->setFlash(__('あなたはハウスオーナーです'));
+                    $this->redirect(array('controller'=>'Housekeepers','action'=>'index'));
+                }elseif($user['group_id']==2){
+                    $this->Session->setFlash(__('あなたはハウスキーパーです'));
+                    //ページネーション画面へ遷移
+                    $this->redirect(array('controller'=>'Users','action'=>'login'));
+
+                }
+
 
             } else {
                 $this->Session->setFlash(__('ユーザー名とパスワードが正しくありません。もう一度試して下さい。'));
@@ -77,4 +87,21 @@ class UsersController extends AppController
     public function index(){
 
     }
+
+    public function add() {
+        if ($this->request->is('post')) {
+            $this->User->create();
+            if ($this->User->save($this->request->data)) {
+                $this->Session->setFlash(__('The user has been saved.'));
+                return $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+            }
+        }
+        $groups = $this->User->Group->find('list');
+        $this->set(compact('groups'));
+    }
+
+
+
 }

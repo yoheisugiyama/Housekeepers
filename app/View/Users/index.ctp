@@ -46,6 +46,10 @@
                 <td><?php echo $this->Form->input('password', array('label'=>false, 'class'=>'form-control')); ?></td>
             </tr>
             <tr>
+                <th><?php echo $this->Form->label('User.group_id', 'グループid'); ?></th>
+                <td><?php echo $this->Form->input('group_id', array('label'=>false, 'class'=>'form-control')); ?></td>
+            </tr>
+            <tr>
                 <th></th>
                 <td>
                     <?php echo $this->Form->input('confirmed', array('type'=>'hidden', 'value'=>false));?>
