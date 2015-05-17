@@ -30,10 +30,6 @@
              <td><?php echo h($housekeeper['Housekeeper']['experience']); ?></td>
         </tr>
         <tr>
-            <td>性別</td>
-             <td><?php echo h($housekeeper['Housekeeper']['sex']); ?></td>
-        </tr>
-        <tr>
             <td>希望時給</td>
              <td><?php echo h($housekeeper['Housekeeper']['salary']); ?></td>
         </tr>

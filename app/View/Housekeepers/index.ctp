@@ -1,6 +1,4 @@
-
 <div class="row">
-
 
     <div class="breadcrumb">
         <?php
@@ -9,8 +7,6 @@
         echo $this->Html->getCrumbs(" > ");
         ?>
     </div>
-
-    
 
     <div class="search_bar">
         <h3>検索</h3>
