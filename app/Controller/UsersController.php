@@ -15,8 +15,9 @@ class UsersController extends AppController
 
     public function beforeFilter()
     {
-
+//        $this->Auth->allow('index');
     }
+
 
 
     public function login()
@@ -45,6 +46,9 @@ class UsersController extends AppController
             }
         }
     }
+
+
+
 
     public function logout(){
         $this->Auth->logout();
@@ -89,19 +93,6 @@ class UsersController extends AppController
 
     }
 
-    public function add() {
-        if ($this->request->is('post')) {
-            $this->User->create();
-            if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('The user has been saved.'));
-                return $this->redirect(array('action' => 'index'));
-            } else {
-                $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
-            }
-        }
-        $groups = $this->User->Group->find('list');
-        $this->set(compact('groups'));
-    }
 
 
 

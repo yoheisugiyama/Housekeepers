@@ -1,7 +1,22 @@
+
+
+
 <div class="row">
 
+    <div class="breadcrumb">
+        <?php
+        $this->Html->addCrumb("ホーム", "/users");
+        $this->Html->addCrumb("ハウスキーパー一覧", "/Housekeepers");
+        echo $this->Html->getCrumbs(" > ");
+        ?>
+    </div>
+
+    <div>
+
+    </div>
+
     <div class="search_bar">
-        <h2>検索</h2>
+        <h3>検索</h3>
         <?php echo $this->Form->create('Housekeeper', array('action'=>'index')); ?>
         <fieldset>
             <legend>性別</legend>
@@ -23,7 +38,7 @@
 
     <div class="pagination">
         <div>
-            <h1>ハウスキーパー一覧</h1>
+            <h3>ハウスキーパー一覧</h3>
 
             <p>現在Housekeepersに登録しているハウスキーパー（家事代行をする人）の一覧ページです。現在<?php echo $this->Paginator->params()['count']; ?>人がHousekeeperとして登録しております。</p>
             <p>お目当てのハウスキーパーを探そう!</p>
