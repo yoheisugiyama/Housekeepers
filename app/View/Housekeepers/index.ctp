@@ -1,7 +1,6 @@
 
-
-
 <div class="row">
+
 
     <div class="breadcrumb">
         <?php
@@ -11,29 +10,27 @@
         ?>
     </div>
 
-    <div>
-
-    </div>
+    
 
     <div class="search_bar">
         <h3>検索</h3>
         <?php echo $this->Form->create('Housekeeper', array('action'=>'index')); ?>
         <fieldset>
-            <legend>性別</legend>
-            <?php echo $this->Form->select('Housekeeper.sex',array('男' => '男', '女' => '女')); ?>
-            <br>
             <legend>経験年数</legend>
             <?php echo $this->Form->select('Housekeeper.experience',array('1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9','10' => '10')); ?>
             <br>
+            <br>
             <legend>最寄り駅</legend>
             <?php echo $this->Form->input('Housekeeper.station', array('label' => '駅', 'empty' => true)); ?>
-            <hr />
+            <legend>性別</legend>
+            <?php echo $this->Form->select('Housekeeper.sex',array('男' => '男', '女' => '女')); ?>
+            <br>
+            <br>
         </fieldset>
+        <div>
         <br>
-        <br>
-        <?php echo $this->Form->end('検索'); ?>
-
-
+        <?php echo $this->Form->end(array('label'=>'検索','class'=>'btn btn-info')); ?>
+        </div>
     </div>
 
     <div class="pagination">
@@ -63,7 +60,7 @@
                     <ol>
                         <li>姓名：　<?php echo h($row['Housekeeper']['surname']); ?></li>
                         <li>性別：　<?php echo h($row['Housekeeper']['sex']); ?></li>
-                        <li>経験年数：　<?php echo h($row['Housekeeper']['experience']); ?></li>
+                        <li>経験年数：　<?php echo h($row['Housekeeper']['experience']); ?>年</li>
                         <li>最寄り駅：　<?php echo h($row['Housekeeper']['station']); ?></li>
                     </ol>
                 </div>
@@ -80,6 +77,5 @@
         </div>
 
     </div>
-
 
 </div>

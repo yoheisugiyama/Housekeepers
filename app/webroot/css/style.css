@@ -1,3 +1,4 @@
+/*全体、及びトップページ*/
 
 body{
    font-family:Avenir, 'Helvetica neue', Helvetica, '游ゴシック', YuGothic, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', sans-serif !important; 
@@ -105,12 +106,10 @@ body{
 h3{
     color: grey;
     text-align: center;
+    font-weight: bold;
 }
 
-.search_bar h3,
-.pagination h3{
-    text-align: left;
-}
+
 
 h4{
     color: grey;
@@ -203,22 +202,26 @@ hr{
 
 }
 
-
 .button_center{
     text-align: center;
 }
 
+
+
+/*Housekeeperページ、Houseownerページ*/
+
+
 .search_bar{
     width: 30%;
-
+    padding:10px;
     float: left;
-    height: 100px;
+
 }
 
 .pagination{
     width: 70%;
     margin: 0;
-    height: 100px;
+    padding:10px;
     border-radius: 0;
 
 }
@@ -227,10 +230,27 @@ hr{
     text-align: left;
 }
 
+
+
+.search_bar h3,
+.pagination h3{
+    text-align: left;
+}
+
+legend{
+    font-weight: lighter;
+    font-size: 16px;
+}
+
 .housekeeper{
     background-color: #e3efd7;
     padding: 10px;
+    border: thin dotted grey;
+}
 
+.housekeeper:hover{
+    background-color: #eef5f7;
+    
 }
 
 .houseowner{
@@ -238,6 +258,12 @@ hr{
     padding: 10px;
 
 }
+
+.houseowner:hover{
+    background-color: #eef5f7;
+    
+}
+
 
 .thumb{
     width: 30%;
@@ -270,19 +296,32 @@ div.caption p{
 
 .ind_photo{
     float: left;
-    margin-right: 50px;
+    width:30%;
+    margin-top: 50px;
+
 }
 
 .ind_info{
-    padding:0 20px;
-    margin:0 20px;
-}
-
-.ind_info ul{
-    list-style-type:none;
-    margin-left: 20px;
+    float:right;
+    width:60%;
+    margin-top: 50px;
 
 }
+
+caption{
+    color:grey;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ind_table_caption{
+    width:30%;
+}
+
+.ind_table_info{
+    width:70%;
+}
+
 
 
 footer{

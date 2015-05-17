@@ -1,29 +1,37 @@
 <div class="row">
 
+   <div class="breadcrumb">
+        <?php
+        $this->Html->addCrumb("ホーム", "/users");
+        $this->Html->addCrumb("ハウスオーナー一覧", "/Houseowners");
+        echo $this->Html->getCrumbs(" > ");
+        ?>
+    </div>
+
     <div class="search_bar">
-        <h2>検索</h2>
+        <h3>検索</h3>
         <?php echo $this->Form->create('Houseowner', array('action'=>'index')); ?>
         <fieldset>
+            <legend>年齢</legend>
+            <?php echo $this->Form->input('Houseowner.age', array('label' => '年齢', 'empty' => true)); ?>
+            <br>
+            <br>
             <legend>性別</legend>
             <?php echo $this->Form->select('Houseowner.sex',array('男' => '男', '女' => '女')); ?>
             <br>
-            <legend>経験年数</legend>
-            <?php echo $this->Form->select('Houseowner.experience',array('1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9','10' => '10')); ?>
             <br>
-            <legend>最寄り駅</legend>
-            <?php echo $this->Form->input('Houseowner.station', array('label' => '駅', 'empty' => true)); ?>
-            <hr />
+            <legend>住まいの属する県</legend>
+            <?php echo $this->Form->input('Houseowner.prefecture', array('label' => '県', 'empty' => true)); ?>
         </fieldset>
+        <div>
         <br>
-        <br>
-        <?php echo $this->Form->end('検索'); ?>
-
-
+        <?php echo $this->Form->end(array('label'=>'検索','class'=>'btn btn-info')); ?>
+        </div>
     </div>
 
     <div class="pagination">
         <div>
-            <h1>ハウスオーナー一覧</h1>
+            <h3>ハウスオーナー一覧</h3>
             <p>現在Housekeepersに登録しているハウスオーナー（家事代行を依頼する人）の一覧ページです。現在<?php echo $this->Paginator->params()['count']; ?>人がHouseownerとして登録しております。</p>
             <p>お目当てのハウスキーパーを探そう!</p>
         </div>
