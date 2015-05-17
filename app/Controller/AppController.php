@@ -36,7 +36,14 @@ class AppController extends Controller {
     public $components = array(
         
         //Auth コンポーネントの使用
-        'Auth',
+        'Auth'=>array(
+            'authenticate'=>array(
+                'Form'=>array(
+                    'userModel'=>'User',
+                    'fields' => array('username' => 'email','password' => 'password')
+                )
+            )
+        ),
         //セッションコンポーネントの使用
         'Session',
     );

@@ -34,7 +34,6 @@
             <li><?php  echo $this->Html->link('ログイン', array('class'=>'navbar-link','controller'=>'users', 'action'=>'login')) ?> </li>
             <li><?php  echo $this->Html->link('ログアウト', array('class'=>'navbar-link','controller'=>'users', 'action'=>'logout')) ?> </li>
             <li><?php  echo $this->Html->link('ホーム', array('class'=>'navbar-link','controller'=>'users', 'action'=>'index')) ?> </li>
-            <li><?php  echo $this->Html->link('ハウスキーパー', array('class'=>'navbar-link','controller'=>'housekeepers', 'action'=>'index')) ?> </li>
         </ul>
     </div>
 </nav>

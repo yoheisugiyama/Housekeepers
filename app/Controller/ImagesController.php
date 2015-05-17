@@ -21,12 +21,6 @@ class ImagesController extends AppController
             //ファイル情報の取得
             $image = $this->request->data['Image']['Image'];
 
-            $housekeeper_id=$this->Session->read('id');
-
-            $this->Session->delete('id');
-
-            $image['housekeeper_id']=$housekeeper_id;
-
 
             $this->Image->save($image);
 

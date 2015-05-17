@@ -24,7 +24,8 @@
     <div class="pagination">
         <div>
             <h1>ハウスキーパー一覧</h1>
-            <p>現在Housekeepersに登録しているハウスキーパー（家事代行をする人）の一覧ページです。現在○○人が登録しております。</p>
+
+            <p>現在Housekeepersに登録しているハウスキーパー（家事代行をする人）の一覧ページです。現在<?php echo $this->Paginator->params()['count']; ?>人がHousekeeperとして登録しております。</p>
             <p>お目当てのハウスキーパーを探そう!</p>
         </div>
         <hr/>

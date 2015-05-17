@@ -35,6 +35,7 @@ class HousekeepersController extends AppController
         $this->set('housekeepers', $this->paginate());
 
 
+
     }
 
     public function mypage()
