@@ -5,7 +5,7 @@
 <h1>個別ページ</h1>
 
 <div class="ind_photo">
-<?php echo $this->Html->image($housekeeper['Image'][0]['name'], array('width'=>'400px', 'height'=>'300px')); ?>
+<?php echo $this->Html->image($housekeeper['Image']['name'], array('width'=>'400px', 'height'=>'300px')); ?>
 </div>
 <div class="ind_info">
 <ul>

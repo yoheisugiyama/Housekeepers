@@ -8,7 +8,7 @@
 
 App::uses('AppModel', 'Model');
 
-class Housekeeper extends AppModel
+class Houseowner extends AppModel
 {
 
 

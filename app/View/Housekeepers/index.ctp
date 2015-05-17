@@ -34,10 +34,10 @@
               <div class="housekeeper">
                 <div class="thumb">
                     <?php
-                         if(!isset($row['Image'][0]['name'])){
+                         if(!isset($row['Image']['name'])){
                              echo $this->Html->image('no_image.png', array('url'=>array('action'=>'ind_page',$row['Housekeeper']['id']),'alt'=>'noimages','width'=>'100px', 'height'=>'100px', 'class'=>'thumbphoto')) ;
                          }else{
-                             echo $this->Html->image($row['Image'][0]['name'], array('url'=>array('action'=>'ind_page',$row['Image'][0]['housekeeper_id']),'alt'=>'noimages','width'=>'100px', 'height'=>'100px', 'class'=>'thumbphoto')) ;
+                             echo $this->Html->image($row['Image']['name'], array('url'=>array('action'=>'ind_page',$row['Housekeeper']['id']),'alt'=>'noimages','width'=>'100px', 'height'=>'100px', 'class'=>'thumbphoto')) ;
                          }
                     ?>
                     <?php ?>

@@ -26,6 +26,8 @@ class UsersController extends AppController
             if ($this->Auth->login()) {
 
                 $this->Session->setFlash(__('ログイン成功!'));
+
+            //GroupIDにてHouseownerかHousekeeperかを判定
                 $user = $this->Auth->user();
 
                 if($user['group_id']==1){
@@ -34,8 +36,7 @@ class UsersController extends AppController
                 }elseif($user['group_id']==2){
                     $this->Session->setFlash(__('あなたはハウスキーパーです'));
                     //ページネーション画面へ遷移
-                    $this->redirect(array('controller'=>'Users','action'=>'login'));
-
+                    $this->redirect(array('controller'=>'Houseowners','action'=>'index'));
                 }
 
 

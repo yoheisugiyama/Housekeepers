@@ -46,9 +46,12 @@
                 <td><?php echo $this->Form->input('password', array('label'=>false, 'class'=>'form-control')); ?></td>
             </tr>
             <tr>
-                <th><?php echo $this->Form->label('User.group_id', 'グループid'); ?></th>
-                <td><?php echo $this->Form->input('group_id', array('label'=>false, 'class'=>'form-control')); ?></td>
+                <th><?php echo $this->Form->label('User.group_id', 'ユーザー属性'); ?></th>
+                <td><?php echo $this->Form->select('User.group_id', array('1'=>'ハウスオーナー', '2'=>'ハウスキーパー')); ?></td>
             </tr>
+
+
+
             <tr>
                 <th></th>
                 <td>

@@ -34,6 +34,7 @@ class HousekeepersController extends AppController
 
         $this->set('housekeepers', $this->paginate());
 
+
     }
 
     public function mypage()
@@ -88,14 +89,19 @@ class HousekeepersController extends AppController
     public function ind_page(){
 
             $id=$this->request->pass[0];
-            $options = array(
+
+
+           $options = array(
                 'conditions' => array(
                     'Housekeeper.id' => $id
-                )
+                ),
+                'order'=>'Housekeeper.id'
             );
 
             //ハウスキーパー情報をDBから取得
             $housekeeper = $this->Housekeeper->find('first', $options);
+
+
 
             $this->set('housekeeper',$housekeeper);
 

@@ -227,6 +227,13 @@ hr{
     padding: 10px;
 
 }
+
+.houseowner{
+    background-color: lightyellow;
+    padding: 10px;
+
+}
+
 .thumb{
     width: 30%;
     float: left;
