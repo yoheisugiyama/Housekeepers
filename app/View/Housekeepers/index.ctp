@@ -6,7 +6,9 @@
         $this->Html->addCrumb("ハウスキーパー一覧", "/Housekeepers");
         echo $this->Html->getCrumbs(" > ");
         ?>
+        <p class="user"><?php echo $user['name']; ?>さん、こんにちは！</p>
     </div>
+
 
     <div class="search_bar">
         <h3>検索</h3>

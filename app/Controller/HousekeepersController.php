@@ -19,6 +19,13 @@ class HousekeepersController extends AppController
 
     public $presetVars = true;
 
+    public function beforeFilter()
+    {
+        $user=$this->Auth->user();
+        $this->set('user',$user);
+
+    }
+
     public function index(){
         //ハウスキーパー一覧をページネーションで表示
         // recursiveでアソシエーションをどの深さまで掘り下げるかを設定

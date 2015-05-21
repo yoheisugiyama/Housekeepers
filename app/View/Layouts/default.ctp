@@ -34,6 +34,8 @@
             <li><?php  echo $this->Html->link('ログイン', array('class'=>'navbar-link','controller'=>'users', 'action'=>'login')) ?> </li>
             <li><?php  echo $this->Html->link('ログアウト', array('class'=>'navbar-link','controller'=>'users', 'action'=>'logout')) ?> </li>
             <li><?php  echo $this->Html->link('ホーム', array('class'=>'navbar-link','controller'=>'users', 'action'=>'index')) ?> </li>
+            <li><?php  echo $this->Html->link('マイページ', array('class'=>'navbar-link','controller'=>'users', 'action'=>'mypage')) ?> </li>
+
         </ul>
     </div>
 </nav>
@@ -42,9 +44,7 @@
 <?php echo $this->fetch('content'); ?>
 
 <footer>
-    <div class="row">
         <p>©Copyright©2015 CreaTive WorkS All Rights Reserved</p>
-    </div>
 </footer>
 
 <!-- Placed at the end of the document so the pages load faster -->

@@ -93,6 +93,11 @@ class UsersController extends AppController
 
     }
 
+     public function mypage(){
+        
+    }
+
+
 
 
 

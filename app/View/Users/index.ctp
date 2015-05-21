@@ -45,17 +45,11 @@
                 <th><?php echo $this->Form->label('User.password', 'パスワード'); ?></th>
                 <td><?php echo $this->Form->input('password', array('label'=>false, 'class'=>'form-control')); ?></td>
             </tr>
-            <tr>
-                <th><?php echo $this->Form->label('User.group_id', 'ユーザー属性'); ?></th>
-                <td><?php echo $this->Form->select('User.group_id', array('1'=>'ハウスオーナー', '2'=>'ハウスキーパー')); ?></td>
-            </tr>
-
-
 
             <tr>
                 <th></th>
                 <td>
-                    <?php echo $this->Form->input('confirmed', array('type'=>'hidden', 'value'=>false));?>
+                    <?php echo $this->Form->input('User.group_id', array('type'=>'hidden', 'value'=>false, 'id'=>'group_id'));?>
                     <?php echo $this->Form->submit('確認', array('class'=>'btn btn-primary')) ?>
                 </td>
             </tr>

@@ -3,7 +3,15 @@
 $('body').append("<div id='glayLayer'></div>");
 
 
-$('.login:nth-child(2)').click(function(){
+$('.login .btn').click(function(){
+    if($(this).hasClass("btn-success")){
+        $("#group_id").val("1");
+
+    }else{
+        $("#group_id").val("2");
+
+    }
+
 
     $("#glayLayer").fadeIn();
     $("#overLayer").fadeIn().css({
@@ -11,8 +19,9 @@ $('.login:nth-child(2)').click(function(){
         "margin-left":"-"+$("#overLayer").width()/2+"px"
     });
 
-});
 
+
+});
 
 
 $("#glayLayer").click(function(){

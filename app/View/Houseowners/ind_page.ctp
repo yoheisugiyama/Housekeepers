@@ -2,25 +2,54 @@
 <div class="row">
 
 
-    <h1>個別ページ</h1>
-
     <div class="ind_photo">
-        <?php echo $this->Html->image($houseowner['Image']['name'], array('width'=>'400px', 'height'=>'300px')); ?>
+        <?php echo $this->Html->image($houseowner['Image']['name'], array('width'=>'300px', 'height'=>'300px')); ?>
     </div>
-    <div class="ind_info">
-        <ul>
-            <li>氏名：<?php echo h($houseowner['Houseowner']['surname']); ?></li>
-            <li>名前：<?php echo h($houseowner['Houseowner']['firstname']); ?></li>
-            <li>ふりがな（氏）：<?php echo h($houseowner['Houseowner']['furigana_sur']); ?></li>
-            <li>ふりがな（名）：<?php echo h($houseowner['Houseowner']['furigana_first']); ?></li>
-            <li>性別：<?php echo h($houseowner['Houseowner']['sex']); ?></li>
-            <li>年齢：<?php echo h($houseowner['Houseowner']['age']); ?></li>
-            <li>誕生日：<?php echo h($houseowner['Houseowner']['birthday']); ?></li>
-            <li>婚姻ステータス：<?php echo h($houseowner['Houseowner']['marital_status']); ?></li>
-            <li>住まいの位置する県：<?php echo h($houseowner['Houseowner']['prefecture']); ?></li>
-            <li>コメント：<?php echo h($houseowner['Houseowner']['comment']); ?></li>
-        </ul>
-    </div>
+
+    <p class="user"><?php echo $user['name']; ?>さん、こんにちは！</p>
+
+    <table class="ind_info table table-striped">
+        <caption><?php echo h($houseowner['Houseowner']['surname'].$houseowner['Houseowner']['firstname'] ); ?>の個別ページ</caption>
+        <tbody>
+        <tr>
+            <td class="ind_table_caption">氏</td>
+            <td class="ind_table_info"><?php echo h($houseowner['Houseowner']['surname']); ?></td>
+        </tr>
+        <tr>
+            <td>名</td>
+            <td><?php echo h($houseowner['Houseowner']['firstname']); ?></td>
+        </tr>
+        <tr>
+            <td>ふりがな（氏）</td>
+             <td><?php echo h($houseowner['Houseowner']['furigana_sur']); ?></td>
+        </tr>
+        <tr>
+            <td>ふりがな（名）</td>
+            <td><?php echo h($houseowner['Houseowner']['furigana_first']); ?></td>
+        </tr>
+        <tr>
+            <td>性別</td>
+            <td><?php echo h($houseowner['Houseowner']['sex']); ?></td>
+        </tr>
+        <tr>
+            <td>年齢</td>
+            <td><?php echo h($houseowner['Houseowner']['age']); ?></td>
+        </tr>
+        <tr>
+            <td>婚姻ステータス</td>
+            <td><?php echo h($houseowner['Houseowner']['marital_status']); ?></td>
+        </tr>
+        <tr>
+            <td>comment</td>
+            <td><?php echo h($houseowner['Houseowner']['prefecture']); ?></td>
+        </tr>
+        <tr>
+            <td>コメント</td>
+            <td><?php echo h($houseowner['Houseowner']['comment']); ?></td>
+        </tr>
+
+        </tbody>
+    </table>
 
 </div>
 

@@ -1,14 +1,19 @@
 
 <div class="row">
-	
-<div class="ind_photo">
-<?php echo $this->Html->image($housekeeper['Image']['name'], array('width'=>'300px', 'height'=>'300px')); ?>
-</div>
+
+    <p class="user"><?php echo $user['name']; ?>さん、こんにちは！</p>
 
 
-<table class="ind_info table table-striped">
-    <caption><?php echo h($housekeeper['Housekeeper']['surname'].$housekeeper['Housekeeper']['firstname'] ); ?>の個別ページ</caption>
-    <tbody>
+    <div class="ind_page">
+    <div class="ind_photo">
+    <?php echo $this->Html->image($housekeeper['Image']['name'], array('width'=>'300px', 'height'=>'300px')); ?>
+    </div>
+
+
+    <div class="ind_contents">
+        <table class="ind_info table table-striped">
+        <caption><?php echo h($housekeeper['Housekeeper']['surname'].$housekeeper['Housekeeper']['firstname'] ); ?>の個別ページ</caption>
+        <tbody>
         <tr>
             <td class="ind_table_caption">氏</td>
              <td class="ind_table_info"><?php echo h($housekeeper['Housekeeper']['surname']); ?></td>
@@ -37,9 +42,16 @@
             <td>自己PR</td>
              <td><?php echo h($housekeeper['Housekeeper']['appeal']); ?></td>
         </tr>
-        
-    </tbody>
-</table>
 
+        </tbody>
+         </table>
+        
+     <div>
+     <button type="button" class="btn btn-warning message">メッセージを送る</button>
+     </div>
+
+    </div>
+
+    </div>
 </div>
 
