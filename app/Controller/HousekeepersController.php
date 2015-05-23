@@ -97,7 +97,7 @@ class HousekeepersController extends AppController
 
             if($this->Housekeeper->save($new_housekeeper)){
                 $this->Session->setFlash('マイーページ情報をアップデートしました');
-                $this->redirect(array('controller'=>'houseowner','action'=>'index'));
+                $this->redirect(array('controller'=>'houseowners','action'=>'index'));
             }else{
                 $this->Session->setFlash('入力に間違いがあります');
             }

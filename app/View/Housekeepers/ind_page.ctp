@@ -49,8 +49,7 @@
      <div>
          <?php echo $this->Form->create('Message', array('action'=>'index')); ?>
 
-         <?php echo $this->Form->input('houseowner_id', array('type'=>'hidden', 'value'=>$user_id)); ?>
-         <?php echo $this->Form->input('housekeeper_id', array('type'=>'hidden', 'value'=>$housekeeper['Housekeeper']['id'])); ?>
+         <?php echo $this->Form->input('sendee_id', array('type'=>'hidden', 'value'=>$housekeeper['Housekeeper']['id'])); ?>
 
 
          <?php echo $this->Form->end(array('label'=>'メッセージを送る','class'=>'btn btn-warning message')); ?>

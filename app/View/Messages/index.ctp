@@ -8,7 +8,7 @@
             <tbody class="message">
             <tr>
                 <th><?php echo $this->Form->label('Message.title', '題名'); ?></th>
-                <td><?php echo $this->Form->input('title', array('label'=>false)); ?></td>
+                <td><?php echo $this->Form->input('title', array('type'=>'text','label'=>false)); ?></td>
             </tr>
             <br>
             <br>
