@@ -329,9 +329,31 @@ caption{
     width:70%;
 }
 
+.private_message{
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+}
+
+.textarea{
+    padding:0px;
+}
+
 .message{
     width: 50%;
     margin: 0 auto;
+}
+
+.thread{
+    width: 30%;
+    float: left;
+}
+
+.messages{
+    margin-top: 50px;
+    width: 70%;
+    float: left;
+
 }
 
 

@@ -37,7 +37,8 @@ class HousekeepersController extends AppController
         $this->paginate = array(
             //Search Pluginにて検索条件によって絞り込まれたデータを抽出
             'conditions' => $this->Housekeeper->parseCriteria($this->passedArgs),
-            'id not'=>null
+            'id not'=>null,
+            'recursive'=>1
         );
 
         $this->set('housekeepers', $this->paginate());
@@ -60,7 +61,8 @@ class HousekeepersController extends AppController
                 'conditions' => array(
                     'Housekeeper.user_id' => $id
                 ),
-                'order'=>'Housekeeper.id'
+                'order'=>'Housekeeper.id',
+                'recursive'=>1
             );
 
             //ハウスキーパー情報をDBから取得
@@ -112,7 +114,8 @@ class HousekeepersController extends AppController
                 'conditions' => array(
                     'Housekeeper.id' => $id
                 ),
-                'order'=>'Housekeeper.id'
+                'order'=>'Housekeeper.id',
+                'recursive'=>1
             );
 
             //ハウスキーパー情報をDBから取得

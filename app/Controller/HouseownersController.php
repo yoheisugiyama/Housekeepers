@@ -27,7 +27,8 @@ class HouseownersController extends AppController
         $this->paginate = array(
             //Search Pluginにて検索条件によって絞り込まれたデータを抽出
             'conditions' => $this->Houseowner->parseCriteria($this->passedArgs),
-            'id not'=>null
+            'id not'=>null,
+            'recursive'=>1
         );
 
         $this->set('Houseowners', $this->paginate());
@@ -44,12 +45,12 @@ class HouseownersController extends AppController
         //最初にmypqgeにアクセスした場合
         if (!$this->request->is('post')) {
 
-
             $options = array(
                 'conditions' => array(
                     'Houseowner.user_id' => $id
                 ),
-                'order'=>'Houseowner.id'
+                'order'=>'Houseowner.id',
+                'recursive'=>1
             );
 
             //ハウスキーパー情報をDBから取得
@@ -103,7 +104,9 @@ class HouseownersController extends AppController
             'conditions' => array(
                 'Houseowner.id' => $id
             ),
-            'order'=>'Houseowner.id'
+            'order'=>'Houseowner.id',
+            'recursive'=>1
+
         );
 
         //ハウスキーパー情報をDBから取得
