@@ -97,7 +97,7 @@ class HousekeepersController extends AppController
 
             if($this->Housekeeper->save($new_housekeeper)){
                 $this->Session->setFlash('マイーページ情報をアップデートしました');
-                $this->redirect(array('action'=>'index'));
+                $this->redirect(array('controller'=>'houseowner','action'=>'index'));
             }else{
                 $this->Session->setFlash('入力に間違いがあります');
             }
@@ -120,6 +120,10 @@ class HousekeepersController extends AppController
 
             $this->set('housekeeper',$housekeeper);
 
+        $user = $this->Auth->user();
+        $id = $user['id'];
+
+        $this->set('user_id',$id);
     }
 
 }

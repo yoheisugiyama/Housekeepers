@@ -87,7 +87,7 @@ class HouseownersController extends AppController
 
             if($this->Houseowner->save($new_Houseowner)){
                 $this->Session->setFlash('マイーページ情報をアップデートしました');
-                $this->redirect(array('action'=>'index'));
+                $this->redirect(array('controller'=>'housekeepers','action'=>'index'));
             }else{
                 $this->Session->setFlash('入力に間違いがあります');
             }

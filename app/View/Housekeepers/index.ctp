@@ -12,7 +12,7 @@
 
     <div class="search_bar">
         <h3>検索</h3>
-        <?php echo $this->Form->create('Housekeeper', array('action'=>'index')); ?>
+            <?php echo $this->Form->create('Housekeeper', array('action'=>'index')); ?>
         <fieldset>
             <legend>経験年数</legend>
             <?php echo $this->Form->select('Housekeeper.experience',array('1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9','10' => '10')); ?>
