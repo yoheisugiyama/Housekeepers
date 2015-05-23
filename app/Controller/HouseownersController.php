@@ -10,7 +10,7 @@
 class HouseownersController extends AppController
 {
     //利用するモデルの定義
-    public $uses = array('Houseowner','User','Image');
+    public $uses = array('Houseowner');
 
     public $helpers = array('Html', 'Form');
 
@@ -39,21 +39,34 @@ class HouseownersController extends AppController
         $user = $this->Auth->user();
         $id = $user['id'];
 
+        $this->set('user_id',$id);
+
         //最初にmypqgeにアクセスした場合
         if (!$this->request->is('post')) {
 
+
             $options = array(
                 'conditions' => array(
-                    'Houseowner.id' => $id
-                )
+                    'Houseowner.user_id' => $id
+                ),
+                'order'=>'Houseowner.id'
             );
 
             //ハウスキーパー情報をDBから取得
-            $Houseowner = $this->Houseowner->find('first', $options);
+            $houseowner = $this->Houseowner->find('first', $options);
 
-            $this->Session->write(array('id'=>$Houseowner['Houseowner']['id']));
+            if(!$houseowner){
+                //ハウスオーナープロフィール登録がまだの場合
 
-            $this->request->data = $Houseowner;
+            }else{
+                //ハウスオーナープロフィール登録がある程度終了している場合
+
+                $this->set('houseowner',$houseowner);
+
+                $this->Session->write(array('id'=>$houseowner['Houseowner']['id']));
+
+                $this->request->data = $houseowner;
+            }
 
         }else{
 
@@ -63,13 +76,11 @@ class HouseownersController extends AppController
                 'Houseowner_id'=>$id,
                 'surname'=>$this->request->data['Houseowner']['surname'],
                 'firstname'=>$this->request->data['Houseowner']['firstname'],
-                'nickname'=>$this->request->data['Houseowner']['nickname'],
                 'sex'=>$this->request->data['Houseowner']['sex'],
-                'experience'=>$this->request->data['Houseowner']['experience'],
+                'age'=>$this->request->data['Houseowner']['age'],
                 'prefecture'=>$this->request->data['Houseowner']['prefecture'],
-                'station'=>$this->request->data['Houseowner']['station'],
-                'salary'=>$this->request->data['Houseowner']['salary'],
-                'appeal'=>$this->request->data['Houseowner']['appeal']
+                'marital_status'=>$this->request->data['Houseowner']['marital_status'],
+                'comment'=>$this->request->data['Houseowner']['comment']
             );
 
             $this->Houseowner->create();

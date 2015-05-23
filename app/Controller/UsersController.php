@@ -94,6 +94,13 @@ class UsersController extends AppController
     }
 
      public function mypage(){
+
+         if($this->Auth->user('group_id')==1){
+             $this->redirect(array('controller'=>'houseowners', 'action'=>'mypage'));
+         }elseif($this->Auth->user('group_id')==2){
+             $this->redirect(array('controller'=>'housekeepers', 'action'=>'mypage'));
+
+         }
         
     }
 

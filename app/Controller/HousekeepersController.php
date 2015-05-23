@@ -10,7 +10,7 @@
 class HousekeepersController extends AppController
 {
     //利用するモデルの定義
-    public $uses = array('Housekeeper','User','Image');
+    public $uses = array('Housekeeper');
 
     public $helpers = array('Html', 'Form');
 
@@ -19,10 +19,11 @@ class HousekeepersController extends AppController
 
     public $presetVars = true;
 
+
     public function beforeFilter()
     {
-        $user=$this->Auth->user();
-        $this->set('user',$user);
+
+        $this->set('user',$this->Auth->user());
 
     }
 
@@ -50,32 +51,41 @@ class HousekeepersController extends AppController
         $user = $this->Auth->user();
         $id = $user['id'];
 
+        $this->set('user_id',$id);
+
         //最初にmypqgeにアクセスした場合
         if (!$this->request->is('post')) {
 
             $options = array(
                 'conditions' => array(
-                    'Housekeeper.id' => $id
-                )
+                    'Housekeeper.user_id' => $id
+                ),
+                'order'=>'Housekeeper.id'
             );
 
             //ハウスキーパー情報をDBから取得
             $housekeeper = $this->Housekeeper->find('first', $options);
 
-            $this->Session->write(array('id'=>$housekeeper['Housekeeper']['id']));
+            if(!$housekeeper){
 
-            $this->request->data = $housekeeper;
+            }else{
+
+                $this->set('housekeeper',$housekeeper);
+
+                $this->Session->write(array('id'=>$housekeeper['Housekeeper']['id']));
+
+                $this->request->data = $housekeeper;
+            }
 
         }else{
 
            //mypageにアクセスしたあと、各項目をアップデートし、再登録する際の処理
 
             $new_housekeeper=array(
-                'housekeeper_id'=>$id,
+                'user_id'=>$this->request->data['Housekeeper']['user_id'],
                 'surname'=>$this->request->data['Housekeeper']['surname'],
                 'firstname'=>$this->request->data['Housekeeper']['firstname'],
                 'nickname'=>$this->request->data['Housekeeper']['nickname'],
-                'sex'=>$this->request->data['Housekeeper']['sex'],
                 'experience'=>$this->request->data['Housekeeper']['experience'],
                 'prefecture'=>$this->request->data['Housekeeper']['prefecture'],
                 'station'=>$this->request->data['Housekeeper']['station'],
@@ -96,8 +106,7 @@ class HousekeepersController extends AppController
 
     public function ind_page(){
 
-            $id=$this->request->pass[0];
-
+        $id=$this->request->pass[0];
 
            $options = array(
                 'conditions' => array(
@@ -108,8 +117,6 @@ class HousekeepersController extends AppController
 
             //ハウスキーパー情報をDBから取得
             $housekeeper = $this->Housekeeper->find('first', $options);
-
-
 
             $this->set('housekeeper',$housekeeper);
 

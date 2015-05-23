@@ -8,6 +8,7 @@
         ?>
     </div>
 
+    <div class="row_left">
     <div class="search_bar">
         <h3>検索</h3>
         <?php echo $this->Form->create('Houseowner', array('action'=>'index')); ?>
@@ -28,8 +29,10 @@
         <?php echo $this->Form->end(array('label'=>'検索','class'=>'btn btn-info')); ?>
         </div>
     </div>
+    </div>
 
-    <div class="pagination">
+    <div class="row_right">
+     <div class="pagination">
         <div>
             <h3>ハウスオーナー一覧</h3>
             <p>現在Housekeepersに登録しているハウスオーナー（家事代行を依頼する人）の一覧ページです。現在<?php echo $this->Paginator->params()['count']; ?>人がHouseownerとして登録しております。</p>
@@ -71,6 +74,7 @@
             <?php echo $this->Paginator->next('次へ'); ?>
         </div>
 
+     </div>
     </div>
 
 

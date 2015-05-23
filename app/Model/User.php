@@ -14,6 +14,8 @@ class User extends AppModel{
 
     public $name='User';
 
+    public $hasMany=array('Housekeeper','Houseowner');
+
     public $validate =array(
         'name'=>array(
             'rule'=>'notEmpty',

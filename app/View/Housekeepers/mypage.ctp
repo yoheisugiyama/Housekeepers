@@ -1,9 +1,14 @@
 <div class="container">
 
-    <div class="search_bar">
+
+    <div class="ind_photo">
+    <?php if(!$housekeeper['Image']['name']){
+
+    } else{
+        echo $this->Html->image($housekeeper['Image']['name'], array('width'=>'300px', 'height'=>'300px'));
+    } ?>
 
     </div>
-
     <div class="pagination">
         <div>
             <h1>プロフィール編集</h1>
@@ -84,7 +89,8 @@
 
 
             <div class="form-group form-group-sm">
-                <?php echo $this->Form->end('プロフィール登録', array('class'=>'btn btn-primary')) ?>
+                <?php echo $this->Form->input('Housekeeper.user_id', array('type'=>'hidden', 'value'=>$user_id)) ?>
+                <?php echo $this->Form->end(array('label'=>'プロフィール登録','class'=>'btn btn-primary')); ?>
             </div>
 
             <div class="form-group form-group-sm">
