@@ -8,7 +8,7 @@
         <table class="table">
             <thead>
              <tr>
-                <th><?php  ?></th>
+                <th colspan="2" class="private_message_title"><?php echo h($housekeeper['Housekeeper']['surname']).h($housekeeper['Housekeeper']['firstname'].'さんへのメッセージ')  ?></th>
              </tr>   
             </thead>
             <tbody class="message">
@@ -22,7 +22,7 @@
             </tr>
             </tbody>
         </table>
-    <?php echo $this->Form->end('送信') ?>
+    <?php echo $this->Form->end(array('label'=>'メッセージ送信', 'class'=>'btn btn-success')) ?>
 </div>
 
 

@@ -9,19 +9,30 @@
 class MessagesController extends AppController
 {
 
-    public $uses=array('Housekeeper','Message');
+    public $uses=array('Message');
 
     public function index()
     {
         //sendee_idはhousekeeper_idまたはhouseowner_id
         $this->Session->write(array('sendee_id'=>$this->request->data['Message']['sendee_id']));
 
+        $options =array(
+            'conditions'=> array(
+                'Housekeeper.id'=>$this->Session->read('sendee_id')
+            ),
+            'recursive'=>0,
+            'order'=>'Housekeeper.id'
+        );
+
+        $housekeeper=$this->Message->Housekeeper->find('first', $options);
+
+        $this->set('housekeeper',$housekeeper);
+
+
     }
 
 
     public function send(){
-
-
 
             $new_message = array(
                 'user_id' => $this->Auth->user('id'),
@@ -45,34 +56,21 @@ class MessagesController extends AppController
     public function my_message(){
 
 
-        $my_messages=$this->Message->findAllByUser_id($this->Auth->user('id'));
+        $options=array(
+            'conditions'=>array(
+                'Message.user_id'=>$this->Auth->user('id')
+            )
+        );
 
-//        debug($my_messages);
-//
-//
-//        $options=array(
-//            'order'=>'Housekeeper.id'
-//        );
-//
-//
-//        $sendees=$my_messages[0]['Message']['sendee_id'];
-//
-//        debug($sendees);
-//
-//        foreach($sendees as $val){
-//            $sendees=$this->Housekeeper->findById($val, $options);
-//
-//        }
-//
-//        $sendees=$sendees['surname'];
-//
-//        debug($sendees);
-//
-//        $this->set('sendees',$sendees);
-
+        $my_messages=$this->Message->find('first',$options);
 
 
         $this->set('my_messages', $my_messages);
+
+        $housekeeper=$this->Message->Housekeeper->find('first', array('conditions'=>array('Housekeeper.id'=>$my_messages['Message']['sendee_id'])));
+
+
+        $this->set('housekeeper',$housekeeper);
 
 
 }

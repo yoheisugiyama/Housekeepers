@@ -107,4 +107,27 @@ CakeLog::config('error', array(
 	'file' => 'error',
 ));
 
+//Search Plugin
 CakePlugin::load('Search');
+
+// プラグインDebugKit
+CakePlugin::load('DebugKit');
+
+/**
+ * 認証用プラグイン
+ */
+CakePlugin::load('Opauth', array('routes' => true, 'bootstrap' => true));
+
+/**
+ * Facebook認証のためのstrategy
+ */
+Configure::write('Opauth.Strategy.Facebook', array(
+    'app_id' => '1590852821183334',
+    'app_secret' => '1f5290be72ef200815506a6f8dbe7503'
+));
+
+/**
+ * 認証用のURL設定
+ */
+Configure::write('Opauth.path', '/housekeepers/auth/');
+

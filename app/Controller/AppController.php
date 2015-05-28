@@ -46,8 +46,10 @@ class AppController extends Controller {
         ),
         //セッションコンポーネントの使用
         'Session',
-    );
 
+        //デバッグキットの使用
+        'DebugKit.Toolbar'
+    );
 
 
 }

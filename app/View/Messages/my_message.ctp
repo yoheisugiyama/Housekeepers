@@ -1,32 +1,34 @@
 <div class="row">
 
     <div class="thread">
-        <p>こちらはスレッドです（Underconstruction）</p>
+<!--        --><?php //foreach ($housekeeper as $val): ?>
+<!--        --><?php //echo $this->Html->link($val['surname'].$val['firstname'].'さんへのメッセージ') ?>
+<!--        --><?php //endforeach; ?>
+
+        <p>Thread Under Construction </p>
     </div>
 
 
     <div class="messages">
-        <?php foreach ($my_messages as $row): ?>
-        <table class="table table-bordered">
-
+        <table class="table">
+            <?php foreach ($my_messages as $row): ?>
             <thead>
-            <th></th>
-            <th></th>
+            <tr><th colspan="2"><?php echo h($housekeeper['Housekeeper']['surname'].$housekeeper['Housekeeper']['firstname'].'さんへのメッセージ') ?></th></tr>
             </thead>
 
             <tbody>
             <tr>
                 <td>題名</td>
-                <td><?php echo h($row['Message']['title']); ?></td>
+                <td><?php echo h($row['title']); ?></td>
             </tr>
             <tr>
                 <td>本文</td>
-                <td><?php echo h($row['Message']['message']); ?></td>
+                <td><?php echo h($row['message']); ?></td>
             </tr>
             </tbody>
-
+            <?php endforeach; ?>
         </table>
-        <?php endforeach; ?>
+
     </div>
 
 </div>
