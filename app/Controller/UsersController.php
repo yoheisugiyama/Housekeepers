@@ -17,15 +17,14 @@ class UsersController extends AppController
     {
 //        $this->Auth->allow('index');
 
-        if($this->params['action'] == 'opauth_complete') {
-            $this->Security->csrfCheck = false;
-            $this->Security->validatePost = false;
-        }
     }
 
 
     public function opauth_complete() {
+
         debug($this->data);
+//        pr($this->request->data);
+//        $this->autoRender = false;
     }
 
     public function login()

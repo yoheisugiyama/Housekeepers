@@ -126,8 +126,19 @@ Configure::write('Opauth.Strategy.Facebook', array(
     'app_secret' => '1f5290be72ef200815506a6f8dbe7503'
 ));
 
+
 /**
- * 認証用のURL設定
+ * Twitter認証のためのstrategy
  */
+
+Configure::write('Opauth.Strategy.Twitter', array(
+    'key'    => '6zzmp3zw6unfB31f0gNdL4KAA',
+    'secret' => 'sp3IKJoVLmEiFWQAte5kkzKL3W8iQm3t2Ku3OSAwsBoP9cdExO'
+));
+
+/**
+ * 認証用のURL設定（ここは、絶対に/アプリ名/authにしないとできない！）
+ */
+
 Configure::write('Opauth.path', '/housekeepers/auth/');
 
