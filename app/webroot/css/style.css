@@ -58,7 +58,7 @@ div#glayLayer {
 
 div#overLayer{
     display:none;
-    width:60%;
+    width:50%;
     background:beige;
     padding:10px;
     position: fixed;
@@ -66,6 +66,12 @@ div#overLayer{
     left:50%;
     z-index: 50;
     border-radius: 5px;
+}
+
+
+.social_login{
+    width: 30%;
+    margin: 0 auto;
 }
 
 

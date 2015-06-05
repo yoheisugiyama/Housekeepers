@@ -10,7 +10,7 @@ class UsersController extends AppController
 {
 
     //利用するモデルの定義
-    public $uses = array('User');
+    public $uses = array('User','Socialuser');
 
 
     public function beforeFilter()
@@ -22,9 +22,20 @@ class UsersController extends AppController
 
     public function opauth_complete() {
 
-        debug($this->data);
-//        pr($this->request->data);
-//        $this->autoRender = false;
+
+     $social_user=array(
+        'provider'=> $this->data['auth']['provider'],
+         'first_name'=> $this->data['auth']['info']['first_name'],
+         'last_name' => $this->data['auth']['info']['last_name'],
+         'token'=> $this->data['auth']['credentials']['token'],
+         'expires'=> $this->data['auth']['credentials']['expires'],
+    );
+
+
+        $this->Socialuser->save($social_user);
+
+        $this->redirect(array('controller'=>'housekeepers', 'action'=>'index'));
+
     }
 
     public function login()

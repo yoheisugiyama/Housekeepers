@@ -16,6 +16,9 @@
     <?php echo $this->Html->css('bootstrap', null, array('media'=>"screen, projection")); ?>
     <?php echo $this->Html->css('style', null, array("screen, projection")); ?>
 
+    <!-- Fontawesome CSS -->
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
     <!-- <link href="css/carousel.css" rel="stylesheet"> -->
 

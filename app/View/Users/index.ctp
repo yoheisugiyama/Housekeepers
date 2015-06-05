@@ -12,15 +12,17 @@
         <p>
             <?php  echo $this->Form->button('ハウスキーパー登録', array('class'=>'btn btn-lg btn-primary', 'type'=>'submit')); ?>
         </p>
+        <i class="fa fa-facebook"></i>
     </div>
     </div>
 </div>
 
 
-    <div id="overLayer">
-        <h2>会員登録</h2>
-        <?php echo $this->Form->create('User', array('action'=>'register'));?>
+<div id="overLayer">
+    <h2>会員登録</h2>
         <table class="table table-bordered">
+            <?php echo $this->Form->create('User', array('action'=>'register'));?>
+
             <thead>
             <tr>
                 <th class="">項目</th>
@@ -54,10 +56,28 @@
                 </td>
             </tr>
             </tbody>
+            <?php echo $this->Form->end();?>
         </table>
-        <?php echo $this->Form->end();?>
-    </div>
+
+        <div class="social_login">
+            <?php echo $this->Form->create('User', array('url'=>'/auth/facebook'));?>
+            <?php $this->Form->hidden('User.provider', array('value'=>'facebook')); ?>
+            <i class="fa fa-facebook"><?php echo $this->Form->end('facebookでログイン', array('class'=>'fa facebook')); ?>
+            </i>
+                <br>
+                <br>
+            <i class="fa fa-twitter"><?php echo $this->Form->button('twitterでログイン', array('url'=>'/auth/twitter/','class'=>'fa fa-twitter')); ?>
+                <?php $this->Form->hidden('User.id', array('value'=>'1')); ?>
+
+            </i>
+            <?php echo $this->Form->end();?>
+
+        </div>
+
+
+
 </div>
+
 
 
 <hr>
