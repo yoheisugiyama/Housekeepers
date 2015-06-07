@@ -18,6 +18,12 @@ body{
 
 }
 
+.row_2{
+    width: 460px;
+    margin:0 auto;
+    position:relative;
+}
+
 .logo{
     margin-top: 20px;
     float:left;
@@ -69,9 +75,13 @@ div#overLayer{
 }
 
 
-.social_login{
-    width: 30%;
+.social_register{
+    width: 100%;
     margin: 0 auto;
+}
+
+.submit{
+    text-align: center;
 }
 
 
@@ -109,6 +119,39 @@ body{
 }
 
 
+.houseowner-register{
+    width: 250px;
+}
+
+.housekeeper-register{
+    width: 250px;
+}
+
+
+.social-login-form{
+    width: 460px;
+    margin: 0 auto;
+
+}
+
+.main-login{
+    width: 40%;
+}
+
+.facebook-login{
+    background-color: #3b5998;
+    width: 80%;
+    margin-left: 10%;
+
+}
+
+.twitter-login{
+    background-color: #0084b4;
+    width: 80%;
+    margin-left: 10%;
+
+}
+
 h3{
     color: grey;
     text-align: center;
@@ -132,13 +175,13 @@ p{
 
 
 .btn-success{
-    width: 250px;
+
     display: inline;
     text-align: center;
 }
 
 .btn-primary{
-    width: 250px;
+
 }
 
 

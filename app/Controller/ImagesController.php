@@ -1,10 +1,9 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: YoheiSugiyama
- * Date: 15/05/03
- * Time: 15:35
+ * @property Image $Image
  */
+
 
 class ImagesController extends AppController
 {

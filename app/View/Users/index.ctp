@@ -7,19 +7,18 @@
     </div>
     <div class="login">        
         <p>
-            <?php  echo $this->Form->button('ハウスオーナー登録', array('class'=>'btn btn-lg btn-success','type'=>'submit')); ?>
+            <?php  echo $this->Form->button('ハウスオーナー登録', array('class'=>'btn btn-lg btn-success houseowner-register','type'=>'submit')); ?>
         </p>
         <p>
-            <?php  echo $this->Form->button('ハウスキーパー登録', array('class'=>'btn btn-lg btn-primary', 'type'=>'submit')); ?>
+            <?php  echo $this->Form->button('ハウスキーパー登録', array('class'=>'btn btn-lg btn-primary housekeeper-register', 'type'=>'submit')); ?>
         </p>
-        <i class="fa fa-facebook"></i>
     </div>
     </div>
 </div>
 
 
 <div id="overLayer">
-    <h2>会員登録</h2>
+    <h3>会員登録</h3>
         <table class="table table-bordered">
             <?php echo $this->Form->create('User', array('action'=>'register'));?>
 
@@ -49,29 +48,28 @@
             </tr>
 
             <tr>
-                <th></th>
-                <td>
+                <td colspan="2">
                     <?php echo $this->Form->input('User.group_id', array('type'=>'hidden', 'value'=>false, 'id'=>'group_id'));?>
-                    <?php echo $this->Form->submit('確認', array('class'=>'btn btn-primary')) ?>
+                    <?php echo $this->Form->submit('確認', array('class'=>'btn btn-primary main-login')) ?>
                 </td>
             </tr>
             </tbody>
             <?php echo $this->Form->end();?>
         </table>
 
-        <div class="social_login">
+    <h3>ソーシャルアカウントで登録</h3>
+        <div class="social_register">
             <?php echo $this->Form->create('User', array('url'=>'/auth/facebook'));?>
             <?php $this->Form->hidden('User.provider', array('value'=>'facebook')); ?>
-            <i class="fa fa-facebook"><?php echo $this->Form->end('facebookでログイン', array('class'=>'fa facebook')); ?>
-            </i>
-                <br>
-                <br>
-            <i class="fa fa-twitter"><?php echo $this->Form->button('twitterでログイン', array('url'=>'/auth/twitter/','class'=>'fa fa-twitter')); ?>
-                <?php $this->Form->hidden('User.id', array('value'=>'1')); ?>
-
-            </i>
+            <div class="col-lg-6">
+                <?php  echo $this->Form->button('<i class="fa fa-facebook"></i>  Facebook', array('class'=>'btn btn-primary facebook-login', 'type'=>'submit')); ?>
+            </div>
             <?php echo $this->Form->end();?>
-
+            <?php echo $this->Form->create('User', array('url'=>'/auth/twitter'));?>
+            <div class="col-lg-6">
+                <?php  echo $this->Form->button('<i class="fa fa-twitter"></i>  Twitter', array('class'=>'btn btn-primary twitter-login', 'type'=>'submit')); ?>
+            </div>
+            <?php echo $this->Form->end();?>
         </div>
 
 

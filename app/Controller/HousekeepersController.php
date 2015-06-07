@@ -1,11 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: YoheiSugiyama
- * Date: 15/04/12
- * Time: 17:07
- */
 
+/**
+ * @property Housekeeper $Housekeeper
+ */
 
 class HousekeepersController extends AppController
 {

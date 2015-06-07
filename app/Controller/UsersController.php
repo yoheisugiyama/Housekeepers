@@ -1,10 +1,9 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: YoheiSugiyama
- * Date: 15/01/25
- * Time: 13:31
+ * @property User $User
  */
+
 
 class UsersController extends AppController
 {
@@ -15,26 +14,45 @@ class UsersController extends AppController
 
     public function beforeFilter()
     {
-//        $this->Auth->allow('index');
+        $this->Auth->allow('index');
 
     }
 
 
     public function opauth_complete() {
 
+        $social_user=array(
+            'Socialuser'=>array(
+            'provider'=> $this->data['auth']['provider'],
+            'uid'=> $this->data['auth']['uid']
+            )
+        );
+        $user=array(
+            'User'=> array(
+                'name'=>$this->data['auth']['info']['name']
+            )
+        );
 
-     $social_user=array(
-        'provider'=> $this->data['auth']['provider'],
-         'first_name'=> $this->data['auth']['info']['first_name'],
-         'last_name' => $this->data['auth']['info']['last_name'],
-         'token'=> $this->data['auth']['credentials']['token'],
-         'expires'=> $this->data['auth']['credentials']['expires'],
-    );
 
-
+        $this->Socialuser->create();
         $this->Socialuser->save($social_user);
 
-        $this->redirect(array('controller'=>'housekeepers', 'action'=>'index'));
+        //ユーザーテーブルにも保存
+        $this->User->create();
+        $this->User->save($user);
+
+        $user=$this->User->find('first', array('conditions'=>array('name'=>$this->data['auth']['info']['name'])));
+
+//        unset($userdata['User']['password']);
+
+        //強制ログイン
+        $this->Auth->login($user['User']);
+
+        $this->Session->setFlash('ユーザー登録が完了しました。');
+
+        return $this->redirect($this->Auth->redirectUrl());
+//        $this->redirect($this->Auth->redirect());
+
 
     }
 

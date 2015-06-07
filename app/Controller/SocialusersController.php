@@ -1,7 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: YoheiSugiyama
- * Date: 15/06/02
- * Time: 21:23
+ * @property Socialusers $Socialusers
  */
+
+
+class SocialusersController extends AppModel{
+
+
+}

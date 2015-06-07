@@ -1,15 +1,16 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: YoheiSugiyama
- * Date: 15/05/23
- * Time: 11:43
+ * @property Message $Message
  */
+
 
 class MessagesController extends AppController
 {
 
-    public $uses=array('Message');
+
+
+    public $uses=array('Message', 'MessageThread');
 
     public function index()
     {
@@ -24,9 +25,11 @@ class MessagesController extends AppController
             'order'=>'Housekeeper.id'
         );
 
-        $housekeeper=$this->Message->Housekeeper->find('first', $options);
+        $housekeeper=$this->MessageThread->Housekeeper->find('first', $options);
 
         $this->set('housekeeper',$housekeeper);
+
+
 
 
     }
@@ -34,44 +37,85 @@ class MessagesController extends AppController
 
     public function send(){
 
-            $new_message = array(
-                'user_id' => $this->Auth->user('id'),
-                'sendee_id' => $this->Session->read('sendee_id'),
+        $new_thread=array(
+            'user_id' => $this->Auth->user('id'),
+            'sendee_id' => $this->Session->read('sendee_id')
+        );
+
+
+        if($this->MessageThread->find('first',array('conditions'=>$new_thread))){
+
+        }else{
+            $this->MessageThread->save($new_thread);
+        };
+
+        $thread_data=$this->MessageThread->find('first',array('conditions'=>$new_thread));
+
+        $new_message = array(
+                'thread_id'=> $thread_data['MessageThread']['id'],
                 'title'=> $this->request->data['Message']['title'],
                 'message' => $this->request->data['Message']['message']
             );
 
+        $this->Message->save($new_message);
+        $this->Session->setFlash('メッセージを送信しました');
 
+        $this->Session->delete('sendee_id');
 
-            $this->Message->save($new_message);
-            $this->Session->setFlash('メッセージを送信しました');
-
-            $this->Session->delete('sendee_id');
-
-            $this->redirect(array('controller'=>'housekeepers','action'=>'index'));
-
+        $this->redirect(array('controller'=>'housekeepers','action'=>'index'));
 
     }
 
     public function my_message(){
 
-
         $options=array(
             'conditions'=>array(
-                'Message.user_id'=>$this->Auth->user('id')
+                'user_id'=>  $this->Auth->user('id')
+            ),
+            'fields'=>array(
+                'id','sendee_id'
             )
         );
 
-        $my_messages=$this->Message->find('first',$options);
+       // ログインユーザーのスレッドを全て取得
 
+        $my_threads=$this->MessageThread->find('all', $options);
+
+        $my_threadids=array_column(array_column($my_threads, 'MessageThread'),'id');
+
+        $options=array(
+            'conditions'=>array(
+                //最初のスレッドIDを取得
+                'thread_id'=>array_shift($my_threadids)
+            )
+        );
+
+        $my_messages=$this->Message->find('all',$options);
+
+        debug($my_messages);
+
+        $my_messages=array_column($my_messages, 'Message');
 
         $this->set('my_messages', $my_messages);
 
-        $housekeeper=$this->Message->Housekeeper->find('first', array('conditions'=>array('Housekeeper.id'=>$my_messages['Message']['sendee_id'])));
+        //sendee_idはhousekeeper_idまたはhouseowner_id
 
+        $my_sendees=array_column(array_column($my_threads, 'MessageThread'),'sendee_id');
+
+        $options=array(
+            'conditions'=>array(
+                'Housekeeper.id'=>$my_sendees
+            ),
+            'fields'=>array(
+                'surname','firstname'
+            )
+        );
+
+        $housekeeper=$this->MessageThread->Housekeeper->find('all', $options);
+
+        $housekeeper=array_column($housekeeper, 'Housekeeper');
 
         $this->set('housekeeper',$housekeeper);
-
 
 }
 
