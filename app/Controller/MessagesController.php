@@ -4,10 +4,8 @@
  * @property Message $Message
  */
 
-
 class MessagesController extends AppController
 {
-
 
     public $uses=array('Message', 'MessageThread');
 
@@ -28,32 +26,40 @@ class MessagesController extends AppController
 
         $this->set('housekeeper',$housekeeper);
 
-
     }
 
 
     public function send(){
 
+        //新しいスレッドを作成
         $new_thread=array(
             'user_id' => $this->Auth->user('id'),
             'sendee_id' => $this->Session->read('sendee_id')
         );
 
 
+        //データベースにスレッドがなければスレッドテーブルに保存、あれば何もしない。
         if($this->MessageThread->find('first',array('conditions'=>$new_thread))){
 
         }else{
             $this->MessageThread->save($new_thread);
         };
 
+        //保存したばかりのスレッドデータをスレッドテーブルから取得
         $thread_data=$this->MessageThread->find('first',array('conditions'=>$new_thread));
 
+
+        //メッセージテーブルに保存するデータの取得
         $new_message = array(
+            //スレッドID
                 'thread_id'=> $thread_data['MessageThread']['id'],
+            //メッセージデータ（フォームからの入力）
                 'title'=> $this->request->data['Message']['title'],
                 'message' => $this->request->data['Message']['message']
             );
 
+
+        //メッセージテーブルに新しいメッセージを保存
         $this->Message->save($new_message);
         $this->Session->setFlash('メッセージを送信しました');
 
