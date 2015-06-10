@@ -59,13 +59,13 @@
 
     <h3>ソーシャルアカウントで登録</h3>
         <div class="social_register">
-            <?php echo $this->Form->create('User', array('url'=>'/auth/facebook'));?>
-            <?php $this->Form->hidden('User.provider', array('value'=>'facebook')); ?>
+            <?php echo $this->Form->create('Socialuser', array('url'=>'/auth/facebook'));?>
+            <?php $this->Form->hidden('Socialuser.provider', array('value'=>'facebook')); ?>
             <div class="col-lg-6">
                 <?php  echo $this->Form->button('<i class="fa fa-facebook"></i>  Facebook', array('class'=>'btn btn-primary facebook-login', 'type'=>'submit')); ?>
             </div>
             <?php echo $this->Form->end();?>
-            <?php echo $this->Form->create('User', array('url'=>'/auth/twitter'));?>
+            <?php echo $this->Form->create('Socialuser', array('url'=>'/auth/twitter'));?>
             <div class="col-lg-6">
                 <?php  echo $this->Form->button('<i class="fa fa-twitter"></i>  Twitter', array('class'=>'btn btn-primary twitter-login', 'type'=>'submit')); ?>
             </div>

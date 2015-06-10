@@ -1,6 +1,8 @@
 <?php
 
-
+/**
+ * @property MessageThread $MessageThread
+ */
 
 App::uses('AppModel', 'Model');
 

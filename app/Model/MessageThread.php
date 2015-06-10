@@ -24,6 +24,7 @@ class MessageThread extends AppModel{
         )
     );
 
+    public $hasMany=array('Message');
 
     public $validate = array(
 

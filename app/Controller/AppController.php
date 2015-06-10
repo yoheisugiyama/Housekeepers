@@ -52,7 +52,7 @@ class AppController extends Controller {
         'Session',
 
         //デバッグキットの使用
-        'DebugKit.Toolbar',
+//        'DebugKit.Toolbar',
 
 
 

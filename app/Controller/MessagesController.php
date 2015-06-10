@@ -9,7 +9,6 @@ class MessagesController extends AppController
 {
 
 
-
     public $uses=array('Message', 'MessageThread');
 
     public function index()
@@ -28,8 +27,6 @@ class MessagesController extends AppController
         $housekeeper=$this->MessageThread->Housekeeper->find('first', $options);
 
         $this->set('housekeeper',$housekeeper);
-
-
 
 
     }
@@ -81,12 +78,16 @@ class MessagesController extends AppController
 
         $my_threads=$this->MessageThread->find('all', $options);
 
+        debug($my_threads);
+
         $my_threadids=array_column(array_column($my_threads, 'MessageThread'),'id');
+
+        $my_sendees=array_column(array_column($my_threads, 'MessageThread'),'sendee_id');
 
         $options=array(
             'conditions'=>array(
                 //最初のスレッドIDを取得
-                'thread_id'=>array_shift($my_threadids)
+                'thread_id'=>$my_threadids
             )
         );
 
@@ -94,13 +95,13 @@ class MessagesController extends AppController
 
         debug($my_messages);
 
+
         $my_messages=array_column($my_messages, 'Message');
 
         $this->set('my_messages', $my_messages);
 
         //sendee_idはhousekeeper_idまたはhouseowner_id
 
-        $my_sendees=array_column(array_column($my_threads, 'MessageThread'),'sendee_id');
 
         $options=array(
             'conditions'=>array(
