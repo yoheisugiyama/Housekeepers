@@ -75,16 +75,11 @@ class MessagesController extends AppController
             'conditions'=>array(
                 'user_id'=>  $this->Auth->user('id')
             ),
-            'fields'=>array(
-                'id','sendee_id'
-            )
+            'order'=>array('sendee_id')
         );
 
-       // ログインユーザーのスレッドを全て取得
-
+       // ログインユーザーのスレッドを全て取得（並び順をsendee_id順にする）
         $my_threads=$this->MessageThread->find('all', $options);
-
-        debug($my_threads);
 
         $my_threadids=array_column(array_column($my_threads, 'MessageThread'),'id');
 
@@ -93,18 +88,22 @@ class MessagesController extends AppController
         $options=array(
             'conditions'=>array(
                 //最初のスレッドIDを取得
-                'thread_id'=>$my_threadids
-            )
+                'Message.thread_id'=>$my_threadids
+            ),
+
+            //アソシエーションを使うと、無駄なフィールドがたくさん出てくるので、必要なものだけに絞り込む
+            'fields'=>array('title','message'),
+            'recursive'=>1
         );
 
-        $my_messages=$this->Message->find('all',$options);
 
-        debug($my_messages);
+        //ログインユーザーのスレッドに関連する最初のメッセージを全て取得
+        $my_messages=$this->Message->find('first',$options);
 
-
-        $my_messages=array_column($my_messages, 'Message');
-
+        //最初のメッセージをmy_messagesに格納、ビューに渡す
         $this->set('my_messages', $my_messages);
+
+//        $my_messages=array_column($my_messages, 'Message');
 
         //sendee_idはhousekeeper_idまたはhouseowner_id
 

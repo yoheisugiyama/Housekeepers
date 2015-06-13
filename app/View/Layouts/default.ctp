@@ -32,14 +32,22 @@
 
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="row">
+        <div class="logo">
         <?php echo $this->Html->image('housekeepers_logo.png', array('alt'=>'Housekeepers', 'class'=>'logo', 'url'=>array('controller'=>'users','action'=>'index'))) ?>
-        <ul class="nav">
-            <li><?php  echo $this->Html->link('ログイン', array('class'=>'navbar-link','controller'=>'users', 'action'=>'login')) ?> </li>
-            <li><?php  echo $this->Html->link('ログアウト', array('class'=>'navbar-link','controller'=>'users', 'action'=>'logout')) ?> </li>
-            <li><?php  echo $this->Html->link('ホーム', array('class'=>'navbar-link','controller'=>'users', 'action'=>'index')) ?> </li>
-            <li><?php  echo $this->Html->link('マイページ', array('class'=>'navbar-link','controller'=>'users', 'action'=>'mypage')) ?> </li>
-            <li><?php  echo $this->Html->link('マイメッセージ', array('class'=>'navbar-link','controller'=>'messages', 'action'=>'my_message')) ?> </li>
-
+        </div>
+        <div class="navi">
+            <ul class="nav-right">
+                <li><?php  echo $this->Html->link('Login', array('class'=>'navbar-link','controller'=>'users', 'action'=>'login')) ?> </li>
+                <li><?php  echo $this->Html->link('Logout', array('class'=>'navbar-link','controller'=>'users', 'action'=>'logout')) ?> </li>
+                <li><?php  echo $this->Html->link('Home', array('class'=>'navbar-link','controller'=>'users', 'action'=>'index')) ?> </li>
+                <li><?php  echo $this->Html->link('Mypage', array('class'=>'navbar-link','controller'=>'users', 'action'=>'mypage')) ?> </li>
+                <li><?php  echo $this->Html->link('MyMessage', array('class'=>'navbar-link','controller'=>'messages', 'action'=>'my_message')) ?> </li>
+            </ul>
+            <ul class="nav-right">
+                <li><?php  echo $this->Html->link('ハウスキーパーを探す', array('class'=>'navbar-link','controller'=>'housekeepers', 'action'=>'index')) ?> </li>
+                <li><?php  echo $this->Html->link('ハウスオーナーを探す', array('class'=>'navbar-link','controller'=>'houseowners', 'action'=>'index')) ?> </li>
+            </ul>
+        </div>
         </ul>
     </div>
 </nav>

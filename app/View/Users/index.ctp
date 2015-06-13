@@ -6,12 +6,7 @@
         <h2>近所の家事代行人を探し、家事代行を依頼しよう</h2>
     </div>
     <div class="login">        
-        <p>
-            <?php  echo $this->Form->button('ハウスオーナー登録', array('class'=>'btn btn-lg btn-success houseowner-register','type'=>'submit')); ?>
-        </p>
-        <p>
-            <?php  echo $this->Form->button('ハウスキーパー登録', array('class'=>'btn btn-lg btn-primary housekeeper-register', 'type'=>'submit')); ?>
-        </p>
+        <?php  echo $this->Form->button('今すぐ新規登録！', array('class'=>'btn btn-lg btn-success register','type'=>'submit')); ?>
     </div>
     </div>
 </div>

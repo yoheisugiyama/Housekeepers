@@ -61,6 +61,7 @@ class HouseownersController extends AppController
 
                 $this->set('houseowner',$houseowner);
 
+
                 $this->Session->write(array('id'=>$houseowner['Houseowner']['id']));
 
                 $this->request->data = $houseowner;

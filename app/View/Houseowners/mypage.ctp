@@ -1,5 +1,4 @@
 <div class="container">
-
     <div class="ind_photo">
         <?php if(!$houseowner['Image']['name']){
 
@@ -82,8 +81,6 @@
                 <?php echo $this->Html->link('ファイルアップロード',array('controller'=>'images','action'=>'file_upload')); ?>
             </div>
         </div>
-
-
     </div>
 
 </div>

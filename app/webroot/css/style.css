@@ -24,28 +24,37 @@ body{
     position:relative;
 }
 
+.container{
+    margin-top:40px;
+    width: 960px;
+}
+
 .logo{
     margin-top: 20px;
     float:left;
 }
 
 
-ul.nav{
+
+ul.nav-right{
     list-style-type: none;
     float: right;
     display:inline;
-    margin-top:30px;
-    font-size: 15px;
+    margin-top:10px;
+    font-size: 18px;
 
 }
 
-.nav>li{
+.nav>li,.nav-right>li{
     float:left;    
 }
 
-.nav>li a{
-    color:white;
 
+.nav>li a, .nav-right>li a{
+    color:white;
+    position: relative;
+    display: block;
+    padding: 5px 5px;
 }
 
 
@@ -74,6 +83,10 @@ div#overLayer{
     border-radius: 5px;
 }
 
+.register{
+    width:50%;
+    text-align: left;
+}
 
 .social_register{
     width: 100%;
@@ -276,8 +289,8 @@ hr{
 
 .pagination{
     width: 70%;
-    margin: 0;
-    padding:10px;
+    margin: 10px 0px;
+    padding:0 50px;
     border-radius: 0;
 
 }
