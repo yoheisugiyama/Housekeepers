@@ -10,10 +10,9 @@
 
 
     <div class="messages">
-        <?php foreach ($housekeeper as $val): ?>
         <table class="table">
             <thead>
-            <tr><th colspan="2"><?php echo h($val['surname'].$val['firstname'].'さんへのメッセージ') ?></th></tr>
+            <tr><th colspan="2"><?php echo h($housekeeper[0]['surname'].$housekeeper[0]['firstname'].'さんへのメッセージ') ?></th></tr>
             </thead>
 
                 <?php foreach ($my_messages as $row): ?>
@@ -29,7 +28,6 @@
             </tbody>
                 <?php endforeach; ?>
         </table>
-        <?php endforeach; ?>
 
     </div>
 

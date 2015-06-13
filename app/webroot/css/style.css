@@ -25,7 +25,6 @@ body{
 }
 
 .container{
-    margin-top:40px;
     width: 960px;
 }
 
@@ -99,7 +98,7 @@ div#overLayer{
 
 
 body{
-    padding-top:70px;
+    padding-top:110px;
     font-family: 'Open Sans', sans-serif;
 
 }
@@ -315,6 +314,7 @@ legend{
     background-color: #e3efd7;
     padding: 10px;
     border: thin dotted grey;
+    clear: both;
 }
 
 .housekeeper:hover{
@@ -337,21 +337,34 @@ legend{
 .thumb{
     width: 30%;
     float: left;
-    height: 70px;
+
 
 }
 
 .thumbphoto{
     padding-bottom: 10px;
 }
+
 .summary{
     width: 70%;
-
+    margin-top: 20px;
 }
 
-.summary>ul{
-
+.thumb li,.summary li{
+    list-style-type: none;
+    text-align: left;
+    margin-left: -35px;
 }
+
+.summary li{
+    margin-bottom: 10px;
+}
+
+.thumb li{
+    font-weight: bold;
+    color:#084884;
+}
+
 
 
 div.caption{
@@ -411,10 +424,16 @@ caption{
 }
 
 .thread{
+    margin-top: 50px;
     width: 30%;
     float: left;
 }
 
+.thread li{
+    list-style-type: none;
+    margin: 10px 0px;
+    font-size: 16px;
+}
 .messages{
     margin-top: 50px;
     width: 70%;

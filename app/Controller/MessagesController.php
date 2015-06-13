@@ -7,7 +7,7 @@
 class MessagesController extends AppController
 {
 
-    public $uses=array('Message', 'MessageThread');
+    public $uses=array('Message', 'MessageThread','Housekeeper');
 
     public function index()
     {
@@ -81,14 +81,18 @@ class MessagesController extends AppController
        // ログインユーザーのスレッドを全て取得（並び順をsendee_id順にする）
         $my_threads=$this->MessageThread->find('all', $options);
 
-        $my_threadids=array_column(array_column($my_threads, 'MessageThread'),'id');
+//        $my_threadids=array_column(array_column($my_threads, 'MessageThread'),'id');
 
         $my_sendees=array_column(array_column($my_threads, 'MessageThread'),'sendee_id');
+
+        $my_sendee=reset($my_sendees);
 
         $options=array(
             'conditions'=>array(
                 //最初のスレッドIDを取得
-                'Message.thread_id'=>$my_threadids
+//                'Message.thread_id'=>$my_threadids
+                'MessageThread.sendee_id'=>$my_sendee
+
             ),
 
             //アソシエーションを使うと、無駄なフィールドがたくさん出てくるので、必要なものだけに絞り込む
@@ -97,8 +101,9 @@ class MessagesController extends AppController
         );
 
 
-        //ログインユーザーのスレッドに関連する最初のメッセージを全て取得
-        $my_messages=$this->Message->find('first',$options);
+        //ログインユーザーと最初のSendeeとのメッセージを全て
+        $my_messages=$this->Message->find('all',$options);
+
 
         //最初のメッセージをmy_messagesに格納、ビューに渡す
         $this->set('my_messages', $my_messages);
@@ -113,13 +118,20 @@ class MessagesController extends AppController
                 'Housekeeper.id'=>$my_sendees
             ),
             'fields'=>array(
-                'surname','firstname'
+                'Housekeeper.surname','firstname'
+            ),
+            'order'=>array(
+                'MessageThread.sendee_id DESC'
             )
         );
 
-        $housekeeper=$this->MessageThread->Housekeeper->find('all', $options);
+        $housekeeper=$this->MessageThread->find('all', $options);
 
-        $housekeeper=array_column($housekeeper, 'Housekeeper');
+        debug($housekeeper);
+
+        $housekeeper=array_column($housekeeper,'Housekeeper');
+
+        debug($housekeeper);
 
         $this->set('housekeeper',$housekeeper);
 

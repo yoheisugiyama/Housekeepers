@@ -44,6 +44,9 @@
             <?php foreach ($housekeepers as $row): ?>
               <div class="housekeeper">
                 <div class="thumb">
+                    <ul>       
+                    <li><?php echo h($row['Housekeeper']['surname'].$row['Housekeeper']['firstname']); ?>さん</li>
+                    </ul>
                     <?php
                          if(!isset($row['Image']['name'])){
                              echo $this->Html->image('no_image.png', array('url'=>array('action'=>'ind_page',$row['Housekeeper']['id']),'alt'=>'noimages','width'=>'100px', 'height'=>'100px', 'class'=>'thumbphoto')) ;
@@ -52,19 +55,21 @@
                          }
                     ?>
                     <?php ?>
+                    <ul>      
                 </div>
 
                 <div class="summary">
-                    <ol>
-                        <li>姓名：　<?php echo h($row['Housekeeper']['surname']); ?></li>
+                    <ul>
+                    
                         <li>性別：　<?php echo h($row['Housekeeper']['sex']); ?></li>
                         <li>経験年数：　<?php echo h($row['Housekeeper']['experience']); ?>年</li>
                         <li>最寄り駅：　<?php echo h($row['Housekeeper']['station']); ?></li>
-                    </ol>
+                        <li>コメント：　<?php echo h($row['Housekeeper']['appeal']); ?></li>
+                    </ul>
                 </div>
-              </div>
-                <br>
-            <?php endforeach; ?>
+            </div>
+             <br>
+           <?php endforeach; ?>
 
 
         <div class="paginator_bottom">
