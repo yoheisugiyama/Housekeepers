@@ -11,12 +11,28 @@ body{
 
 }
 
+
 .row{
     width: 960px;
     margin:0 auto;
     position:relative;
 
 }
+
+@media(max-width:960px){
+.row{
+    width: 768px;
+}
+}
+
+@media(max-width:768px){
+
+.row{
+    width: 360px;
+}
+
+}
+
 
 .row_2{
     width: 460px;
@@ -30,8 +46,18 @@ body{
 
 .logo{
     margin-top: 20px;
-    float:left;
+    text-align: left;
 }
+
+@media(max-width:768px){
+
+.logo{
+
+    text-align: center;
+}
+
+}
+
 
 
 
@@ -55,6 +81,24 @@ ul.nav-right{
     display: block;
     padding: 5px 5px;
 }
+
+
+@media(max-width:768px){
+
+    ul.nav-right{
+    
+    float:none;
+    text-align: center;
+    }
+
+    .nav>li,.nav-right>li{
+    float:none; 
+    text-align: center;   
+    }
+
+}
+
+
 
 
 div#glayLayer {

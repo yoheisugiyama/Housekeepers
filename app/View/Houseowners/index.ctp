@@ -46,9 +46,9 @@
                 <div class="thumb">
                     <?php
                     if(!isset($row['Image']['name'])){
-                        echo $this->Html->image('no_image.png', array('url'=>array('action'=>'ind_page',$row['Houseowner']['id']),'alt'=>'noimages','width'=>'100px', 'height'=>'100px', 'class'=>'thumbphoto')) ;
+                        echo $this->Html->image('no_image.png', array('url'=>array('action'=>'ind_page',$row['Houseowner']['id']),'alt'=>'noimages','width'=>'120px', 'height'=>'120px', 'class'=>'thumbphoto')) ;
                     }else{
-                        echo $this->Html->image($row['Image']['name'], array('url'=>array('action'=>'ind_page',$row['Houseowner']['id']),'alt'=>'noimages','width'=>'100px', 'height'=>'100px', 'class'=>'thumbphoto')) ;
+                        echo $this->Html->image($row['Image']['name'], array('url'=>array('action'=>'ind_page',$row['Houseowner']['id']),'alt'=>'noimages','width'=>'120px', 'height'=>'120px', 'class'=>'thumbphoto')) ;
                     }
                     ?>
                     <?php ?>
