@@ -1,3 +1,37 @@
+
+/*reset css*/
+
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.clearfix {
+    min-height: 1px;
+}
+
+* html .clearfix {
+    height: 1px;
+    /*¥*//*/
+    height: auto;
+    overflow: hidden;
+    /**/
+}
+
+.both{
+    clear:both;
+}
+
+.inline_block {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
 /*全体、及びトップページ*/
 
 body{
@@ -46,13 +80,14 @@ body{
 
 .logo{
     margin-top: 20px;
+    float:left;
     text-align: left;
 }
 
 @media(max-width:768px){
 
 .logo{
-
+    float:none;
     text-align: center;
 }
 
@@ -85,15 +120,15 @@ ul.nav-right{
 
 @media(max-width:768px){
 
-    ul.nav-right{
-    
-    float:none;
-    text-align: center;
+
+    ul.nav-right{    
+        float:none;
+        text-align: center;
     }
 
     .nav>li,.nav-right>li{
-    float:none; 
-    text-align: center;   
+        float:none; 
+        text-align: center;   
     }
 
 }
@@ -324,14 +359,14 @@ hr{
 }
 
 .search_bar{
-    width: 30%;
+    width: 20%;
     padding:10px;
     float: left;
 
 }
 
 .pagination{
-    width: 70%;
+    width: 80%;
     margin: 10px 0px;
     padding:0 50px;
     border-radius: 0;
@@ -390,8 +425,9 @@ legend{
 }
 
 .summary{
-    width: 70%;
+    margin-left: 30%;
     margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .thumb li,.summary li{
@@ -400,13 +436,33 @@ legend{
     margin-left: -35px;
 }
 
+
+.summary_left{
+
+    float: left;
+    width: 40%;
+    font-weight: bold;
+    font-size: 15px;
+    color: orange;
+
+
+}
+
+.summary_right{
+    margin-left: 40%;
+
+
+
+}
+
 .summary li{
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .thumb li{
     font-weight: bold;
     color:#084884;
+    font-size: 16px;
 }
 
 
