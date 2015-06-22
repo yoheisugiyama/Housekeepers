@@ -127,11 +127,9 @@ class MessagesController extends AppController
 
         $housekeeper=$this->MessageThread->find('all', $options);
 
-        debug($housekeeper);
 
         $housekeeper=array_column($housekeeper,'Housekeeper');
 
-        debug($housekeeper);
 
         $this->set('housekeeper',$housekeeper);
 

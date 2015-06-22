@@ -289,6 +289,7 @@ p{
 .col-lg-6{
     text-align: center;
     font-size: 16px;
+    padding: 0px;
 }
 
 dt{
@@ -321,31 +322,63 @@ hr{
     text-align: center;
     width: 300px;
     margin-top: 50px;
-    moz-transition-property: background-color, width, height;
-   -webkit-transition-property: background-color, width, height;
-   -o-transition-property: background-color, width, height;
-   -ms-transition-property: background-color, width, height;
-
-   -moz-transition-duration:0.3s;
-   -webkit-transition-duration:0.3s;
-   -o-transition-duration:0.3s;
-   -ms-transition-duration:0.3s;
-
-   -moz-transition-timing-function:ease-in-out;
-   -webkit-transition-timing-function:ease-in-out;
-   -o-transition-timing-function:ease-in-out;
-   -ms-transition-timing-function:ease-in-out;
+    color: grey;
 }
 
 .thumbnail:hover{
-    background-color: white;
+    background-color: #486b9b;
+    color: white;
+
 
 }
+
+.caption{
+    height: 480px;
+}
+
+
+div.caption p{
+    font-size: 14px;
+}
+
 
 .button_center{
     text-align: center;
 }
 
+.background_2 img{
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 50px;
+}
+
+.howtouse{
+    padding: 20px;
+    background-color: #cbe7d2;
+    margin: 10px;
+    height: 200px;
+    text-align: left;
+    color: grey;
+}
+
+.howtouse:hover{
+    background-color: #1a92b4;
+    color: #ffffff;
+}
+
+
+
+
+.howtouse_comment{
+    margin-left: 5px;
+
+}
+
+
+.howtouse dd{
+
+    font-size: 14px;
+}
 
 
 /*Housekeeperページ、Houseownerページ*/
@@ -466,15 +499,6 @@ legend{
 }
 
 
-
-div.caption{
-    height: 450px;
-}
-
-
-div.caption p{
-    font-size: 14px;
-}
 
 .ind_photo{
     float: left;

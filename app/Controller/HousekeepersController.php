@@ -19,7 +19,6 @@ class HousekeepersController extends AppController
 
     public function beforeFilter()
     {
-
         $this->set('user',$this->Auth->user());
 
     }

@@ -106,6 +106,7 @@
             <div class="caption">
                 <?php echo $this->Html->image('souji_ofuro.png', array('alt'=>'souji_ofuro')) ?>
                 <h4>今なら会員登録無料!</h4>
+                <br>
                 <p>HouseKeepersのサービスは、期間限定で無料でお使いいただけます。</p>
             </div>
         </div>
@@ -118,17 +119,21 @@
 <div class="background">
     <div class="row">
         <h3>ハウスキーパーとは？ハウスオーナーとは？</h3>
+        <br/>
         <h4>ハウスキーパーとは</h4>
         <p>
             家事代行をする人のことを言います。当ページの上部にある「ハウスキーパー登録」のページより登録いた
             だいたユーザーはハウスキーパーとなります。ハウスキーパーは、FacebookまたはLinkedIn、運転免許証等
             による本人確認が必要となります。
         </p>
+        <br/>
         <h4>ハウスオーナーとは</h4>
         <p>
             家事代行を依頼する人のことを言います。住居は賃貸・購入を問いません。家事代行を依頼したい人であれ
             ばどなたでもハウスオーナー登録が可能です。
         </p>
+        <br/>
+        <br/>
     </div>
 </div>
 
@@ -138,24 +143,47 @@
 <div class="background_2">
     <div class="row">
         <h3>How To Use</h3>
+        <br/>
         <div class="col-lg-6">
-        <dl>
-            <dt>ハウスキーパーの場合</dt>
-            <dd>ハウスキーパーとして登録する</dd>
-            <dd>ハウスオーナーを探す</dd>
-            <dd>面談を設定する</dd>
-            <dd>トライアルを設定する</dd>
+            <div class="howtouse">
+                <?php echo $this->Html->image('kaiin.png',array('alt'=>'', 'width'=>'100px', 'height'=>'100px')) ?>
+            <dl class="howtouse_comment">
+                <dt>1. ハウスキーパー、またはハウスオーナーとして登録する</dt>
+                <br/>
+                <dd>まずは、今すぐ新規登録！より、ハウスキーパー、またはハウスオーナーとして登録いただきます。</dd>
+            </dl>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="howtouse">
+                <?php echo $this->Html->image('pagination.png',array('alt'=>'', 'width'=>'100px', 'height'=>'100px')) ?>
+                <dl class="howtouse_comment">
+                <dt>2. 条件に合ううハウスキーパー、またはハウスオーナーを探す</dt>
+                <br/>
+                <dd>絞り検索機能を存分に使っていただき、条件に合うハウスキーパー、またはハウスオーナーを納得の行くまで探していただきます。</dd>
+            </dl>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="howtouse">
+                <?php echo $this->Html->image('interview.png',array('alt'=>'', 'width'=>'100px', 'height'=>'100px')) ?>
+            <dl class="howtouse_comment">
+                <dt>3. 面談を設定する</dt>
+                <br/>
+                <dd>条件に合うハウスキーパー、ハウスオーナーが見つかりましたら、面談を設定いたします。面談の打診は、ハウスオーナーからハウスキーパーに対してのみならず、ハウスキーパーからハウスオーナーに対しても実施することができます。</dd>
+            </dl>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="howtouse">
+                <?php echo $this->Html->image('trial.png',array('alt'=>'','width'=>'100px', 'height'=>'100px')) ?>
+                <dl class="howtouse_comment">
+                <dt>4. トライアルを設定する</dt>
+                <br/>
+                <dd>面談の結果、お気に入りのハウスキーパー、ハウスオーナーが見つかりましたら、トライアルを設定いたします。トライアルの打診は、ハウスオーナーからハウスキーパーに対してのみならず、ハウスキーパーからハウスオーナーに対しても実施することができます。</dd>
+            </dl>
+            </div>
+        </div>
 
-        </dl>
-        </div>
-        <div class="col-lg-6" >
-        <dl>
-            <dt>ハウスオーナーの場合</dt>
-            <dd>ハウスオーナーとして登録する</dd>
-            <dd>ハウスオーナーを探す</dd>
-            <dd>面談を設定する</dd>
-            <dd>トライアルを設定する</dd>
-        </dl>
-        </div>
     </div>
 </div>
