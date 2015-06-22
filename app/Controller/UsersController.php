@@ -9,6 +9,7 @@
 class UsersController extends AppController
 {
 
+
     //利用するモデルの定義
     public $uses = array('User');
 
