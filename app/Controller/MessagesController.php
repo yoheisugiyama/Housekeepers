@@ -12,6 +12,7 @@ class MessagesController extends AppController
     public function index()
     {
         //sendee_idはhousekeeper_idまたはhouseowner_id
+
         $this->Session->write(array('sendee_id'=>$this->request->data['Message']['sendee_id']));
 
         $options =array(
@@ -92,7 +93,6 @@ class MessagesController extends AppController
                 //最初のスレッドIDを取得
 //                'Message.thread_id'=>$my_threadids
                 'MessageThread.sendee_id'=>$my_sendee
-
             ),
 
             //アソシエーションを使うと、無駄なフィールドがたくさん出てくるので、必要なものだけに絞り込む
@@ -114,22 +114,25 @@ class MessagesController extends AppController
 
 
         $options=array(
+
             'conditions'=>array(
                 'Housekeeper.id'=>$my_sendees
             ),
+
             'fields'=>array(
                 'Housekeeper.surname','firstname'
             ),
+
             'order'=>array(
                 'MessageThread.sendee_id DESC'
             )
+
         );
+
 
         $housekeeper=$this->MessageThread->find('all', $options);
 
-
         $housekeeper=array_column($housekeeper,'Housekeeper');
-
 
         $this->set('housekeeper',$housekeeper);
 

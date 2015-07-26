@@ -21,6 +21,7 @@ class HouseownersController extends AppController
         // Search PluginのPOSTデータのバリデーションを実施
 
         $this->Prg->commonProcess();
+
         $this->paginate = array(
             //Search Pluginにて検索条件によって絞り込まれたデータを抽出
             'conditions' => $this->Houseowner->parseCriteria($this->passedArgs),
@@ -35,6 +36,7 @@ class HouseownersController extends AppController
     public function mypage()
     {
         $user = $this->Auth->user();
+
         $id = $user['id'];
 
         $this->set('user_id',$id);
@@ -58,9 +60,7 @@ class HouseownersController extends AppController
 
             }else{
                 //ハウスオーナープロフィール登録がある程度終了している場合
-
                 $this->set('houseowner',$houseowner);
-
 
                 $this->Session->write(array('id'=>$houseowner['Houseowner']['id']));
 
@@ -68,7 +68,6 @@ class HouseownersController extends AppController
             }
 
         }else{
-
             //mypageにアクセスしたあと、各項目をアップデートし、再登録する際の処理
 
             $new_Houseowner=array(
@@ -89,6 +88,7 @@ class HouseownersController extends AppController
                 $this->redirect(array('controller'=>'housekeepers','action'=>'index'));
             }else{
                 $this->Session->setFlash('入力に間違いがあります');
+
             }
         }
     }
@@ -96,7 +96,6 @@ class HouseownersController extends AppController
     public function ind_page(){
 
         $id=$this->request->pass[0];
-
 
         $options = array(
             'conditions' => array(
@@ -110,9 +109,11 @@ class HouseownersController extends AppController
         //ハウスキーパー情報をDBから取得
         $houseowner = $this->Houseowner->find('first', $options);
 
-
         $this->set('houseowner',$houseowner);
 
+
+
     }
+
 
 }

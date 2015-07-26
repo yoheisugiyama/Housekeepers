@@ -1,6 +1,9 @@
 
-
 $('body').append("<div id='glayLayer'></div>");
+
+$(document).ready(function(){
+    $('.bxslider').bxSlider();
+});
 
 
 $('.login .btn').click(function(){

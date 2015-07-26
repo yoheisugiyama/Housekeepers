@@ -31,6 +31,9 @@ class ImagesController extends AppController
 
             $this->redirect(array('controller'=>'Housekeepers', 'action' => 'index'));
 
+
+
+
         }
     }
 

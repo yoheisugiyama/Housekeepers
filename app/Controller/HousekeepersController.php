@@ -39,8 +39,6 @@ class HousekeepersController extends AppController
 
         $this->set('housekeepers', $this->paginate());
 
-
-
     }
 
     public function mypage()
@@ -67,11 +65,8 @@ class HousekeepersController extends AppController
             if(!$housekeeper){
 
             }else{
-
                 $this->set('housekeeper',$housekeeper);
-
                 $this->Session->write(array('id'=>$housekeeper['Housekeeper']['id']));
-
                 $this->request->data = $housekeeper;
             }
 

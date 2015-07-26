@@ -61,9 +61,10 @@
 
 <!-- Placed at the end of the document so the pages load faster -->
 <?php echo $this->Html->script('jquery-1.11.2.js'); ?>
+
 <?php echo $this->Html->script('main.js'); ?>
 <?php echo $this->Html->script('bootstrap.min.js'); ?>
-<?php echo $this->Html->script('jquery.bxslider.min.js'); ?>
+
 
 
 <?php echo $this->element('sql_dump'); ?>

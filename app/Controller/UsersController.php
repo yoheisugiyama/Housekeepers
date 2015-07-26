@@ -78,9 +78,7 @@ class UsersController extends AppController
                     //ページネーション画面へ遷移
                     $this->redirect(array('controller'=>'Houseowners','action'=>'index'));
                 }
-
             }else{
-
                     $this->Session->setFlash(__('ユーザー名とパスワードが正しくありません。もう一度試して下さい。'));
                     $this->redirect(array('controller'=>'Housekeepers','action'=>'index'));
             }
