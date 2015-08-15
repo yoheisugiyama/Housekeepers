@@ -1,11 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: YoheiSugiyama
- * Date: 15/04/12
- * Time: 17:07
- */
 
+/**
+ * @property Housekeeper $Housekeeper
+ */
 
 class HousekeepersController extends AppController
 {
@@ -22,7 +19,6 @@ class HousekeepersController extends AppController
 
     public function beforeFilter()
     {
-
         $this->set('user',$this->Auth->user());
 
     }
@@ -42,8 +38,6 @@ class HousekeepersController extends AppController
         );
 
         $this->set('housekeepers', $this->paginate());
-
-
 
     }
 
@@ -71,11 +65,8 @@ class HousekeepersController extends AppController
             if(!$housekeeper){
 
             }else{
-
                 $this->set('housekeeper',$housekeeper);
-
                 $this->Session->write(array('id'=>$housekeeper['Housekeeper']['id']));
-
                 $this->request->data = $housekeeper;
             }
 

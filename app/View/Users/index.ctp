@@ -1,26 +1,23 @@
 
 <div class="main">
+
     <div class="row">
     <div class="title">
         <h1>HouseKeepers</h1>
         <h2>近所の家事代行人を探し、家事代行を依頼しよう</h2>
     </div>
     <div class="login">        
-        <p>
-            <?php  echo $this->Form->button('ハウスオーナー登録', array('class'=>'btn btn-lg btn-success','type'=>'submit')); ?>
-        </p>
-        <p>
-            <?php  echo $this->Form->button('ハウスキーパー登録', array('class'=>'btn btn-lg btn-primary', 'type'=>'submit')); ?>
-        </p>
+        <?php  echo $this->Form->button('今すぐ新規登録！', array('class'=>'btn btn-lg btn-success register','type'=>'submit')); ?>
     </div>
     </div>
 </div>
 
 
-    <div id="overLayer">
-        <h2>会員登録</h2>
-        <?php echo $this->Form->create('User', array('action'=>'register'));?>
+<div id="overLayer">
+    <h3>会員登録</h3>
         <table class="table table-bordered">
+            <?php echo $this->Form->create('User', array('action'=>'register'));?>
+
             <thead>
             <tr>
                 <th class="">項目</th>
@@ -47,17 +44,34 @@
             </tr>
 
             <tr>
-                <th></th>
-                <td>
+                <td colspan="2">
                     <?php echo $this->Form->input('User.group_id', array('type'=>'hidden', 'value'=>false, 'id'=>'group_id'));?>
-                    <?php echo $this->Form->submit('確認', array('class'=>'btn btn-primary')) ?>
+                    <?php echo $this->Form->submit('確認', array('class'=>'btn btn-primary main-login')) ?>
                 </td>
             </tr>
             </tbody>
+            <?php echo $this->Form->end();?>
         </table>
-        <?php echo $this->Form->end();?>
-    </div>
+
+    <h3>ソーシャルアカウントで登録</h3>
+        <div class="social_register">
+            <?php echo $this->Form->create('Socialuser', array('url'=>'/auth/facebook'));?>
+            <?php $this->Form->hidden('Socialuser.provider', array('value'=>'facebook')); ?>
+            <div class="col-lg-6">
+                <?php  echo $this->Form->button('<i class="fa fa-facebook"></i>  Facebook', array('class'=>'btn btn-primary facebook-login', 'type'=>'submit')); ?>
+            </div>
+            <?php echo $this->Form->end();?>
+            <?php echo $this->Form->create('Socialuser', array('url'=>'/auth/twitter'));?>
+            <div class="col-lg-6">
+                <?php  echo $this->Form->button('<i class="fa fa-twitter"></i>  Twitter', array('class'=>'btn btn-primary twitter-login', 'type'=>'submit')); ?>
+            </div>
+            <?php echo $this->Form->end();?>
+        </div>
+
+
+
 </div>
+
 
 
 <hr>
@@ -93,6 +107,7 @@
             <div class="caption">
                 <?php echo $this->Html->image('souji_ofuro.png', array('alt'=>'souji_ofuro')) ?>
                 <h4>今なら会員登録無料!</h4>
+                <br>
                 <p>HouseKeepersのサービスは、期間限定で無料でお使いいただけます。</p>
             </div>
         </div>
@@ -105,17 +120,21 @@
 <div class="background">
     <div class="row">
         <h3>ハウスキーパーとは？ハウスオーナーとは？</h3>
+        <br/>
         <h4>ハウスキーパーとは</h4>
         <p>
             家事代行をする人のことを言います。当ページの上部にある「ハウスキーパー登録」のページより登録いた
             だいたユーザーはハウスキーパーとなります。ハウスキーパーは、FacebookまたはLinkedIn、運転免許証等
             による本人確認が必要となります。
         </p>
+        <br/>
         <h4>ハウスオーナーとは</h4>
         <p>
             家事代行を依頼する人のことを言います。住居は賃貸・購入を問いません。家事代行を依頼したい人であれ
             ばどなたでもハウスオーナー登録が可能です。
         </p>
+        <br/>
+        <br/>
     </div>
 </div>
 
@@ -125,24 +144,47 @@
 <div class="background_2">
     <div class="row">
         <h3>How To Use</h3>
+        <br/>
         <div class="col-lg-6">
-        <dl>
-            <dt>ハウスキーパーの場合</dt>
-            <dd>ハウスキーパーとして登録する</dd>
-            <dd>ハウスオーナーを探す</dd>
-            <dd>面談を設定する</dd>
-            <dd>トライアルを設定する</dd>
+            <div class="howtouse">
+                <?php echo $this->Html->image('kaiin.png',array('alt'=>'', 'width'=>'100px', 'height'=>'100px')) ?>
+            <dl class="howtouse_comment">
+                <dt>1. ハウスキーパー、またはハウスオーナーとして登録する</dt>
+                <br/>
+                <dd>まずは、今すぐ新規登録！より、ハウスキーパー、またはハウスオーナーとして登録いただきます。</dd>
+            </dl>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="howtouse">
+                <?php echo $this->Html->image('pagination.png',array('alt'=>'', 'width'=>'100px', 'height'=>'100px')) ?>
+                <dl class="howtouse_comment">
+                <dt>2. 条件に合ううハウスキーパー、またはハウスオーナーを探す</dt>
+                <br/>
+                <dd>絞り検索機能を存分に使っていただき、条件に合うハウスキーパー、またはハウスオーナーを納得の行くまで探していただきます。</dd>
+            </dl>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="howtouse">
+                <?php echo $this->Html->image('interview.png',array('alt'=>'', 'width'=>'100px', 'height'=>'100px')) ?>
+            <dl class="howtouse_comment">
+                <dt>3. 面談を設定する</dt>
+                <br/>
+                <dd>条件に合うハウスキーパー、ハウスオーナーが見つかりましたら、面談を設定いたします。面談の打診は、ハウスオーナーからハウスキーパーに対してのみならず、ハウスキーパーからハウスオーナーに対しても実施することができます。</dd>
+            </dl>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="howtouse">
+                <?php echo $this->Html->image('trial.png',array('alt'=>'','width'=>'100px', 'height'=>'100px')) ?>
+                <dl class="howtouse_comment">
+                <dt>4. トライアルを設定する</dt>
+                <br/>
+                <dd>面談の結果、お気に入りのハウスキーパー、ハウスオーナーが見つかりましたら、トライアルを設定いたします。トライアルの打診は、ハウスオーナーからハウスキーパーに対してのみならず、ハウスキーパーからハウスオーナーに対しても実施することができます。</dd>
+            </dl>
+            </div>
+        </div>
 
-        </dl>
-        </div>
-        <div class="col-lg-6" >
-        <dl>
-            <dt>ハウスオーナーの場合</dt>
-            <dd>ハウスオーナーとして登録する</dd>
-            <dd>ハウスオーナーを探す</dd>
-            <dd>面談を設定する</dd>
-            <dd>トライアルを設定する</dd>
-        </dl>
-        </div>
     </div>
 </div>

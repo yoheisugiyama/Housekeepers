@@ -78,6 +78,7 @@
                     <?php echo $this->Form->input('Housekeeper.salary', array('type'=>'text', 'label'=>false,'required'=>false, 'class'=>'form-control', 'id'=>'formGroupInput', 'placeholder'=>'希望報酬')); ?>
                 </div>
             </div>
+            
             <div class="form-group form-group-sm">
                 <label class="col-sm-6 control-label" for="formGroupInput">アピール</label>
                 <br>

@@ -42,13 +42,20 @@ class AppController extends Controller {
                     'userModel'=>'User',
                     'fields' => array('username' => 'email','password' => 'password')
                 )
-            )
+            ),
+
+            'loginRedirect'=>array('controller'=>'Housekeepers', 'action'=>'index'),
+            'logoutRedirect'=>array('controller'=>'Users', 'action'=>'login')
+
         ),
         //セッションコンポーネントの使用
         'Session',
 
         //デバッグキットの使用
-        'DebugKit.Toolbar'
+        'DebugKit.Toolbar',
+
+
+
     );
 
 

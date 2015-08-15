@@ -1,13 +1,13 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: YoheiSugiyama
- * Date: 15/05/03
- * Time: 15:35
+ * @property Image $Image
  */
+
 
 class ImagesController extends AppController
 {
+
 
     public function file_upload($id = null)
     {
@@ -30,6 +30,9 @@ class ImagesController extends AppController
             move_uploaded_file($image['tmp_name'], $path . DS . $image['name']);
 
             $this->redirect(array('controller'=>'Housekeepers', 'action' => 'index'));
+
+
+
 
         }
     }

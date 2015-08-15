@@ -34,6 +34,7 @@
     <div class="pagination">
         <div>
             <h3>ハウスキーパー一覧</h3>
+            <h3>検索条件：評価５</h3>
 
             <p>現在Housekeepersに登録しているハウスキーパー（家事代行をする人）の一覧ページです。現在<?php echo $this->Paginator->params()['count']; ?>人がHousekeeperとして登録しております。</p>
             <p>お目当てのハウスキーパーを探そう!</p>
@@ -44,27 +45,36 @@
             <?php foreach ($housekeepers as $row): ?>
               <div class="housekeeper">
                 <div class="thumb">
+                    <ul>       
+                    <li><?php echo h($row['Housekeeper']['surname'].$row['Housekeeper']['firstname']); ?>さん</li>
+                    </ul>
                     <?php
                          if(!isset($row['Image']['name'])){
                              echo $this->Html->image('no_image.png', array('url'=>array('action'=>'ind_page',$row['Housekeeper']['id']),'alt'=>'noimages','width'=>'100px', 'height'=>'100px', 'class'=>'thumbphoto')) ;
                          }else{
-                             echo $this->Html->image($row['Image']['name'], array('url'=>array('action'=>'ind_page',$row['Housekeeper']['id']),'alt'=>'noimages','width'=>'100px', 'height'=>'100px', 'class'=>'thumbphoto')) ;
+                             echo $this->Html->image($row['Image']['name'], array('url'=>array('action'=>'ind_page',$row['Housekeeper']['id']),'alt'=>'noimages','width'=>'120px', 'height'=>'120px', 'class'=>'thumbphoto')) ;
                          }
                     ?>
                     <?php ?>
+                    <ul>      
                 </div>
 
                 <div class="summary">
-                    <ol>
-                        <li>姓名：　<?php echo h($row['Housekeeper']['surname']); ?></li>
+                    <ul class="summary_left">
+                        <li>評価：<?php echo h($row['Housekeeper']['reputation']); ?></li>
+                        <br>
+                        <li>料金：<?php echo h($row['Housekeeper']['salary']); ?>円</li>
+                    </ul>
+                    <ul class="summary_right">
                         <li>性別：　<?php echo h($row['Housekeeper']['sex']); ?></li>
                         <li>経験年数：　<?php echo h($row['Housekeeper']['experience']); ?>年</li>
                         <li>最寄り駅：　<?php echo h($row['Housekeeper']['station']); ?></li>
-                    </ol>
+                        <li>コメント：　<?php echo h($row['Housekeeper']['appeal']); ?></li>
+                    </ul>
                 </div>
-              </div>
-                <br>
-            <?php endforeach; ?>
+            </div>
+             <br>
+           <?php endforeach; ?>
 
 
         <div class="paginator_bottom">

@@ -1,5 +1,4 @@
 <div class="container">
-
     <div class="ind_photo">
         <?php if(!$houseowner['Image']['name']){
 
@@ -81,9 +80,13 @@
             <div class="form-group form-group-sm">
                 <?php echo $this->Html->link('ファイルアップロード',array('controller'=>'images','action'=>'file_upload')); ?>
             </div>
+
+            <div>
+                <?php echo $this->Html->link(); ?>
+            </div>
+
+            <?php $this->Form ?>
         </div>
-
-
     </div>
 
 </div>

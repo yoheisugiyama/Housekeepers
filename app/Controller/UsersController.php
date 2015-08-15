@@ -1,33 +1,64 @@
 <?php
+
 /**
- * Created by PhpStorm.
- * User: YoheiSugiyama
- * Date: 15/01/25
- * Time: 13:31
+ * @property User $User
  */
+
 
 class UsersController extends AppController
 {
 
 
     //利用するモデルの定義
-    public $uses = array('User');
+    public $uses = array('User','Socialuser');
 
 
     public function beforeFilter()
     {
-//        $this->Auth->allow('index');
+      $this->Auth->allow('index', 'opauth_complete');
 
-        if($this->params['action'] == 'opauth_complete') {
-            $this->Security->csrfCheck = false;
-            $this->Security->validatePost = false;
-        }
+
     }
 
 
     public function opauth_complete() {
-        debug($this->data);
+
+        $social_user=array(
+            'Socialuser'=>array(
+                'uid'=> $this->data['auth']['uid'],
+                'provider'=> $this->data['auth']['provider'],
+            )
+        );
+
+        $user=array(
+            'User'=> array(
+                'name'=>$this->data['auth']['info']['name'],
+                'email'=>'',
+                'password'=>''
+            )
+        );
+
+        $this->Socialuser->create();
+        $this->Socialuser->save($social_user);
+
+        //ユーザーテーブルにも保存
+        $this->User->create();
+        $this->User->save($user);
+
+//        unset($userdata['User']['password']);
+
+        //強制ログイン
+
+        $this->Auth->login($user['User']);
+
+        $this->Session->setFlash('ユーザー登録が完了しました。');
+
+        $this->redirect(array('controller'=>'Housekeepers','action'=>'index'));
+//        $this->redirect($this->Auth->redirect());
+
+
     }
+
 
     public function login()
     {
@@ -48,11 +79,11 @@ class UsersController extends AppController
                     //ページネーション画面へ遷移
                     $this->redirect(array('controller'=>'Houseowners','action'=>'index'));
                 }
-
-
-            } else {
-                $this->Session->setFlash(__('ユーザー名とパスワードが正しくありません。もう一度試して下さい。'));
+            }else{
+                    $this->Session->setFlash(__('ユーザー名とパスワードが正しくありません。もう一度試して下さい。'));
+                    $this->redirect(array('controller'=>'Housekeepers','action'=>'index'));
             }
+
         }
     }
 
@@ -64,6 +95,10 @@ class UsersController extends AppController
         $this->redirect(array('controller'=>'Users','action'=>'login'));
     }
 
+    /**
+     * @param null $id
+     * @throws Exception
+     */
     public function register($id=null){
 
         // フォーム入力があった場合には保存処理。
@@ -75,8 +110,10 @@ class UsersController extends AppController
                 }
             }
             if($this->User->save($this->request->data)){
+
                 $this->Session->setFlash('ユーザー情報を保存しました');
-                $this->redirect(array('action'=>'login'));
+
+                $this->redirect(array('controller'=>'Housekeepers', 'action'=>'index'));
             }else{
                 $this->Session->setFlash('入力に間違いがあります');
             }
