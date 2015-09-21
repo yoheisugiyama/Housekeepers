@@ -44,82 +44,35 @@
 
 
         <div>
+
+
             <ul class="housekeeper_row">
+                <?php for($i=0; $i<3; $i++) : ?>
                 <li class="housekeeper_profile">
                     <div class="photo">
-                        <?php echo $this->Html->image('housekeeper.png'); ?>
+                        <?php
+                        if(!isset($housekeepers[$i]['Image']['name'])){
+                            echo $this->Html->image('no_image.png', array('url'=>array('action'=>'ind_page',$housekeepers[$i]['Housekeeper']['id']),'alt'=>'noimages')) ;
+                        }else{
+                            echo $this->Html->image($housekeepers[$i]['Image']['name'], array('url'=>array('action'=>'ind_page',$housekeepers[$i]['Housekeeper']['id']),'alt'=>'noimages')) ;
+                        }
+                        ?>
+                        <?php ?>
                     </div>
                     <div class="profile">
-                        <h5>遠藤久美</h5>
+                        <h5><?php echo h($housekeepers[$i]['Housekeeper']['surname'].$housekeepers[$i]['Housekeeper']['firstname']); ?></h5>
                         <hr/>
-                        <h6>吉祥寺在住！成蹊大学生</h6>
+                        <h6><?php echo h($housekeepers[$i]['Housekeeper']['comment']); ?></h6>
                         <hr/>
-                        <h6>料理大好きの大学１年生です！吉祥寺近辺に住んでいるので、中央線、井の頭沿線のご家族様の料理を承ります！</h6>
+                        <h6><?php echo h($housekeepers[$i]['Housekeeper']['appeal']); ?></h6>
                         </p>
                     </div>
                 </li>
-                <li class="housekeeper_profile">
-                    <div class="photo">
-                        <?php echo $this->Html->image('housekeeper_2.png'); ?>
-                    </div>
-                    <div class="profile">
-                        <h5>小池純平</h5>
-                        <hr/>
-                        <h6>慶応大学体育会ラグビー部所属！力技得意！</h6>
-                        <hr/>
-                        <h6>肉体労働得意です！引っ越しのお手伝いいたします！東京都大田区、目黒区、品川区と神奈川県川崎市の引っ越しのお手伝いをいたします！</h6>
-                        </p>
-                    </div>
-                </li>
-                <li class="housekeeper_profile">
-                    <div class="photo">
-                        <?php echo $this->Html->image('housekeeper_3.png'); ?>
-                    </div>
-                    <div class="profile">
-                        <h5>Cary Jensen</h5>
-                        <hr/>
-                        <h6>ハウスキーパー歴８年のロシア人ベテランハウスキーパー！</h6>
-                        <hr/>
-                        <h6>ロシア・アメリカ・日本でハウスキーパーを８年間やってきました！各国料理作れます！また、特に水回りを綺麗にするのが得意です！</h6>
-                        </p>
-                    </div>
-                </li>
+                <?php endfor; ?>
             </ul>
         </div>
-        
 
-<!---->
-<!--            --><?php //foreach ($housekeepers as $row): ?>
-<!--              <div class="housekeeper">-->
-<!--                <div class="thumb">-->
-<!--                    --><?php
-//                         if(!isset($row['Image']['name'])){
-//                             echo $this->Html->image('no_image.png', array('url'=>array('action'=>'ind_page',$row['Housekeeper']['id']),'alt'=>'noimages','width'=>'100px', 'height'=>'100px', 'class'=>'thumbphoto')) ;
-//                         }else{
-//                             echo $this->Html->image($row['Image']['name'], array('url'=>array('action'=>'ind_page',$row['Housekeeper']['id']),'alt'=>'noimages','width'=>'120px', 'height'=>'120px', 'class'=>'thumbphoto')) ;
-//                         }
-//                    ?>
-<!--                    --><?php //?>
-<!--                    <ul>      -->
-<!--                </div>-->
-<!---->
-<!--                <div class="summary">-->
-<!--                    <ul class="summary_left">-->
-<!--                        <li>評価：--><?php //echo h($row['Housekeeper']['reputation']); ?><!--</li>-->
-<!--                        <br>-->
-<!--                        <li>料金：--><?php //echo h($row['Housekeeper']['salary']); ?><!--円</li>-->
-<!--                    </ul>-->
-<!--                    <ul class="summary_right">-->
-<!--                        <li>性別：　--><?php //echo h($row['Housekeeper']['sex']); ?><!--</li>-->
-<!--                        <li>経験年数：　--><?php //echo h($row['Housekeeper']['experience']); ?><!--年</li>-->
-<!--                        <li>最寄り駅：　--><?php //echo h($row['Housekeeper']['station']); ?><!--</li>-->
-<!--                        <li>コメント：　--><?php //echo h($row['Housekeeper']['appeal']); ?><!--</li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--             <br>-->
-<!--           -->
-<!---->
+
 
         <div class="paginator_bottom">
             <?php echo $this->Paginator->counter(); ?><br/>

@@ -33,6 +33,12 @@ $("#glayLayer").click(function(){
 });
 
 
+$(document).ready(function() {
+    $('#fc1').fullCalendar({})
+});
+
+
+
 
 
 

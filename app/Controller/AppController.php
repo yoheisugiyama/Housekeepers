@@ -55,8 +55,13 @@ class AppController extends Controller {
         'DebugKit.Toolbar',
 
 
-
     );
 
+
+    public function beforeRender(){
+        //Numberヘルパーを使用する際、円マークが表示されるようにする！
+        App::uses('CakeNumber', 'Utility');
+        CakeNumber::addFormat('JPY', array('before' => '¥', 'places' => 0));
+    }
 
 }

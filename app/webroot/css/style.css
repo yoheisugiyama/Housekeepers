@@ -605,19 +605,32 @@ legend{
 }
 
 
+.ind_page h3{
+    text-align: left;
+    font-weight: bold;
+}
 
-.ind_photo{
+
+.ind_column{
     float: left;
     width:30%;
     margin-top: 50px;
-
 }
+
+
 
 .ind_contents{
   float: left;
   width: 60%;
   margin: 0px 40px;
 
+}
+
+.ind_contents h4{
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    color: grey;
 }
 
 caption{
@@ -649,8 +662,8 @@ caption{
 }
 
 .message{
-    width: 50%;
-    margin: 0 auto;
+    width: 84%;
+    margin:0 auto;
 }
 
 .thread{

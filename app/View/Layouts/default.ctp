@@ -14,6 +14,7 @@
 
     <!-- Bootstrap core CSS -->
     <?php echo $this->Html->css('bootstrap', null, array('media'=>"screen, projection")); ?>
+    <?php echo $this->Html->css('fullcalendar', null, array("screen, projection")); ?>
     <?php echo $this->Html->css('style', null, array("screen, projection")); ?>
 
     <!-- Fontawesome CSS -->
@@ -61,6 +62,7 @@
 
 <!-- Placed at the end of the document so the pages load faster -->
 <?php echo $this->Html->script('jquery-1.11.2.js'); ?>
+<?php echo $this->Html->script('fullcalendar.min.js'); ?>
 
 <?php echo $this->Html->script('main.js'); ?>
 <?php echo $this->Html->script('bootstrap.min.js'); ?>
