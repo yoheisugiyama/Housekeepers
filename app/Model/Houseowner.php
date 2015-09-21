@@ -29,6 +29,21 @@ class Houseowner extends AppModel
 
     );
 
+    public $validate = array(
+        'surname' =>array(
+            'rule' =>'notEmpty',
+            'required' =>true,
+            'message' =>'苗字は必須です。'
+        ),
+        'firstname' =>array(
+            'rule' =>'notEmpty',
+            'required' =>true,
+            'message' =>'名前は必須です。'
+        ),
+
+
+    );
+
 
 
 }

@@ -7,7 +7,7 @@
         <h2>近所の家事代行人を探し、家事代行を依頼しよう</h2>
     </div>
     <div class="login">        
-        <?php  echo $this->Form->button('今すぐ新規登録！', array('class'=>'btn btn-lg btn-success register','type'=>'submit')); ?>
+        <?php  echo $this->Form->button('家事代行を依頼する', array('class'=>'btn btn-lg btn-success register','type'=>'submit')); ?>
     </div>
     </div>
 </div>
@@ -78,16 +78,17 @@
 
 <div class="row">
 
-    <h3>HouseKeepersは、家事代行依頼人と家事代行人をマッチングさせるサービスです</h3>
-    <h4>HouseKeepersは、より多くの方々に、安心して安価に家事代行をご利用いただくための</h4>
-    <h4>オンラインプラットフォームです。</h4>
+    <h3 class="midashi_1">HouseKeepersは、家事代行依頼人と家事代行人をマッチングさせるサービスです</h3>
+    <h4 class="midashi_2">HouseKeepersは、より多くの方々に、安心して安価に家事代行をご利用いただくための</h4>
+    <h4 class="midashi_2">オンラインプラットフォームです。</h4>
+
     <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
             <img src="" alt="" class="koumoku">
             <div class="caption">
                 <?php echo $this->Html->image('cleaning_seiketsu.png', array('alt'=>'cleaning_seiketsu')) ?>
-                <h4>業界最低水準！1500円〜家事代行を依頼！</h4>
-                <p>近年、多くの家事代行業者が登場し、以前に比べて安価になったとは言えるものの１時間２５００円以上するものも多く、高所得者でないと手に届きにくいと言えます。HouseKeepersは家事代行依頼人と家事代行人のマッチングに特化することにより、１時間１５００円〜の家事代行サービスのご利用を実現いたします。</p>
+                <h4>業界最低水準！1,500円〜家事代行を依頼！</h4>
+                <p>HouseKeepersは家事代行依頼人と家事代行人のマッチングに特化することにより、１時間１,５００円〜の家事代行サービスのご利用を実現いたします。</p>
             </div>
         </div>
     </div>
@@ -97,7 +98,7 @@
             <div class="caption">
                 <?php echo $this->Html->image('cleaning_seiri.png', array('alt'=>'cleaning_seiri')) ?>
                 <h4>業界初！安心の直接面接及びトライアル方式</h4>
-                <p>家事代行業界初の直接面接及びトライアル方式を採用しております。即ち、家事代行人または家事代行依頼人を検索した後、本契約前に、ご希望に応じてお目当ての面接またはトライアルを打診し、相手がOKであれば実施することが可能です。こうしたステップを踏むことで、より安心して家事代行人、家事代行依頼人との契約に移行できます。</p>
+                <p>家事代行業界初の直接面接及びトライアル方式を採用しております。本契約前にこうしたステップを踏むことで、より安心して家事代行人、家事代行依頼人との契約に移行できます。</p>
             </div>
         </div>
     </div>
@@ -106,9 +107,8 @@
             <img src="" alt="" class="koumoku">
             <div class="caption">
                 <?php echo $this->Html->image('souji_ofuro.png', array('alt'=>'souji_ofuro')) ?>
-                <h4>今なら会員登録無料!</h4>
-                <br>
-                <p>HouseKeepersのサービスは、期間限定で無料でお使いいただけます。</p>
+                <h4>今ならプラットフォーム利用料無料でお使いいただけます!</h4>
+                <p>HouseKeepersのサービスは、ユーザー様1,000名に達するまでは、無料でお使いいただけます(ユーザー様1,000名突破後は１回のご利用につき150円の手数料がかかります。）</p>
             </div>
         </div>
     </div>

@@ -81,11 +81,8 @@
                 <?php echo $this->Html->link('ファイルアップロード',array('controller'=>'images','action'=>'file_upload')); ?>
             </div>
 
-            <div>
-                <?php echo $this->Html->link(); ?>
-            </div>
 
-            <?php $this->Form ?>
+
         </div>
     </div>
 

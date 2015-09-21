@@ -46,6 +46,8 @@ class HousekeepersController extends AppController
         $user = $this->Auth->user();
         $id = $user['id'];
 
+        debug($user);
+
         $this->set('user_id',$id);
 
         //最初にmypqgeにアクセスした場合
@@ -118,6 +120,7 @@ class HousekeepersController extends AppController
         $id = $user['id'];
 
         $this->set('user_id',$id);
+
     }
 
 }
