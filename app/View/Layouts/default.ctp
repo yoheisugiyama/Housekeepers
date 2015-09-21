@@ -14,7 +14,7 @@
 
     <!-- Bootstrap core CSS -->
     <?php echo $this->Html->css('bootstrap', null, array('media'=>"screen, projection")); ?>
-    <?php echo $this->Html->css('fullcalendar', null, array("screen, projection")); ?>
+    <?php echo $this->Html->css('fullcalendar.min', null, array("screen, projection")); ?>
     <?php echo $this->Html->css('style', null, array("screen, projection")); ?>
 
     <!-- Fontawesome CSS -->
@@ -29,7 +29,12 @@
 
     <!-- Custom styles for this template -->
 
+
+</head>
+
 <body>
+
+
 
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="row">
@@ -53,6 +58,7 @@
     </div>
 </nav>
 
+
 <?php echo $this->Session->flash(); ?>
 <?php echo $this->fetch('content'); ?>
 
@@ -61,13 +67,12 @@
 </footer>
 
 <!-- Placed at the end of the document so the pages load faster -->
+
 <?php echo $this->Html->script('jquery-1.11.2.js'); ?>
-<?php echo $this->Html->script('fullcalendar.min.js'); ?>
-
-<?php echo $this->Html->script('main.js'); ?>
 <?php echo $this->Html->script('bootstrap.min.js'); ?>
-
-
+<?php echo $this->Html->script('fullcalendar.min.js'); ?>
+<?php echo $this->Html->script('moment.min.js'); ?>
+<?php echo $this->Html->script('main.js'); ?>
 
 <?php echo $this->element('sql_dump'); ?>
 </body>

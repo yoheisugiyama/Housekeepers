@@ -40,11 +40,7 @@
             <p>お目当てのハウスキーパーを探そう!</p>
         </div>
         <hr/>
-
-
-
         <div>
-
 
             <ul class="housekeeper_row">
                 <?php for($i=0; $i<3; $i++) : ?>

@@ -1,5 +1,8 @@
 
+
 <div class="row">
+
+
 
     <p class="user"><?php echo $user['name']; ?>さん、こんにちは！</p>
 
@@ -15,8 +18,8 @@
 
             <br/>
 
-            <div id="fc1" class="fc"></div>
 
+            <div id="calendar"></div>
         </div>
 
 
@@ -76,4 +79,10 @@
 
     </div>
 </div>
+
+<script type="text/javascript">
+
+    $('calendar').fullCalendar();
+
+</script>
 

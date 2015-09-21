@@ -1,8 +1,14 @@
 
 $('body').append("<div id='glayLayer'></div>");
 
-$(document).ready(function(){
-    $('.bxslider').bxSlider();
+$(document).ready(function() {
+
+    // page is now ready, initialize the calendar...
+
+    $('#calendar').fullCalendar({
+        // put your options and callbacks here
+    })
+
 });
 
 
@@ -33,9 +39,7 @@ $("#glayLayer").click(function(){
 });
 
 
-$(document).ready(function() {
-    $('#fc1').fullCalendar({})
-});
+
 
 
 
