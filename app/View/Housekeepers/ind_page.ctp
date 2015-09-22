@@ -25,15 +25,11 @@
 
         <div class="ind_contents">
             <table class="ind_info table table-striped">
-                <caption>ハウスキーパー<?php echo h($housekeeper['Housekeeper']['surname'].$housekeeper['Housekeeper']['firstname'] ); ?>さんのプロフィール</caption>
+                <caption>ハウスキーパー <?php echo h($housekeeper['Housekeeper']['surname'].' '.$housekeeper['Housekeeper']['firstname'] ); ?>さんのプロフィール</caption>
                 <tbody>
                 <tr>
-                    <td class="ind_table_caption">氏</td>
-                     <td class="ind_table_info"><?php echo h($housekeeper['Housekeeper']['surname']); ?></td>
-                </tr>
-                <tr>
-                    <td>名</td>
-                     <td><?php echo h($housekeeper['Housekeeper']['firstname']); ?></td>
+                    <td class="ind_table_caption">ハウスキーパー</td>
+                     <td class="ind_table_info"><?php echo h($housekeeper['Housekeeper']['surname'].' '.$housekeeper['Housekeeper']['firstname']); ?></td>
                 </tr>
                 <tr>
                     <td>ニックネーム</td>
@@ -45,7 +41,7 @@
                 </tr>
                 <tr>
                     <td>ハウスキーパー経験年数</td>
-                     <td><?php echo h($housekeeper['Housekeeper']['experience']); ?></td>
+                     <td><?php echo h($housekeeper['Housekeeper']['experience']); ?>年</td>
                 </tr>
                 </tbody>
             </table>
@@ -64,6 +60,8 @@
 
                 </dl>
             </div>
+
+
      <div>
          <?php echo $this->Form->create('Message', array('action'=>'index')); ?>
 

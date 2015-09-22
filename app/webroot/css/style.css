@@ -469,11 +469,13 @@ div.caption p{
 
 
 .pagination {
-    width: 80%;
+    width: 75%;
     margin: 10px 0px;
-    padding: 0px 0px 0px 50px;
+    padding: 0px 0px 50px 0px;
     border-radius: 0;
+
 }
+
 
 
 .form-horizontal .control-label{
@@ -481,6 +483,12 @@ div.caption p{
 }
 
 
+.pagination h2{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+    color: grey;
+}
 
 .search_bar h3,
 .pagination h3{
@@ -490,6 +498,57 @@ div.caption p{
 
 .pagination p{
     text-align: left;
+}
+
+.profile{
+    width: 100%;
+    margin: 10px 0px;
+    padding: 0px 0px 0px 0px;
+    border-radius: 0;
+
+}
+
+.profile p{
+    text-align: left;
+}
+
+ul.tab{
+    padding:0;
+}
+ul.tab li{
+    list-style-type:none;
+    width:100px;
+    height:40px;
+    float:left;
+    display: block;
+    border: solid 1px #9FB7D4;
+    border-radius: 3px;
+    border-bottom: none;
+
+}
+ul.tab li a{
+    outline:none;
+    display:block;
+    color:blue;
+    line-height:40px;
+    text-align:center;
+
+}
+ul.tab li a.selected{
+    text-decoration:none;
+    color:#333;
+    cursor:default;
+}
+ul.panel{
+    clear:both;
+    border:1px solid #9FB7D4;
+    padding:0;
+}
+ul.panel li{
+    list-style-type:none;
+    padding:10px;
+    text-indent:1em;
+    color:#333;
 }
 
 legend{

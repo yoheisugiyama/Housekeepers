@@ -7,7 +7,7 @@
 class HouseownersController extends AppController
 {
     //利用するモデルの定義
-    public $uses = array('Houseowner');
+    public $uses = array('Houseowner', 'Sex');
 
     public $helpers = array('Html', 'Form');
 
@@ -54,6 +54,10 @@ class HouseownersController extends AppController
 
             //ハウスキーパー情報をDBから取得
             $houseowner = $this->Houseowner->find('first', $options);
+
+            $sex=$this->Sex->find('all');
+            $this->set('sex', $sex);
+
 
             if(!$houseowner){
                 //ハウスオーナープロフィール登録がまだの場合
