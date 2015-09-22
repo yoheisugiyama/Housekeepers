@@ -53,6 +53,12 @@ body{
 
 }
 
+
+hr{
+    margin-top: 0;
+
+}
+
 @media(max-width:960px){
 .row{
     width: 768px;
@@ -79,7 +85,7 @@ body{
 }
 
 .logo{
-    margin-top: 20px;
+    margin-top: 10px;
     float:left;
     text-align: left;
 }
@@ -94,6 +100,9 @@ body{
 }
 
 
+.navi{
+    margin-top: 20px;
+}
 
 
 ul.nav-right{
@@ -102,16 +111,34 @@ ul.nav-right{
     display:inline;
     margin-top:10px;
     font-size: 18px;
-    width:500px;
-
+    width:300px;
 }
 
-.nav>li,.nav-right>li{
+ul.nav-right_2 {
+    list-style-type: none;
+    float: right;
+    display:inline;
+    margin-top:10px;
+    font-size: 18px;
+    width:400px;
+}
+
+ul.nav-right_3 {
+    list-style-type: none;
+    float: right;
+    display:inline;
+    margin-top:10px;
+    font-size: 18px;
+    width:400px;
+}
+
+
+.nav>li,.nav-right>li, .nav-right_2>li, .nav-right_3>li{
     float:left;    
 }
 
 
-.nav>li a, .nav-right>li a{
+.nav>li a, .nav-right>li a, .nav-right_2>li a, .nav-right_3>li a{
     color:white;
     position: relative;
     display: block;
@@ -235,7 +262,7 @@ body{
     border-top: solid;
     border-top-width: 10px;
     border-color: #e9ebed;
-    margin-top: 100px;
+    margin-top: 70px;
     font-family: 'Open Sans', sans-serif;
 
 }
@@ -354,9 +381,6 @@ dt{
     font-size: 18px !important;
 }
 
-hr{
-    margin: 0 0 50px 0;
-}
 
 .alert{
     clear: both;
@@ -397,7 +421,7 @@ hr{
 }
 
 .thumbnail:hover{
-    background-color: #486b9b;
+    background-color:#a5b6bc;
     color: white;
 }
 
@@ -462,7 +486,7 @@ div.caption p{
 
 .search_bar{
     width: 20%;
-    padding:10px;
+    margin-top:10px;
     float: left;
 
 }
@@ -470,7 +494,7 @@ div.caption p{
 
 .pagination {
     width: 75%;
-    margin: 10px 0px;
+    margin: 10px 0px 0px 50px;
     padding: 0px 0px 50px 0px;
     border-radius: 0;
 
@@ -493,6 +517,7 @@ div.caption p{
 .search_bar h3,
 .pagination h3{
     text-align: left;
+    margin-bottom: 0px;
 }
 
 
@@ -669,6 +694,16 @@ legend{
     font-weight: bold;
 }
 
+.ind_page h4{
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    color: grey;
+}
+
+.ind_page p{
+    text-align: left;
+}
 
 .ind_column{
     float: left;
@@ -685,12 +720,6 @@ legend{
 
 }
 
-.ind_contents h4{
-    text-align: left;
-    font-size: 20px;
-    font-weight: bold;
-    color: grey;
-}
 
 caption{
     color:grey;
@@ -704,6 +733,22 @@ caption{
 
 .ind_table_info{
     width:70%;
+}
+
+.housekeeper_request,.profile,.ind_photo{
+    margin-top: 50px;
+}
+
+
+.profile h4,.housekeeper_request h4{
+    text-align: left;
+    font-size: 20px;
+}
+
+.profile p,.housekeeper_request p{
+    text-align: left;
+    font-size: 14px;
+
 }
 
 .private_message{

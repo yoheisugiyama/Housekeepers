@@ -11,15 +11,22 @@
 
 
     <div class="search_bar">
-        <h3>検索</h3>
+        <h3>条件を絞り込む</h3>
             <?php echo $this->Form->create('Housekeeper', array('action'=>'index')); ?>
+        <br>
         <fieldset>
+            <legend>時給で絞り込む</legend>
+            <?php echo $this->Form->select('Housekeeper.salary',array('1' => '1,500円~2,000円', '2' => '2,500円~3,000円', '3' => '3,000円~3,500円', '4' => '3,500円~4,000円')); ?>
+            <br>
+            <br>
             <legend>経験年数</legend>
             <?php echo $this->Form->select('Housekeeper.experience',array('1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9','10' => '10')); ?>
             <br>
             <br>
             <legend>最寄り駅</legend>
             <?php echo $this->Form->input('Housekeeper.station', array('label' => '駅', 'empty' => true)); ?>
+            <br>
+            <br>
             <legend>性別</legend>
             <?php echo $this->Form->select('Housekeeper.sex',array('男' => '男', '女' => '女')); ?>
             <br>
@@ -34,8 +41,6 @@
     <div class="pagination">
         <div>
             <h3>ハウスキーパー一覧</h3>
-            <h3>検索条件：評価５</h3>
-
             <p>現在Housekeepersに登録しているハウスキーパー（家事代行をする人）の一覧ページです。現在<?php echo $this->Paginator->params()['count']; ?>人がHousekeeperとして登録しております。</p>
             <p>お目当てのハウスキーパーを探そう!</p>
         </div>

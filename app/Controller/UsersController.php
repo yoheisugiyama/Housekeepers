@@ -15,8 +15,13 @@ class UsersController extends AppController
 
     public function beforeFilter()
     {
-      $this->Auth->allow('index', 'opauth_complete');
+        $this->Auth->allow('index', 'opauth_complete');
 
+        if ($this->Auth->user()) {
+            $this->layout = 'user';
+        } else {
+            $this->layout = 'default';
+        }
 
     }
 

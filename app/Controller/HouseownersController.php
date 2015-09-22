@@ -7,7 +7,7 @@
 class HouseownersController extends AppController
 {
     //利用するモデルの定義
-    public $uses = array('Houseowner', 'Sex');
+    public $uses = array('Houseowner', 'Sex','Housekeeper');
 
     public $helpers = array('Html', 'Form');
 
@@ -55,8 +55,6 @@ class HouseownersController extends AppController
             //ハウスキーパー情報をDBから取得
             $houseowner = $this->Houseowner->find('first', $options);
 
-            $sex=$this->Sex->find('all');
-            $this->set('sex', $sex);
 
 
             if(!$houseowner){
@@ -116,9 +114,44 @@ class HouseownersController extends AppController
         $this->set('houseowner',$houseowner);
 
 
+    }
+
+
+    public function housekeeper_request(){
+
+        // リクエストを送るハウスキーパーの情報
+
+        $housekeeper_id=$this->request->data['Houseowner']['housekeeper_request'];
+
+        $options = array(
+            'conditions' => array(
+                'Housekeeper.id' => $housekeeper_id
+            ),
+        );
+
+        $housekeeper= $this->Housekeeper->find('first', $options);
+
+        $this->set('housekeeper', $housekeeper);
+
+        //　当該ユーザー（ハウスオーナー）の情報
+        $user = $this->Auth->user();
+        $user_id = $user['id'];
+        $this->set('user_id',$user_id);
+
+        $options = array(
+            'conditions' => array(
+                'Houseowner.user_id' => $user_id
+            ),
+            'order'=>'Houseowner.id',
+            'recursive'=>1
+        );
+
+        //ハウスキーパー情報をDBから取得
+        $houseowner = $this->Houseowner->find('first', $options);
+        $this->set('houseowner',$houseowner);
+        $this->request->data = $houseowner;
 
 
     }
-
 
 }

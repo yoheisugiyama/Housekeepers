@@ -3,7 +3,6 @@
 <div class="row">
 
 
-
     <p class="user"><?php echo $user['name']; ?>さん、こんにちは！</p>
 
     <br/>
@@ -15,17 +14,45 @@
             <div class="ind_photo">
                 <?php echo $this->Html->image($housekeeper['Image']['name'], array('width'=>'300px', 'height'=>'300px')); ?>
             </div>
+            <br/>
+            <div>
+                <h4>ハウスキーパー利用希望日時</h4>
+            <hr/>
+                <div id="calendar">
+                </div>
+            </div>
+            <br/>
+            <div>
+                <h4>ご利用料金</h4>
+                <hr/>
+                <p><?php echo $this->Number->currency($housekeeper['Housekeeper']['salary'], 'JPY'); ?> x ご利用時間</p>
+            </div>
+
+
+
+            <div>
+                <?php echo $this->Form->create('Houseowner', array('action'=>'housekeeper_request')); ?>
+                <?php echo $this->Form->input('housekeeper_request', array('type'=>'hidden', 'value'=>$housekeeper['Housekeeper']['id'])); ?>
+                <?php echo $this->Form->end(array('label'=>'予約フォームへ','class'=>'btn btn-success message')); ?>
+            </div>
 
             <br/>
+            <br/>
 
+            <div>
+                <?php echo $this->Form->create('Message', array('action'=>'index')); ?>
+                <?php echo $this->Form->input('sendee_id', array('type'=>'hidden', 'value'=>$housekeeper['Housekeeper']['id'])); ?>
+                <?php echo $this->Form->end(array('label'=>'メッセージを送る','class'=>'btn btn-warning message')); ?>
 
-            <div id="calendar"></div>
+            </div>
+
         </div>
 
 
         <div class="ind_contents">
+            <h4>ハウスキーパー <?php echo h($housekeeper['Housekeeper']['surname'].' '.$housekeeper['Housekeeper']['firstname'] ); ?>さんのプロフィール</h4>
+            <hr/>
             <table class="ind_info table table-striped">
-                <caption>ハウスキーパー <?php echo h($housekeeper['Housekeeper']['surname'].' '.$housekeeper['Housekeeper']['firstname'] ); ?>さんのプロフィール</caption>
                 <tbody>
                 <tr>
                     <td class="ind_table_caption">ハウスキーパー</td>
@@ -43,6 +70,11 @@
                     <td>ハウスキーパー経験年数</td>
                      <td><?php echo h($housekeeper['Housekeeper']['experience']); ?>年</td>
                 </tr>
+                <tr>
+                    <td>得意分野</td>
+                    <td></td>
+                </tr>
+
                 </tbody>
             </table>
 
@@ -50,6 +82,7 @@
             <br/>
             <div>
                 <h4>自己紹介</h4>
+                <hr/>
                 <dl>
                     <dt>自己PR</dt>
                     <dd><?php echo h($housekeeper['Housekeeper']['appeal']); ?></dd>
@@ -61,26 +94,18 @@
                 </dl>
             </div>
 
+            <br/>
+            <br/>
+            <div>
+                <h4>ご利用者の声</h4>
 
-     <div>
-         <?php echo $this->Form->create('Message', array('action'=>'index')); ?>
+            </div>
 
-         <?php echo $this->Form->input('sendee_id', array('type'=>'hidden', 'value'=>$housekeeper['Housekeeper']['id'])); ?>
-
-
-         <?php echo $this->Form->end(array('label'=>'メッセージを送る','class'=>'btn btn-warning message')); ?>
-
-
-     </div>
 
     </div>
 
     </div>
 </div>
 
-<script type="text/javascript">
 
-    $('calendar').fullCalendar();
-
-</script>
 

@@ -21,6 +21,12 @@ class HousekeepersController extends AppController
     {
         $this->set('user',$this->Auth->user());
 
+        if ($this->Auth->user()) {
+            $this->layout = 'user';
+        } else {
+            $this->layout = 'default';
+        }
+
     }
 
     public function index(){

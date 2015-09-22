@@ -64,4 +64,5 @@ class AppController extends Controller {
         CakeNumber::addFormat('JPY', array('before' => '¥', 'places' => 0));
     }
 
+
 }
