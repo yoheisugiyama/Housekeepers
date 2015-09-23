@@ -16,6 +16,16 @@ class HouseownersController extends AppController
 
     public $presetVars = true;
 
+
+    public function beforeFilter(){
+        if ($this->Auth->user()) {
+            $this->layout = 'user';
+        } else {
+            $this->layout = 'default';
+        }
+
+    }
+
     public function index(){
         //ハウスオーナー一覧をページネーションで表示
         // Search PluginのPOSTデータのバリデーションを実施

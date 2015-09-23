@@ -9,6 +9,15 @@ class MessagesController extends AppController
 
     public $uses=array('Message', 'MessageThread','Housekeeper');
 
+    public function beforeFilter(){
+        if ($this->Auth->user()) {
+            $this->layout = 'user';
+        } else {
+            $this->layout = 'default';
+        }
+
+    }
+
     public function index()
     {
         //sendee_idはhousekeeper_idまたはhouseowner_id

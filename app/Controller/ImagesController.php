@@ -8,6 +8,14 @@
 class ImagesController extends AppController
 {
 
+    public function beforeFilter(){
+        if ($this->Auth->user()) {
+            $this->layout = 'user';
+        } else {
+            $this->layout = 'default';
+        }
+
+    }
 
     public function file_upload($id = null)
     {

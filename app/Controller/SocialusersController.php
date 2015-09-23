@@ -8,6 +8,14 @@ class SocialusersController extends AppController{
 
     public $uses = array('User','Socialuser');
 
+    public function beforeFilter(){
+        if ($this->Auth->user()) {
+            $this->layout = 'user';
+        } else {
+            $this->layout = 'default';
+        }
+
+    }
 
 //    public $components = array(
 //
