@@ -1,2 +1,4 @@
 [21-Sep-2015 19:31:26 Asia/Tokyo] PHP Fatal error:  Call to undefined function array_column() in /vagrant/Housekeepers/app/Controller/MessagesController.php on line 87
 [22-Sep-2015 14:05:50 Asia/Tokyo] PHP Fatal error:  Call to undefined function array_column() in /vagrant/Housekeepers/app/Controller/MessagesController.php on line 87
+[23-Sep-2015 15:02:13 Asia/Tokyo] PHP Fatal error:  Call to undefined function array_column() in /vagrant/Housekeepers/app/Controller/MessagesController.php on line 96
+[23-Sep-2015 16:13:30 Asia/Tokyo] PHP Fatal error:  Call to undefined function array_column() in /vagrant/Housekeepers/app/Controller/MessagesController.php on line 96

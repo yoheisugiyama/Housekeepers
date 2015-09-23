@@ -39,7 +39,6 @@ $("#glayLayer").click(function(){
 });
 
 
-
 $(function(){
     $("ul.panel li:not("+$("ul.tab li a.selected").attr("href")+")").hide()
     $("ul.tab li a").click(function(){
@@ -49,6 +48,20 @@ $(function(){
         $($(this).attr("href")).show();
         return false;
     });
+});
+
+
+$(function(){
+
+    $("ul.custom_dropdown").hide();
+
+    $("span.user").hover(function(){
+        $("ul.custom_dropdown:not(animated)", this).slideDown('fast');
+    },
+    function(){
+        $("ul.custom_dropdown",this).slideUp('fast');
+    });
+
 });
 
 

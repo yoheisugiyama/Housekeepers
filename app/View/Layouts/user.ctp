@@ -46,10 +46,23 @@
         </div>
         <div class="navi">
             <ul class="nav-right_2">
-                <li class="nav_btn"><?php  echo $this->Html->link('ログアウト', array('class'=>'navbar-link','controller'=>'users', 'action'=>'logout')) ?> </li>
-                <li class="nav_btn"><?php  echo $this->Html->link('ホーム', array('class'=>'navbar-link','controller'=>'users', 'action'=>'index')) ?> </li>
-                <li class="nav_btn"><?php  echo $this->Html->link('マイページ', array('class'=>'navbar-link','controller'=>'users', 'action'=>'mypage')) ?> </li>
-                <li class="nav_btn"><?php  echo $this->Html->link('Message', array('class'=>'navbar-link','controller'=>'messages', 'action'=>'my_message')) ?> </li>
+
+                <li><?php  echo $this->Html->link($this->Html->tag('span',$user['name'].'さん', array('class'=>'user')), array('controller'=>'users', 'action'=>'logout'), array('escape'=>false, 'class'=>'navbar-link')) ?> </li>
+                    <ul class="custom_dropdown">
+                        <li>マイページ</li>
+                        <li>プロフィール編集</li>
+                        <li>メッセージ</li>
+                        <li>お知らせ</li>
+                        <li>設定</li>
+                        <li>ログアウト</li>
+                    </ul>
+                <li><?php  echo $this->Html->link($this->Html->tag('span','',
+                        array('class' => 'glyphicon glyphicon-home')), array('controller'=>'users', 'action'=>'index'), array('escape'=>false, 'class'=>'navbar-link'))?></li>
+                <li><?php  echo $this->Html->link($this->Html->tag('span','',
+                        array('class' => 'glyphicon glyphicon-envelope')), array('controller'=>'messages', 'action'=>'my_message'), array('escape'=>false, 'class'=>'navbar-link'))?></li>
+                <li><?php  echo $this->Html->link($this->Html->tag('span','',
+                        array('class' => 'glyphicon glyphicon-bell')), array('controller'=>'', 'action'=>''), array('escape'=>false, 'class'=>'navbar-link'))?></li>
+
             </ul>
             <ul class="nav-right_3">
                 <li class="nav_btn_2"><?php  echo $this->Html->link('ハウスキーパーを探す', array('class'=>'navbar-link','controller'=>'housekeepers', 'action'=>'index')) ?> </li>

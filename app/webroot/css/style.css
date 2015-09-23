@@ -115,13 +115,55 @@ ul.nav-right{
 }
 
 ul.nav-right_2 {
+    position: relative;
     list-style-type: none;
     float: right;
     display:inline;
     margin-top:10px;
-    font-size: 18px;
-    width:400px;
+    font-size: 14px;
+    width:300px;
 }
+
+
+ul.nav-right_2 span{
+    cursor: pointer;
+}
+
+ul.custom_dropdown{
+    background-color: #f5f5f5;
+    position: absolute;
+    color: #000000;
+}
+
+ul.custom_dropdown li{
+    list-style-type: none;
+    display: block;
+    text-align: center;
+    border-bottom: 1px #000000;
+}
+
+.glyphicon-home{
+    color: #f5f5f5;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.glyphicon-envelope{
+    color: #f5f5f5;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.glyphicon-bell{
+    color: #f5f5f5;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+
+
+
+
 
 ul.nav-right_3 {
     list-style-type: none;

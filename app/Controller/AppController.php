@@ -62,6 +62,9 @@ class AppController extends Controller {
         //Numberヘルパーを使用する際、円マークが表示されるようにする！
         App::uses('CakeNumber', 'Utility');
         CakeNumber::addFormat('JPY', array('before' => '¥', 'places' => 0));
+
+        $this->set('user',$this->Auth->user());
+
     }
 
 
