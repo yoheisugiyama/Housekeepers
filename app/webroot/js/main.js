@@ -53,14 +53,14 @@ $(function(){
 
 $(function(){
 
-    $("ul.custom_dropdown").hide();
 
-    $("span.user").hover(function(){
-        $("ul.custom_dropdown:not(animated)", this).slideDown('fast');
-    },
-    function(){
-        $("ul.custom_dropdown",this).slideUp('fast');
-    });
+    $("ul.nav-right_2").hover(function(){
+            $("ul.custom_dropdown:not(:animated)").show();
+        },
+        function(){
+            $("ul.custom_dropdown:not(:animated)").hide();
+        });
+
 
 });
 

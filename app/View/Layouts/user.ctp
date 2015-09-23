@@ -47,7 +47,7 @@
         <div class="navi">
             <ul class="nav-right_2">
 
-                <li><?php  echo $this->Html->link($this->Html->tag('span',$user['name'].'さん', array('class'=>'user')), array('controller'=>'users', 'action'=>'logout'), array('escape'=>false, 'class'=>'navbar-link')) ?> </li>
+                <li><?php  echo $this->Html->link($this->Html->tag('span',$user['name'].'さん', array('class'=>'username')), array('controller'=>'users', 'action'=>'logout'), array('escape'=>false, 'class'=>'navbar-link')) ?> </li>
                     <ul class="custom_dropdown">
                         <li>マイページ</li>
                         <li>プロフィール編集</li>
