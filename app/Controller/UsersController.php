@@ -70,19 +70,16 @@ class UsersController extends AppController
         //Auth認証（ログイン）
         if ($this->request->isPost()) {
             if ($this->Auth->login()) {
-
-                $this->Session->setFlash(__('ログイン成功!'));
-
             //GroupIDにてHouseownerかHousekeeperかを判定
                 $user = $this->Auth->user();
 
                 if($user['group_id']==1){
-                    $this->Session->setFlash(__('あなたはハウスオーナーです'));
-                    $this->redirect(array('controller'=>'Housekeepers','action'=>'index'));
+//                    $this->Session->setFlash(__('あなたはハウスオーナーです'));
+                    $this->redirect(array('controller'=>'Users','action'=>'loginindex'));
                 }elseif($user['group_id']==2){
-                    $this->Session->setFlash(__('あなたはハウスキーパーです'));
+//                    $this->Session->setFlash(__('あなたはハウスキーパーです'));
                     //ページネーション画面へ遷移
-                    $this->redirect(array('controller'=>'Houseowners','action'=>'index'));
+                    $this->redirect(array('controller'=>'Users','action'=>'loginindex'));
                 }
             }else{
                     $this->Session->setFlash(__('ユーザー名とパスワードが正しくありません。もう一度試して下さい。'));
@@ -97,7 +94,7 @@ class UsersController extends AppController
 
     public function logout(){
         $this->Auth->logout();
-        $this->redirect(array('controller'=>'Users','action'=>'login'));
+        $this->redirect(array('controller'=>'Users','action'=>'index'));
     }
 
     /**
@@ -118,7 +115,7 @@ class UsersController extends AppController
 
                 $this->Session->setFlash('ユーザー情報を保存しました');
 
-                $this->redirect(array('controller'=>'Housekeepers', 'action'=>'index'));
+                $this->redirect(array('controller'=>'Housekeepers', 'action'=>'loginindex'));
             }else{
                 $this->Session->setFlash('入力に間違いがあります');
             }
@@ -141,6 +138,10 @@ class UsersController extends AppController
 
 
     public function index(){
+
+    }
+
+    public function loginindex(){
 
     }
 

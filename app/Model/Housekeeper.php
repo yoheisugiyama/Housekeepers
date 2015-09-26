@@ -5,7 +5,6 @@ App::uses('AppModel', 'Model');
 class Housekeeper extends AppModel
 {
 
-
     public $belongsTo=array('Image');
 
 

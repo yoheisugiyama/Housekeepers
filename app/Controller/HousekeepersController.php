@@ -7,7 +7,8 @@
 class HousekeepersController extends AppController
 {
     //利用するモデルの定義
-    public $uses = array('Housekeeper');
+    public $uses = array('Housekeeper','Feedback');
+
 
     public $helpers = array('Html', 'Form');
 
@@ -123,10 +124,26 @@ class HousekeepersController extends AppController
 
             $this->set('housekeeper',$housekeeper);
 
+
+        $options = array(
+            'conditions' =>array(
+                'Feedback.housekeeper_id'=>$id
+            ),
+            'order'=>'Feedback.housekeeper_id',
+            'recursive'=>-1
+        );
+
+        $feedbacks = $this->Feedback->find('first', $options);
+        $this->set('feedbacks', $feedbacks);
+
+
         $user = $this->Auth->user();
         $id = $user['id'];
-
         $this->set('user_id',$id);
+
+
+
+
 
     }
 

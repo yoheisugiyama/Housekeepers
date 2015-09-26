@@ -6,8 +6,10 @@
         <h1>HouseKeepers</h1>
         <h2>近所の家事代行人を探し、家事代行を依頼しよう</h2>
     </div>
-    <div class="login">        
-        <?php  echo $this->Form->button('家事代行を依頼する', array('class'=>'btn btn-lg btn-success register','type'=>'submit')); ?>
+    <div class="login">
+
+        <?php  echo $this->Form->button('ユーザー登録する（無料）', array('class'=>'btn btn-lg btn-success register','type'=>'submit')); ?>
+
     </div>
     </div>
 </div>

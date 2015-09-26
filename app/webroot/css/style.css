@@ -120,18 +120,24 @@ ul.nav-right_2 {
     float: right;
     display:inline;
     margin-top:10px;
-    font-size: 14px;
-    width:300px;
+    font-size: 16px;
+    color: #f5f5f5;
+    width:150px;
+
 }
 
 ul.nav-right_2 a{
     text-decoration: none;
+    color: grey;
 }
 
 
-
 span.username{
-    color: #ffffff;
+    color: #f5f5f5;
+    font-size: 16px;
+    margin-top: 5px;
+    display: block;
+
 }
 
 ul.custom_dropdown{
@@ -139,7 +145,7 @@ ul.custom_dropdown{
     background-color: #f5f5f5;
     position: absolute;
     color: grey;
-    margin-top:30px;
+    margin-top:22px;
     padding-left: 0px;
     width: 150px;
 
@@ -147,31 +153,40 @@ ul.custom_dropdown{
 
 ul.custom_dropdown li{
     list-style-type: none;
+    font-size: 14px;
     display: block;
     text-align: center;
-    border-bottom: 2px #000000;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px dashed grey;
+
+}
+
+.glyphicon-chevron-down{
+    color: #f5f5f5;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 0px;
+    vertical-align: bottom;
 }
 
 .glyphicon-home{
     color: #f5f5f5;
     font-size: 20px;
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
 .glyphicon-envelope{
     color: #f5f5f5;
     font-size: 20px;
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
 .glyphicon-bell{
     color: #f5f5f5;
     font-size: 20px;
-    margin-left: 5px;
+    margin-left: 10px;
 }
-
-
-
 
 
 
@@ -180,8 +195,9 @@ ul.nav-right_3 {
     float: right;
     display:inline;
     margin-top:10px;
+    padding-left: 0px;
     font-size: 18px;
-    width:400px;
+    width:200px;
 }
 
 
@@ -335,10 +351,12 @@ body{
 }
 
 
-.login{
+.login, .loginindex{
     margin: 80px 0;
     
 }
+
+
 
 .login>p{
     float:left;
@@ -660,6 +678,7 @@ legend{
 
 .housekeeper_row{
     padding-left: 0px;
+    margin-top: 10px;
 }
 
 .housekeeper_profile{
@@ -670,6 +689,7 @@ legend{
     float: left;
     list-style-type: none;
     margin-right: 20px;
+    margin-bottom: 20px;
 
 }
 
@@ -692,7 +712,6 @@ legend{
 .photo{
     width: 250px;
     height: 250px;
-
 }
 
 .thumbphoto{

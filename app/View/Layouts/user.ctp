@@ -42,32 +42,37 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="row">
         <div class="logo">
-            <?php echo $this->Html->image('housekeepers_logo.png', array('alt'=>'Housekeepers', 'class'=>'logo', 'url'=>array('controller'=>'users','action'=>'index'))) ?>
+            <?php echo $this->Html->image('housekeepers_logo.png', array('alt'=>'Housekeepers', 'class'=>'logo', 'url'=>array('controller'=>'users','action'=>'loginindex'))) ?></li>
         </div>
         <div class="navi">
-            <ul class="nav-right_2">
-
-                <li><?php  echo $this->Html->link($this->Html->tag('span',$user['name'].'さん', array('class'=>'username')), array('controller'=>'users', 'action'=>'logout'), array('escape'=>false, 'class'=>'navbar-link')) ?> </li>
-                    <ul class="custom_dropdown">
-                        <li>マイページ</li>
-                        <li>プロフィール編集</li>
-                        <li>メッセージ</li>
-                        <li>お知らせ</li>
-                        <li>設定</li>
-                        <li>ログアウト</li>
-                    </ul>
+            <ul class="nav-right_3">
                 <li><?php  echo $this->Html->link($this->Html->tag('span','',
-                        array('class' => 'glyphicon glyphicon-home')), array('controller'=>'users', 'action'=>'index'), array('escape'=>false, 'class'=>'navbar-link'))?></li>
+                        array('class' => 'glyphicon glyphicon-home')), array('controller'=>'users', 'action'=>'loginindex'), array('escape'=>false, 'class'=>'navbar-link'))?></li>
                 <li><?php  echo $this->Html->link($this->Html->tag('span','',
                         array('class' => 'glyphicon glyphicon-envelope')), array('controller'=>'messages', 'action'=>'my_message'), array('escape'=>false, 'class'=>'navbar-link'))?></li>
                 <li><?php  echo $this->Html->link($this->Html->tag('span','',
                         array('class' => 'glyphicon glyphicon-bell')), array('controller'=>'', 'action'=>''), array('escape'=>false, 'class'=>'navbar-link'))?></li>
+            </ul>
+            <ul class="nav-right_2">
+                <li><?php  echo $this->Html->tag('span',''.$user['username'].'さん', array('class'=>'username')); ?></li>
+                <li><?php echo $this->Html->tag('span', '', array('class'=>'glyphicon glyphicon-chevron-down')); ?></li>
+                </li>
+                    <ul class="custom_dropdown">
+                        <li><?php echo $this->Html->link('ハウスキーパーを探す',array('controller'=>'housekeepers', 'action'=>'index')); ?></li>
+                        <li><?php echo $this->Html->link('お気に入りハウスキーパー一覧',array('controller'=>'housekeepers', 'action'=>'index')); ?></li>
+                        <li><?php echo $this->Html->link('マイページ',array('controller'=>'users', 'action'=>'mypage')); ?></li>
+                        <li><?php echo $this->Html->link('プロフィール編集',array('controller'=>'users', 'action'=>'mypage')); ?></li>
+                        <li><?php echo $this->Html->link('メッセージ',array('controller'=>'messages', 'action'=>'my_message')); ?></li>
+                        <li>お知らせ</li>
+                        <li>設定</li>
+                        <li><?php echo $this->Html->link('ログアウト',array('controller'=>'users', 'action'=>'logout')); ?></li>
+                    </ul>
+            </ul>
 
-            </ul>
-            <ul class="nav-right_3">
-                <li class="nav_btn_2"><?php  echo $this->Html->link('ハウスキーパーを探す', array('class'=>'navbar-link','controller'=>'housekeepers', 'action'=>'index')) ?> </li>
-                <li class="nav_btn_2"><?php  echo $this->Html->link('ハウスオーナーを探す', array('class'=>'navbar-link','controller'=>'houseowners', 'action'=>'index')) ?> </li>
-            </ul>
+<!--            <ul class="nav-right_3">-->
+<!--                <li class="nav_btn_2">--><?php // echo $this->Html->link('ハウスキーパーを探す', array('class'=>'navbar-link','controller'=>'housekeepers', 'action'=>'index')) ?><!-- </li>-->
+<!--                <li class="nav_btn_2">--><?php // echo $this->Html->link('ハウスオーナーを探す', array('class'=>'navbar-link','controller'=>'houseowners', 'action'=>'index')) ?><!-- </li>-->
+<!--            </ul>-->
         </div>
         </ul>
     </div>

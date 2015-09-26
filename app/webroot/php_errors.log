@@ -2,3 +2,11 @@
 [22-Sep-2015 14:05:50 Asia/Tokyo] PHP Fatal error:  Call to undefined function array_column() in /vagrant/Housekeepers/app/Controller/MessagesController.php on line 87
 [23-Sep-2015 15:02:13 Asia/Tokyo] PHP Fatal error:  Call to undefined function array_column() in /vagrant/Housekeepers/app/Controller/MessagesController.php on line 96
 [23-Sep-2015 16:13:30 Asia/Tokyo] PHP Fatal error:  Call to undefined function array_column() in /vagrant/Housekeepers/app/Controller/MessagesController.php on line 96
+[24-Sep-2015 05:11:34 Asia/Tokyo] PHP Fatal error:  Call to undefined function array_column() in /vagrant/Housekeepers/app/Controller/MessagesController.php on line 96
+[24-Sep-2015 20:58:30 Asia/Tokyo] PHP Fatal error:  Call to undefined function array_column() in /vagrant/Housekeepers/app/Controller/MessagesController.php on line 96
+[26-Sep-2015 11:29:54 Asia/Tokyo] PHP Parse error:  syntax error, unexpected '?>' in /vagrant/Housekeepers/app/View/Layouts/user.ctp on line 50
+[26-Sep-2015 11:32:08 Asia/Tokyo] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /vagrant/Housekeepers/app/View/Layouts/user.ctp on line 50
+[26-Sep-2015 11:38:41 Asia/Tokyo] PHP Fatal error:  Call to undefined function array_column() in /vagrant/Housekeepers/app/Controller/MessagesController.php on line 96
+[26-Sep-2015 13:01:40 Asia/Tokyo] PHP Fatal error:  Call to undefined function array_column() in /vagrant/Housekeepers/app/Controller/MessagesController.php on line 96
+[26-Sep-2015 13:26:13 Asia/Tokyo] PHP Fatal error:  Call to undefined function array_column() in /vagrant/Housekeepers/app/Controller/MessagesController.php on line 96
+[26-Sep-2015 15:48:44 Asia/Tokyo] PHP Fatal error:  Call to a member function find() on a non-object in /vagrant/Housekeepers/app/Controller/HousekeepersController.php on line 139

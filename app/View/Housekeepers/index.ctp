@@ -46,7 +46,6 @@
         </div>
         <hr/>
         <div>
-
             <ul class="housekeeper_row">
                 <?php for($i=0; $i<3; $i++) : ?>
                 <li class="housekeeper_profile">
@@ -71,9 +70,59 @@
                 </li>
                 <?php endfor; ?>
             </ul>
+            <br/>
+            <ul class="housekeeper_row">
+                <?php for($i=3; $i<6; $i++) : ?>
+                    <li class="housekeeper_profile">
+                        <div class="photo">
+                            <?php
+                            if(!isset($housekeepers[$i]['Image']['name'])){
+                                echo $this->Html->image('no_image.png', array('url'=>array('action'=>'ind_page',$housekeepers[$i]['Housekeeper']['id']),'alt'=>'noimages')) ;
+                            }else{
+                                echo $this->Html->image($housekeepers[$i]['Image']['name'], array('url'=>array('action'=>'ind_page',$housekeepers[$i]['Housekeeper']['id']),'alt'=>'noimages', 'width'=>'250px')) ;
+                            }
+                            ?>
+                            <?php ?>
+                        </div>
+                        <div class="profile">
+                            <h5><?php echo h($housekeepers[$i]['Housekeeper']['surname'].$housekeepers[$i]['Housekeeper']['firstname']); ?></h5>
+                            <hr/>
+                            <h6><?php echo h($housekeepers[$i]['Housekeeper']['comment']); ?></h6>
+                            <hr/>
+                            <h6><?php echo h($housekeepers[$i]['Housekeeper']['appeal']); ?></h6>
+                            </p>
+                        </div>
+                    </li>
+                <?php endfor; ?>
+            </ul>
+            <br/>
+            <ul class="housekeeper_row">
+                <?php for($i=6; $i<9; $i++) : ?>
+                    <li class="housekeeper_profile">
+                        <div class="photo">
+                            <?php
+                            if(!isset($housekeepers[$i]['Image']['name'])){
+                                echo $this->Html->image('no_image.png', array('url'=>array('action'=>'ind_page',$housekeepers[$i]['Housekeeper']['id']),'alt'=>'noimages')) ;
+                            }else{
+                                echo $this->Html->image($housekeepers[$i]['Image']['name'], array('url'=>array('action'=>'ind_page',$housekeepers[$i]['Housekeeper']['id']),'alt'=>'noimages', 'width'=>'250px')) ;
+                            }
+                            ?>
+                            <?php ?>
+                        </div>
+                        <div class="profile">
+                            <h5><?php echo h($housekeepers[$i]['Housekeeper']['surname'].$housekeepers[$i]['Housekeeper']['firstname']); ?></h5>
+                            <hr/>
+                            <h6><?php echo h($housekeepers[$i]['Housekeeper']['comment']); ?></h6>
+                            <hr/>
+                            <h6><?php echo h($housekeepers[$i]['Housekeeper']['appeal']); ?></h6>
+                            </p>
+                        </div>
+                    </li>
+                <?php endfor; ?>
+            </ul>
         </div>
 
-
+        <br/>
 
         <div class="paginator_bottom">
             <?php echo $this->Paginator->counter(); ?><br/>
