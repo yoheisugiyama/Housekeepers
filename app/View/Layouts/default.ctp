@@ -59,8 +59,28 @@
 <?php echo $this->fetch('content'); ?>
 
 <footer>
-        <p>©Copyright©2015 CreaTive WorkS All Rights Reserved</p>
+    <div class="row">
+        <ul class="col-lg-4">
+        <h5 class=" subpage-title">サービス</h5>
+            <li>ハウスキーパー応募</li>
+            <li>運営会社</li>
+            <li>よくあるご質問</li>
+        </ul>
+        <ul class="col-lg-4">
+            <h5 class=" subpage-title">規約</h5>
+            <li>サービス利用規約</li>
+            <li>ポイント利用規約</li>
+            <li>プライバシーポリシー</li>
+            <li>特定商取引法に基づく表示</li>
+        </ul>
+        <ul class="col-lg-4">
+            <h5 class=" subpage-title">FACEBOOK PAGE</h5>
+            <li>FACEBOOK PAGE</li>
+        </ul>
+    </div>
+    <p>©Copyright©2015 CreaTive WorkS All Rights Reserved</p>
 </footer>
+
 
 <!-- Placed at the end of the document so the pages load faster -->
 

@@ -332,6 +332,7 @@ body{
     border-color: #e9ebed;
     margin-top: 70px;
     font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
 
 }
 
@@ -373,6 +374,19 @@ body{
     width: 250px;
 }
 
+.housekeeper_gather{
+    background-image: url(../img/housekeeper_gather.png);
+    height: 400px;
+    margin-bottom: -50px;
+    display: block;
+
+}
+
+.housekeeper_gather h3{
+    margin-top: 150px;
+    color: #ffffff;
+    font-weight: bold;
+}
 
 .social-login-form{
     width: 460px;
@@ -412,7 +426,7 @@ h4{
 
 
 p{
-   font-size: 1.2em;
+   font-size: 1.0em;
    margin-top: 20px;
     text-align: center;
     color: grey;
@@ -437,6 +451,9 @@ p{
 }
 
 .background_2{
+
+    padding-top: 50px;
+    padding-bottom: 100px;
 
 }
 
@@ -491,17 +508,18 @@ dt{
 }
 
 .thumbnail:hover{
-    background-color:#a5b6bc;
+    background-color:#3c68b1;
     color: white;
+    box-shadow: none;
 }
 
-
-div.caption p{
-    font-size: 16px;
-}
 
 .caption:hover{
     color: white;
+}
+
+.caption img{
+    margin-bottom: 20px;
 }
 
 
@@ -543,6 +561,30 @@ div.caption p{
     font-size: 14px;
 }
 
+footer{
+    background-color: #000000;
+    padding: 20px 0;
+    margin-top: 50px;
+    text-align: center;
+    color: #ffffff;
+    clear:both;
+}
+
+
+
+footer ul li{
+    list-style-type: none;
+    font-size: 14px;
+}
+
+.subpage-title:after {
+    content: "";
+    width: 100px;
+    height: 3px;
+    background-color: darkgreen;
+    display: block;
+    margin: 10px auto;
+}
 
 /*Housekeeperページ、Houseownerページ*/
 
@@ -662,6 +704,7 @@ legend{
 
 .housekeeper:hover{
     background-color: #eef5f7;
+
     
 }
 
@@ -862,13 +905,6 @@ caption{
 }
 
 
-footer{
-    background-color: #000000;
-    margin: 50px 0;
-    text-align: center;
-    color: #ffffff;
-    clear:both;
-}
 
 
 

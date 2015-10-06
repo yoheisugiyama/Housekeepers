@@ -22,6 +22,7 @@
             </tr>
             </tbody>
         </table>
+    <?php echo $this->Form->input('housekeeper_id',array('type'=>'hidden', 'value'=>$housekeeper['Housekeeper']['id'])) ?>
     <?php echo $this->Form->end(array('label'=>'メッセージ送信', 'class'=>'btn btn-success')) ?>
 </div>
 

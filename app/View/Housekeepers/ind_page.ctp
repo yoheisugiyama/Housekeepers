@@ -41,7 +41,7 @@
 
             <div>
                 <?php echo $this->Form->create('Message', array('action'=>'index')); ?>
-                <?php echo $this->Form->input('sendee_id', array('type'=>'hidden', 'value'=>$housekeeper['Housekeeper']['id'])); ?>
+                <?php echo $this->Form->input('housekeeper_id', array('type'=>'hidden', 'value'=>$housekeeper['Housekeeper']['id'])); ?>
                 <?php echo $this->Form->end(array('label'=>'メッセージを送る','class'=>'btn btn-warning message')); ?>
 
             </div>
@@ -100,7 +100,7 @@
                 <h4>ご利用者の声</h4>
                 <hr/>
                 <?php foreach ($feedbacks as $row) :?>
-                 <dd> <?php echo h($row['feedback_comment']); ?></dd>
+                 <dd> <?php echo h($row['Feedback']['feedback_comment']); ?></dd>
                 <?php endforeach; ?>
 
             </div>

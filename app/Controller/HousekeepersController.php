@@ -27,7 +27,6 @@ class HousekeepersController extends AppController
         } else {
             $this->layout = 'default';
         }
-
     }
 
     public function index(){
@@ -54,7 +53,6 @@ class HousekeepersController extends AppController
         $user = $this->Auth->user();
         $id = $user['id'];
 
-        debug($user);
 
         $this->set('user_id',$id);
 
@@ -133,7 +131,7 @@ class HousekeepersController extends AppController
             'recursive'=>-1
         );
 
-        $feedbacks = $this->Feedback->find('first', $options);
+        $feedbacks = $this->Feedback->find('all', $options);
         $this->set('feedbacks', $feedbacks);
 
 

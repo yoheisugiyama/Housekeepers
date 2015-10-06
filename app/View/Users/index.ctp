@@ -1,16 +1,15 @@
 
 <div class="main">
-
     <div class="row">
-    <div class="title">
-        <h1>HouseKeepers</h1>
-        <h2>近所の家事代行人を探し、家事代行を依頼しよう</h2>
-    </div>
-    <div class="login">
+        <div class="title">
+            <h1>HouseKeepers</h1>
+            <h2>近所の家事代行人を探し、家事代行を依頼しよう</h2>
+        </div>
+        <div class="login">
 
-        <?php  echo $this->Form->button('ユーザー登録する（無料）', array('class'=>'btn btn-lg btn-success register','type'=>'submit')); ?>
+            <?php  echo $this->Form->button('ユーザー登録する（無料）', array('class'=>'btn btn-lg btn-success register','type'=>'submit')); ?>
 
-    </div>
+        </div>
     </div>
 </div>
 
@@ -89,8 +88,10 @@
             <img src="" alt="" class="koumoku">
             <div class="caption">
                 <?php echo $this->Html->image('cleaning_seiketsu.png', array('alt'=>'cleaning_seiketsu')) ?>
-                <h4>業界最低水準！1,500円〜家事代行を依頼！</h4>
-                <p>HouseKeepersは家事代行依頼人と家事代行人のマッチングに特化することにより、１時間１,５００円〜の家事代行サービスのご利用を実現いたします。</p>
+                <br/>
+                <dt>業界最低水準！1,500円〜家事代行を依頼！</dt>
+                <br/>
+                <dd>HouseKeepersは家事代行依頼人と家事代行人のマッチングに特化することにより、１時間１,５００円〜の家事代行サービスのご利用を実現いたします。</dd>
             </div>
         </div>
     </div>
@@ -99,8 +100,10 @@
             <img src="" alt="" class="koumoku">
             <div class="caption">
                 <?php echo $this->Html->image('cleaning_seiri.png', array('alt'=>'cleaning_seiri')) ?>
-                <h4>業界初！安心の直接面接及びトライアル方式</h4>
-                <p>家事代行業界初の直接面接及びトライアル方式を採用しております。本契約前にこうしたステップを踏むことで、より安心して家事代行人、家事代行依頼人との契約に移行できます。</p>
+                <br/>
+                <dt>業界初！安心の直接面接及びトライアル方式</dt>
+                <br/>
+                <dd>家事代行業界初の直接面接及びトライアル方式を採用しております。本契約前にこうしたステップを踏むことで、より安心して家事代行人、家事代行依頼人との契約に移行できます。</dd>
             </div>
         </div>
     </div>
@@ -109,8 +112,10 @@
             <img src="" alt="" class="koumoku">
             <div class="caption">
                 <?php echo $this->Html->image('souji_ofuro.png', array('alt'=>'souji_ofuro')) ?>
-                <h4>今ならプラットフォーム利用料無料でお使いいただけます!</h4>
-                <p>HouseKeepersのサービスは、ユーザー様1,000名に達するまでは、無料でお使いいただけます(ユーザー様1,000名突破後は１回のご利用につき150円の手数料がかかります。）</p>
+                <br/>
+                <dt>今ならプラットフォーム利用料無料でお使いいただけます!</dt>
+                <br/>
+                <dd>HouseKeepersのサービスは、ユーザー様1,000名に達するまでは、無料でお使いいただけます(ユーザー様1,000名突破後は１回のご利用につき150円の手数料がかかります。）</dd>
             </div>
         </div>
     </div>
@@ -189,5 +194,12 @@
         </div>
 
 
+    </div>
+</div>
+
+<div class="background housekeeper_gather">
+    <div class="row">
+    <h3>ただいまハウスキーパー絶賛募集中！</h3>
+    <p><?php echo $this->Form->button('詳しくはこちら',array('class'=>'btn btn-lg btn-primary','type'=>'submit')); ?></p>
     </div>
 </div>

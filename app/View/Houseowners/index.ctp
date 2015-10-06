@@ -40,7 +40,6 @@
         </div>
         <hr/>
 
-
         <?php foreach ($Houseowners as $row): ?>
             <div class="houseowner">
                 <div class="thumb">
