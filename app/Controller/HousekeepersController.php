@@ -27,6 +27,7 @@ class HousekeepersController extends AppController
         } else {
             $this->layout = 'default';
         }
+
     }
 
     public function index(){

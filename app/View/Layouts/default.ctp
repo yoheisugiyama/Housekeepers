@@ -16,6 +16,7 @@
     <?php echo $this->Html->css('bootstrap', null, array('media'=>"screen, projection")); ?>
     <?php echo $this->Html->css('fullcalendar.min', null, array("screen, projection")); ?>
     <?php echo $this->Html->css('style', null, array("screen, projection")); ?>
+    <?php echo $this->Html->css('style_sm', null, array("screen, projection")); ?>
 
     <!-- Fontawesome CSS -->
 

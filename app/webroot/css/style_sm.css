@@ -1,0 +1,63 @@
+
+@media(max-width:400px){
+
+    .row{
+        width: 340px;
+    }
+
+
+    .logo{
+        float:none;
+        text-align: center;
+    }
+
+    .navi{
+        margin-top: 0px;
+        text-align: center;
+
+    }
+
+    ul.nav-right{
+        float: left;
+
+    }
+
+
+    .title{
+        text-align: center;
+        padding: 0 40px;
+    }
+
+    h1{
+        font-size: 32px;
+    }
+    h2{
+        font-size: 24px;
+    }
+
+
+    .login, .loginindex{
+        text-align: center;
+
+    }
+
+
+
+
+    .btn-success{
+        width:250px;
+        font-size: 12px;
+    }
+
+    div.col-sm-6{
+        padding-left: 25px;
+    }
+
+
+    .howtouse{
+        height: 250px;
+    }
+
+
+
+}
