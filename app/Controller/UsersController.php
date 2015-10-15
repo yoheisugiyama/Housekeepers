@@ -15,7 +15,7 @@ class UsersController extends AppController
 
     public function beforeFilter()
     {
-        $this->Auth->allow('index', 'opauth_complete');
+        $this->Auth->allow('index', 'opauth_complete', 'recruit');
 
         if ($this->Auth->user()) {
             $this->layout = 'user';
@@ -145,7 +145,7 @@ class UsersController extends AppController
 
     }
 
-     public function mypage(){
+    public function mypage(){
 
          if($this->Auth->user('group_id')==1){
              $this->redirect(array('controller'=>'houseowners', 'action'=>'mypage'));
@@ -154,6 +154,10 @@ class UsersController extends AppController
 
          }
         
+    }
+
+    public function recruit(){
+
     }
 
 

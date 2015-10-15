@@ -135,9 +135,12 @@
     </div>
 </div>
 
-<div class="background housekeeper_gather">
+<div class="background housekeeper_recruit">
     <div class="row">
         <h3>ただいまハウスキーパー絶賛募集中！</h3>
+        <?php echo $this->Form->create('User', array('controller'=>'Users', 'action'=>'recruit')) ?>
         <p><?php echo $this->Form->button('詳しくはこちら',array('class'=>'btn btn-lg btn-primary','type'=>'submit')); ?></p>
+        <?php echo $this->Form->end() ?>
+
     </div>
 </div>

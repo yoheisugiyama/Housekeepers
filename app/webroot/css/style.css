@@ -84,7 +84,7 @@ ul.nav-right{
     list-style-type: none;
     float: right;
     display:inline;
-    margin-top:10px;
+    margin-top:30px;
     font-size: 18px;
     width:300px;
 }
@@ -338,15 +338,15 @@ body{
     width: 250px;
 }
 
-.housekeeper_gather{
-    background-image: url(../img/housekeeper_gather.png);
+.housekeeper_recruit{
+    background-image: url(../img/housekeeper_recruit.png);
     height: 400px;
     margin-bottom: -50px;
     display: block;
 
 }
 
-.housekeeper_gather h3{
+.housekeeper_recruit h3{
     margin-top: 150px;
     color: #ffffff;
     font-weight: bold;
@@ -868,6 +868,17 @@ caption{
 }
 
 
+.recruit_banner{
+    height: 100px;
+    background-color: #0084b4;
+
+    color: #ffffff;
+}
+
+.recruit_banner h1{
+    font-size: 24px;
+
+}
 
 
 
