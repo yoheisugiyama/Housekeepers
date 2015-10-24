@@ -6,9 +6,14 @@ $(document).ready(function() {
     // page is now ready, initialize the calendar...
 
     $('#calendar').fullCalendar({
-        // put your options and callbacks here
-        editable: true,
 
+        googleCalendarApiKey: 'AIzaSyDuLapAUV9qq9eK2YOXVGQDzexx6-KplSM',
+        events: {
+            googleCalendarId: 'yoheisugiyamameister@gmail.com'
+        },
+
+        // put your options and callbacks here
+        editable: true, //trueでスケジュールを編集可能にする
 
 //ヘッダーの書式
         columnFormat: {
@@ -54,7 +59,8 @@ $(document).ready(function() {
 });
 
 
-$('.login .btn').click(function(){
+$('.register').click(function(){
+
     if($(this).hasClass("btn-success")){
         $("#group_id").val("1");
 
@@ -63,22 +69,36 @@ $('.login .btn').click(function(){
 
     }
 
-
     $("#glayLayer").fadeIn();
     $("#overLayer").fadeIn().css({
         "margin-top":"-"+$("#overLayer").height()/2+"px" ,
         "margin-left":"-"+$("#overLayer").width()/2+"px"
     });
 
+});
+
+
+$('.owner_register').click(function(){
+
+    $("#overLayer").fadeOut();
+
+    $("#ownerLayer").fadeIn().css({
+        "margin-top": "-" + $("#ownerLayer").height() / 2 + "px",
+        "margin-left": "-" + $("#ownerLayer").width() / 2 + "px"
+    });
 
 
 });
+
 
 
 $("#glayLayer").click(function(){
     $(this).hide();
     $("#overLayer").hide();
+    $("#ownerLayer").hide();
 });
+
+
 
 
 $(function(){
@@ -95,7 +115,6 @@ $(function(){
 
 $(function(){
 
-
     $("ul.nav-right_2").hover(function(){
             $("ul.custom_dropdown:not(:animated)").show();
         },
@@ -103,7 +122,14 @@ $(function(){
             $("ul.custom_dropdown:not(:animated)").hide();
         });
 
+});
 
+$(function() {
+    $( '#leanModal').leanModal({
+        top: 50,                     // モーダルウィンドウの縦位置を指定
+        overlay : 0.5,               // 背面の透明度
+        closeButton: ".modal_close"  // 閉じるボタンのCSS classを指定
+    });
 });
 
 

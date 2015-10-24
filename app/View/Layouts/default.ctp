@@ -30,9 +30,8 @@
 
     <!-- Custom styles for this template -->
 
-    <?php echo $this->Html->script('jquery-1.11.2.js'); ?>
-    <script src='/cakephp-2.7.3/js/moment.min.js'></script>
-    <script src='/cakephp-2.7.3/js/fullcalendar.js'></script>
+
+
 
 </head>
 
@@ -85,8 +84,13 @@
 
 <!-- Placed at the end of the document so the pages load faster -->
 
+<?php echo $this->Html->script('jquery-1.11.2.js'); ?>
 <?php echo $this->Html->script('bootstrap.min.js'); ?>
+<?php echo $this->Html->script('jquery.leanModal.min.js'); ?>
+<?php echo $this->Html->script('fullcalendar.min.js'); ?>
+<?php echo $this->Html->script('gcal.js'); ?>
 <?php echo $this->Html->script('main.js'); ?>
+
 
 <?php echo $this->element('sql_dump'); ?>
 </body>

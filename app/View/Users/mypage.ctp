@@ -1,12 +1,9 @@
 <div class="container">
-
-
     <div class="pagination">
         <div>
             <h1>プロフィール編集</h1>
             <p>プロフィールの基本情報を充実化させて、houseownerの目に止まるページを作りましょう!</p>
         </div>
-
         <div>
             <h2>基本情報</h2>
             <?php echo $this->Form->create('User', array('type'=>'post','class'=>'form-horizontal', 'url'=>array('controller'=>'housekeepers','action'=>'mypage')));  ?>
@@ -78,18 +75,12 @@
                     <?php echo $this->Form->input('Housekeeper.appeal', array('type'=>'text', 'label'=>false,'required'=>false, 'class'=>'form-control', 'id'=>'formGroupInput', 'placeholder'=>'アピール')); ?>
                 </div>
             </div>
-
-
             <div class="form-group form-group-sm">
                 <?php echo $this->Form->end('プロフィール登録', array('class'=>'btn btn-primary')) ?>
             </div>
-
             <div class="form-group form-group-sm">
                 <?php echo $this->Html->link('ファイルアップロード',array('controller'=>'images','action'=>'file_upload')); ?>
             </div>
         </div>
-
-
     </div>
-
 </div>

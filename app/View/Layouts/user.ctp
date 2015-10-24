@@ -60,7 +60,8 @@
                 </li>
                     <ul class="custom_dropdown">
                         <li><?php echo $this->Html->link('ハウスキーパーを探す',array('controller'=>'housekeepers', 'action'=>'index')); ?></li>
-                        <li><?php echo $this->Html->link('お気に入りハウスキーパー一覧',array('controller'=>'housekeepers', 'action'=>'index')); ?></li>
+                        <li><?php echo $this->Html->link('お気に入りハウスキーパー（業者）一覧',array('controller'=>'housekeepers', 'action'=>'index')); ?></li>
+                        <li><?php echo $this->Html->link('お気に入りハウスキーパー（個人）一覧',array('controller'=>'housekeepers', 'action'=>'index')); ?></li>
                         <li><?php echo $this->Html->link('マイページ',array('controller'=>'users', 'action'=>'mypage')); ?></li>
                         <li><?php echo $this->Html->link('プロフィール編集',array('controller'=>'users', 'action'=>'mypage')); ?></li>
                         <li><?php echo $this->Html->link('メッセージ',array('controller'=>'messages', 'action'=>'my_message')); ?></li>

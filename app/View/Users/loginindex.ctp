@@ -7,7 +7,7 @@
         <div class="loginindex">
 
             <?php echo $this->Form->create('Housekeeper', array('controller'=>'Housekeepers', 'action'=>'index')) ?>
-            <?php echo $this->Form->button('ハウスキーパー（家事代行人）を探す', array('class'=>'btn btn-lg btn-success register','type'=>'submit')); ?>
+            <?php echo $this->Form->button('ハウスキーパー（家事代行人）を探す', array('class'=>'btn btn-lg btn-success find','type'=>'submit')); ?>
             <?php echo $this->Form->end() ?>
         </div>
     </div>

@@ -15,7 +15,7 @@ class UsersController extends AppController
 
     public function beforeFilter()
     {
-        $this->Auth->allow('index', 'opauth_complete', 'recruit');
+        $this->Auth->allow('index', 'opauth_complete', 'recruit', 'register');
 
         if ($this->Auth->user()) {
             $this->layout = 'user';
@@ -81,6 +81,8 @@ class UsersController extends AppController
                     //ページネーション画面へ遷移
                     $this->redirect(array('controller'=>'Users','action'=>'loginindex'));
                 }
+
+
             }else{
                     $this->Session->setFlash(__('ユーザー名とパスワードが正しくありません。もう一度試して下さい。'));
                     $this->redirect(array('controller'=>'Housekeepers','action'=>'index'));

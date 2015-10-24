@@ -5,73 +5,136 @@
             <h1>HouseKeepers</h1>
             <h2>近所の家事代行人を探し、家事代行を依頼しよう</h2>
         </div>
-        <div class="login">
+<!--        <div class="login">-->
+<!---->
 
-            <?php  echo $this->Form->button('ユーザー登録する（無料）', array('class'=>'btn btn-lg btn-success register','type'=>'submit')); ?>
+<!---->
+<!--        </div>-->
 
+        <div class="registration">
+         <?php  echo $this->Form->button('ユーザー登録する（無料）', array('class'=>'btn btn-lg btn-success register','id'=>'leanModal', 'href'=>'#div787')); ?>
+            <div id="div787">
+                <div class="col-sm-12"><?php echo $this->Form->button('法人の方はこちら', array('class'=>'btn btn-lg btn-info register')); ?></div>
+                <div class="col-sm-12"><?php echo $this->Form->button('個人の方はこちら', array('class'=>'btn btn-lg btn-info register')); ?></div>
+            </div>
         </div>
+
     </div>
 </div>
 
 
 <div id="overLayer">
-    <h3>会員登録</h3>
-        <table class="table table-bordered">
-            <?php echo $this->Form->create('User', array('action'=>'register'));?>
 
-            <thead>
-            <tr>
-                <th class="">項目</th>
-                <th class="">入力欄</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th><?php echo $this->Form->label('User.name', '名前'); ?></th>
-                <td><?php echo $this->Form->input('name', array('label'=>false, 'class'=>'form-control')); ?></td>
-            </tr>
-            <tr>
-                <th><?php echo $this->Form->label('User.email', 'email'); ?></th>
-                <td><?php echo $this->Form->input('email', array('label'=>false, 'class'=>'form-control')); ?></td>
-            </tr>
-            <tr>
-                <th><?php echo $this->Form->label('User.username', 'ユーザー名'); ?></th>
-                <td><?php echo $this->Form->input('username', array('label'=>false, 'class'=>'form-control')); ?></td>
+    <?php echo $this->Form->button('ハウスオーナー（家事代行依頼人）として登録する', array('class'=>'btn btn-info owner_register'))  ?>
+    <br/>
+    <br/>
+    <?php echo $this->Form->button('ハウスキーパー（家事代行人）として登録する', array('class'=>'btn btn-warning keeper_register'))  ?>
 
-            </tr>
-            <tr>
-                <th><?php echo $this->Form->label('User.password', 'パスワード'); ?></th>
-                <td><?php echo $this->Form->input('password', array('label'=>false, 'class'=>'form-control')); ?></td>
-            </tr>
 
-            <tr>
-                <td colspan="2">
-                    <?php echo $this->Form->input('User.group_id', array('type'=>'hidden', 'value'=>false, 'id'=>'group_id'));?>
-                    <?php echo $this->Form->submit('確認', array('class'=>'btn btn-primary main-login')) ?>
-                </td>
-            </tr>
-            </tbody>
-            <?php echo $this->Form->end();?>
-        </table>
-
-    <h3>ソーシャルアカウントで登録</h3>
-        <div class="social_register">
-            <?php echo $this->Form->create('Socialuser', array('url'=>'/auth/facebook'));?>
-            <?php $this->Form->hidden('Socialuser.provider', array('value'=>'facebook')); ?>
-            <div class="col-lg-6">
-                <?php  echo $this->Form->button('<i class="fa fa-facebook"></i>  Facebook', array('class'=>'btn btn-primary facebook-login', 'type'=>'submit')); ?>
-            </div>
-            <?php echo $this->Form->end();?>
-            <?php echo $this->Form->create('Socialuser', array('url'=>'/auth/twitter'));?>
-            <div class="col-lg-6">
-                <?php  echo $this->Form->button('<i class="fa fa-twitter"></i>  Twitter', array('class'=>'btn btn-primary twitter-login', 'type'=>'submit')); ?>
-            </div>
-            <?php echo $this->Form->end();?>
-        </div>
+<!--    <h3>会員登録</h3>-->
+<!--        <table class="table table-bordered">-->
+<!--            --><?php //echo $this->Form->create('User', array('action'=>'register'));?>
+<!---->
+<!--            <thead>-->
+<!--            <tr>-->
+<!--                <th class="">項目</th>-->
+<!--                <th class="">入力欄</th>-->
+<!--            </tr>-->
+<!--            </thead>-->
+<!--            <tbody>-->
+<!--            <tr>-->
+<!--                <th>--><?php //echo $this->Form->label('User.name', '名前'); ?><!--</th>-->
+<!--                <td>--><?php //echo $this->Form->input('name', array('label'=>false, 'class'=>'form-control')); ?><!--</td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <th>--><?php //echo $this->Form->label('User.email', 'email'); ?><!--</th>-->
+<!--                <td>--><?php //echo $this->Form->input('email', array('label'=>false, 'class'=>'form-control')); ?><!--</td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <th>--><?php //echo $this->Form->label('User.username', 'ユーザー名'); ?><!--</th>-->
+<!--                <td>--><?php //echo $this->Form->input('username', array('label'=>false, 'class'=>'form-control')); ?><!--</td>-->
+<!---->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <th>--><?php //echo $this->Form->label('User.password', 'パスワード'); ?><!--</th>-->
+<!--                <td>--><?php //echo $this->Form->input('password', array('label'=>false, 'class'=>'form-control')); ?><!--</td>-->
+<!--            </tr>-->
+<!---->
+<!--            <tr>-->
+<!--                <td colspan="2">-->
+<!--                    --><?php //echo $this->Form->input('User.group_id', array('type'=>'hidden', 'value'=>false, 'id'=>'group_id'));?>
+<!--                    --><?php //echo $this->Form->submit('確認', array('class'=>'btn btn-primary main-login')) ?>
+<!--                </td>-->
+<!--            </tr>-->
+<!--            </tbody>-->
+<!--            --><?php //echo $this->Form->end();?>
+<!--        </table>-->
+<!---->
+<!--    <h3>ソーシャルアカウントで登録</h3>-->
+<!--        <div class="social_register">-->
+<!--            --><?php //echo $this->Form->create('Socialuser', array('url'=>'/auth/facebook'));?>
+<!--            --><?php //$this->Form->hidden('Socialuser.provider', array('value'=>'facebook')); ?>
+<!--            <div class="col-lg-6">-->
+<!--                --><?php // echo $this->Form->button('<i class="fa fa-facebook"></i>  Facebook', array('class'=>'btn btn-primary facebook-login', 'type'=>'submit')); ?>
+<!--            </div>-->
+<!--            --><?php //echo $this->Form->end();?>
+<!--            --><?php //echo $this->Form->create('Socialuser', array('url'=>'/auth/twitter'));?>
+<!--            <div class="col-lg-6">-->
+<!--                --><?php // echo $this->Form->button('<i class="fa fa-twitter"></i>  Twitter', array('class'=>'btn btn-primary twitter-login', 'type'=>'submit')); ?>
+<!--            </div>-->
+<!--            --><?php //echo $this->Form->end();?>
+<!--        </div>-->
 
 
 
 </div>
+
+
+<div id="ownerLayer">
+
+    <h4>ソーシャルアカウントで登録</h4>
+    <div class="social_register">
+        <?php echo $this->Form->create('Socialuser', array('url'=>'/auth/facebook'));?>
+        <?php $this->Form->hidden('Socialuser.provider', array('value'=>'facebook')); ?>
+        <div class="col-lg-6">
+            <?php  echo $this->Form->button('<i class="fa fa-facebook"></i>  Facebook', array('class'=>'btn btn-primary facebook-login', 'type'=>'submit')); ?>
+        </div>
+        <?php echo $this->Form->end();?>
+        <?php echo $this->Form->create('Socialuser', array('url'=>'/auth/twitter'));?>
+        <div class="col-lg-6">
+            <?php  echo $this->Form->button('<i class="fa fa-twitter"></i>  Twitter', array('class'=>'btn btn-primary twitter-login', 'type'=>'submit')); ?>
+        </div>
+        <?php echo $this->Form->end();?>
+    </div>
+    <br/>
+    <br/>
+
+    <h4>ソーシャルアカウントを使わないで登録</h4>
+        <?php echo $this->Form->create('User', array('action'=>'register')); ?>
+        <?php echo $this->Form->button('登録', array('class'=>'btn btn-success')); ?>
+        <?php echo $this->Form->end(); ?>
+    </div>
+</div>
+
+<div id="keeperLayer">
+
+    <h3>ソーシャルアカウントで登録</h3>
+    <div class="social_register">
+        <?php echo $this->Form->create('Socialuser', array('url'=>'/auth/facebook'));?>
+        <?php echo $this->Form->hidden('Socialuser.provider', array('value'=>'facebook')); ?>
+        <div class="col-lg-6">
+            <?php  echo $this->Form->button('<i class="fa fa-facebook"></i>  Facebook', array('class'=>'btn btn-primary facebook-login', 'type'=>'submit')); ?>
+        </div>
+        <?php echo $this->Form->end();?>
+        <?php echo $this->Form->create('Socialuser', array('url'=>'/auth/twitter'));?>
+        <div class="col-lg-6">
+            <?php  echo $this->Form->button('<i class="fa fa-twitter"></i>  Twitter', array('class'=>'btn btn-primary twitter-login', 'type'=>'submit')); ?>
+        </div>
+        <?php echo $this->Form->end();?>
+    </div>
+
+</div>
+
 
 
 
