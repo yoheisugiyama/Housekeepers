@@ -266,7 +266,7 @@ div#overLayer{
     border-radius: 5px;
 }
 
-.register{
+.register, .find{
     width:50%;
     text-align: left;
 }
@@ -617,7 +617,7 @@ ul.tab{
 }
 ul.tab li{
     list-style-type:none;
-    width:100px;
+    width:120px;
     height:40px;
     float:left;
     display: block;

@@ -29,11 +29,22 @@
                     <div class="form-group form-group-sm">
                         <label class="col-sm-4 control-label" for="formGroupInput">お名前*</label>
                         <div class="col-sm-4">
-                            <?php echo $this->Form->input('Houseowner.surname', array('type'=>'text', 'label'=>false,'required'=>false, 'class'=>'form-control', 'id'=>'formGroupInput', 'placeholder'=>'氏')); ?>
+                            <?php echo $this->Form->input('Houseowner.surname', array('type'=>'text', 'label'=>false,'required'=>false, 'class'=>'form-control', 'id'=>'formGroupInput', 'placeholder'=>'例）山本')); ?>
                         </div>
                         <div class="col-sm-4">
-                            <?php echo $this->Form->input('Houseowner.firstname', array('type'=>'text', 'label'=>false,'required'=>false, 'class'=>'form-control', 'id'=>'formGroupInput', 'placeholder'=>'名')); ?>
+                            <?php echo $this->Form->input('Houseowner.firstname', array('type'=>'text', 'label'=>false,'required'=>false, 'class'=>'form-control', 'id'=>'formGroupInput', 'placeholder'=>'例）太郎')); ?>
                         </div>
+                    </div>
+
+                    <div class="form-group form-group-sm">
+                        <label class="col-sm-4 control-label" for="formGroupInput">よみがな*</label>
+                        <div class="col-sm-4">
+                            <?php echo $this->Form->input('Houseowner.surname_kana', array('type'=>'text', 'label'=>false,'required'=>false, 'class'=>'form-control', 'id'=>'formGroupInput', 'placeholder'=>'例）やまもと')); ?>
+                        </div>
+                        <div class="col-sm-4">
+                            <?php echo $this->Form->input('Houseowner.firstname_kana', array('type'=>'text', 'label'=>false,'required'=>false, 'class'=>'form-control', 'id'=>'formGroupInput', 'placeholder'=>'例）たろう')); ?>
+                        </div>
+
                     </div>
                     <div class="form-group form-group-sm">
                         <label class="col-sm-4 control-label" for="formGroupInput">性別</label>
@@ -41,24 +52,22 @@
                             <?php echo $this->Form->radio('Houseowner.sex', array('1'=>"男性 ", '2'=>"女性 "), array('legend' => false)); ?>
                         </div>
                     </div>
+
+
                     <div class="form-group form-group-sm">
-                        <label class="col-sm-4 control-label" for="formGroupInput">年齢</label>
+                        <label class="col-sm-4 control-label" for="formGroupInput">生年月日</label>
                         <div class="col-sm-4">
-                            <?php echo $this->Form->input('Houseowner.age', array('type'=>'text', 'label'=>false,'required'=>false, 'class'=>'form-control', 'id'=>'formGroupInput', 'placeholder'=>'年齢')); ?>
+                            <?php echo $this->Form->input('Houseowner.birthday', array('type'=>'text', 'label'=>false,'required'=>false, 'class'=>'form-control', 'id'=>'formGroupInput', 'placeholder'=>'生年月日')); ?>
+
                         </div>
                     </div>
                     <div class="form-group form-group-sm">
-                        <label class="col-sm-4 control-label" for="formGroupInput">対象エリア（都道府県）</label>
+                        <label class="col-sm-4 control-label" for="formGroupInput">最寄り駅</label>
                         <div class="col-sm-4">
-                            <?php echo $this->Form->input('Houseowner.prefecture', array('type'=>'text', 'label'=>false,'required'=>false, 'class'=>'form-control', 'id'=>'formGroupInput', 'placeholder'=>'都道府県')); ?>
+                            <?php echo $this->Form->input('Houseowner.station', array('type'=>'text', 'label'=>false,'required'=>false, 'class'=>'form-control', 'id'=>'formGroupInput', 'placeholder'=>'例 ○○駅')); ?>
                         </div>
                     </div>
-                    <div class="form-group form-group-sm">
-                        <label class="col-sm-4 control-label" for="formGroupInput">結婚ステータス</label>
-                        <div class="col-sm-4">
-                            <?php echo $this->Form->input('Houseowner.marital_status', array('type'=>'text', 'label'=>false,'required'=>false, 'class'=>'form-control', 'id'=>'formGroupInput', 'placeholder'=>'結婚ステータス')); ?>
-                        </div>
-                    </div>
+
                     <div class="form-group form-group-sm">
                         <label class="col-sm-4 control-label" for="formGroupInput">アピール</label>
 
