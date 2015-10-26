@@ -1,14 +1,31 @@
 
 $('body').append("<div id='glayLayer'></div>");
 
+
+// FullCalandarの設定
 $(document).ready(function() {
 
     // page is now ready, initialize the calendar...
 
     $('#calendar').fullCalendar({
+
+        googleCalendarApiKey: 'AIzaSyC4ccA8dc2YkOgG6jlEFxnpm2va0Yb2YdA',
+
+
+        events: 'j9bj0l5slk5fmf6kahofua9d78@group.calendar.google.com',
+
+        eventClick: function(event) {
+            // opens events in a popup window
+            window.open(event.url, 'gcalevent', 'width=700,height=600');
+            return false;
+        },
+
+        loading: function(bool) {
+            $('#loading').toggle(bool);
+        },
+
         // put your options and callbacks here
         editable: true,
-
 
 //ヘッダーの書式
         columnFormat: {
@@ -51,6 +68,15 @@ $(document).ready(function() {
 
     })
 
+});
+
+
+// Bootstrap Selectorの設定（Bootstrapのフォームをかっこよくしたもの）　
+$(window).on('load', function () {
+    $('.selectpicker').selectpicker({
+        size: 6
+
+    });
 });
 
 

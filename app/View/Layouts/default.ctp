@@ -14,7 +14,9 @@
 
     <!-- Bootstrap core CSS -->
     <?php echo $this->Html->css('bootstrap', null, array('media'=>"screen, projection")); ?>
+    <?php echo $this->Html->css('bootstrap-select', null, array('media'=>"screen, projection")); ?>
     <?php echo $this->Html->css('fullcalendar.min', null, array("screen, projection")); ?>
+    <?php echo $this->Html->css('fullcalendar.print', null, array("screen, projection")); ?>
     <?php echo $this->Html->css('style', null, array("screen, projection")); ?>
     <?php echo $this->Html->css('style_sm', null, array("screen, projection")); ?>
 
@@ -27,12 +29,15 @@
     <!--[if IE]>
     <?php echo $this->Html->css('ie', null, array('media'=>"screen, projection")); ?>
     <![endif]-->
-
     <!-- Custom styles for this template -->
-
     <?php echo $this->Html->script('jquery-1.11.2.js'); ?>
-    <script src='/cakephp-2.7.3/js/moment.min.js'></script>
-    <script src='/cakephp-2.7.3/js/fullcalendar.js'></script>
+    <?php echo $this->Html->script('bootstrap.min.js'); ?>
+    <?php echo $this->Html->script('bootstrap-select.js'); ?>
+    <?php echo $this->Html->script('moment.min.js'); ?>
+    <?php echo $this->Html->script('fullcalendar.min.js'); ?>
+    <?php echo $this->Html->script('gcal.js'); ?>
+    <?php echo $this->Html->script('main.js'); ?>
+
 
 </head>
 
@@ -85,8 +90,7 @@
 
 <!-- Placed at the end of the document so the pages load faster -->
 
-<?php echo $this->Html->script('bootstrap.min.js'); ?>
-<?php echo $this->Html->script('main.js'); ?>
+
 
 <?php echo $this->element('sql_dump'); ?>
 </body>

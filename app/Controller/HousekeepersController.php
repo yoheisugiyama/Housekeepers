@@ -47,6 +47,16 @@ class HousekeepersController extends AppController
         $this->set('housekeepers', $this->paginate());
 
 
+        // 検索バーのセレクトフォームの中身をセットする。本当はデータベースから引っ張ってきた方がいいような気がするが、とりあえず、当面の措置
+        $salary_range=array('1' => '1,500円~2,000円', '2' => '2,500円~3,000円', '3' => '3,000円~3,500円', '4' => '3,500円~4,000円');
+        $this->set('salary_range', $salary_range);
+
+        $experience_range  = array('1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9','10' => '10');
+        $this->set('experience_range', $experience_range);
+
+        $sex_range=array('男' => '男', '女' => '女');
+        $this->set('sex_range', $sex_range);
+
     }
 
     public function mypage()
