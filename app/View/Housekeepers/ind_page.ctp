@@ -28,8 +28,14 @@
                 <p><?php echo $this->Number->currency($housekeeper['Housekeeper']['salary'], 'JPY'); ?> x ご利用時間</p>
             </div>
 
+            <div>
+                <?php echo $this->Form->create('Message', array('action'=>'index')); ?>
+                <?php echo $this->Form->input('housekeeper_id', array('type'=>'hidden', 'value'=>$housekeeper['Housekeeper']['id'])); ?>
+                <?php echo $this->Form->end(array('label'=>'メッセージを送る','class'=>'btn btn-warning message')); ?>
 
-
+            </div>
+            <br/>
+            <br/>
             <div>
                 <?php echo $this->Form->create('Houseowner', array('action'=>'housekeeper_request')); ?>
                 <?php echo $this->Form->input('housekeeper_request', array('type'=>'hidden', 'value'=>$housekeeper['Housekeeper']['id'])); ?>
@@ -42,9 +48,20 @@
             <div>
                 <?php echo $this->Form->create('Message', array('action'=>'index')); ?>
                 <?php echo $this->Form->input('housekeeper_id', array('type'=>'hidden', 'value'=>$housekeeper['Housekeeper']['id'])); ?>
-                <?php echo $this->Form->end(array('label'=>'メッセージを送る','class'=>'btn btn-warning message')); ?>
+                <?php echo $this->Form->end(array('label'=>'面談設定のページへ','class'=>'btn btn-info message')); ?>
 
             </div>
+            <br/>
+            <br/>
+            <div>
+                <?php echo $this->Form->create('Message', array('action'=>'index')); ?>
+                <?php echo $this->Form->input('housekeeper_id', array('type'=>'hidden', 'value'=>$housekeeper['Housekeeper']['id'])); ?>
+                <?php echo $this->Form->end(array('label'=>'トライアル設定のページへ','class'=>'btn btn-danger message')); ?>
+
+            </div>
+            <br/>
+            <br/>
+
 
         </div>
 
@@ -57,6 +74,10 @@
                 <tr>
                     <td class="ind_table_caption">ハウスキーパー</td>
                      <td class="ind_table_info"><?php echo h($housekeeper['Housekeeper']['surname'].' '.$housekeeper['Housekeeper']['firstname']); ?></td>
+                </tr>
+                <tr>
+                    <td>個人/法人</td>
+                    <td><?php echo h($housekeeper['Housekeeper']['attribution']); ?></td>
                 </tr>
                 <tr>
                     <td>ニックネーム</td>
@@ -72,7 +93,7 @@
                 </tr>
                 <tr>
                     <td>得意分野</td>
-                    <td></td>
+                    <td><?php echo h($housekeeper['Housekeeper']['advantages']); ?></td>
                 </tr>
 
                 </tbody>

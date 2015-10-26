@@ -15,20 +15,20 @@
             <?php echo $this->Form->create('Housekeeper', array('action'=>'index')); ?>
         <br>
         <fieldset>
+            <legend>最寄り駅</legend>
+            <?php echo $this->Form->input('Housekeeper.station', array('label' => false, 'class'=>'form-control','empty' => true, 'placeholder'=>'最寄駅を記載')); ?>
+            <br>
+            <br>
             <legend>時給で絞り込む</legend>
-            <?php echo $this->Form->select('Housekeeper.salary',array('1' => '1,500円~2,000円', '2' => '2,500円~3,000円', '3' => '3,000円~3,500円', '4' => '3,500円~4,000円')); ?>
+            <?php echo $this->Form->input('Housekeeper.salary', array( 'label'=>false, 'class'=>'selectpicker','type'=>'select', 'options'=>$salary_range)); ?>
             <br>
             <br>
             <legend>経験年数</legend>
-            <?php echo $this->Form->select('Housekeeper.experience',array('1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9','10' => '10')); ?>
-            <br>
-            <br>
-            <legend>最寄り駅</legend>
-            <?php echo $this->Form->input('Housekeeper.station', array('label' => '駅', 'empty' => true)); ?>
+            <?php echo $this->Form->input('Housekeeper.experience', array( 'label'=>false, 'class'=>'selectpicker','type'=>'select', 'options'=>$experience_range)); ?>
             <br>
             <br>
             <legend>性別</legend>
-            <?php echo $this->Form->select('Housekeeper.sex',array('男' => '男', '女' => '女')); ?>
+            <?php echo $this->Form->input('Housekeeper.sex', array( 'label'=>false, 'class'=>'selectpicker','type'=>'select', 'options'=>$sex_range)); ?>
             <br>
             <br>
         </fieldset>
